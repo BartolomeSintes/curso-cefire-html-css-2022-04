@@ -13,6 +13,8 @@
   no sé si son también clases de prism).
 */
 
+div.terminal { background-color: #1e1e1e; color: white; padding-top: 5px; padding-bottom: 5px; }
+
 div.codigo { background-color: #1e1e1e; color: white; }
 
 div.codigo.idle { background-color: white; color: black; }

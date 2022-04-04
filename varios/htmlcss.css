@@ -296,7 +296,7 @@ div.filaflex pre {
   white-space: pre-wrap;
 }
 
-div.codigo, div[class^="resultado"], div[class^="enunciado"] {
+div.terminal, div.codigo, div.powershell, div[class^="resultado"], div[class^="enunciado"] {
   clear: both;
   border: 2px black solid;
   margin: 5px 10px;
@@ -309,7 +309,7 @@ div.resultado-html-sin-borde {
   border: none;
 }
 
-div.codigo {
+div.terminal, div.codigo, div.powershell {
   font-family: "Consolas", monospace;
 }
 
@@ -600,6 +600,10 @@ div.mcl-diapo p.control {
   }
 
   nav {
+    display: none;
+  }
+
+  footer {
     display: none;
   }
 
