@@ -44,17 +44,19 @@
 
   <hr class="corta">
 
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Parte de la configuración de Visual Studio Code se puede definir a nivel global (o de usuario) o a nivel de espacio de trabajo (o carpeta). Dependiendo del uso que hagamos de Visual Studio Code nos interesará más un enfoque u otro. Por ejemplo, si todos los proyectos en las que trabajamos son similares y utilizamos las mismas preferencias de configuración, entonces es más lógico utilizar preferencias globales.</p>
+  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Parte de la configuración de Visual Studio Code se puede definir a nivel global (o de usuario) o a nivel de espacio de trabajo (o carpeta), mientras que otras partes sólo se puede definir a uno de los niveles. Si una configuración se define a nivel global, la configuración se aplicará a todos los espacios de trabajo, mientras que si se define a nivel de espacio de trabajo se aplicará únicamente al espacio de trabajo en que se haya definido. Dependiendo del uso que hagamos de Visual Studio Code nos interesará más un enfoque u otro. Por ejemplo, si todos los proyectos en las que trabajamos son similares y utilizamos las mismas preferencias de configuración, entonces es más cómodo utilizar preferencias globales.</p>
 
-  <p>Como es probable que muchos de vosotros ya estéis utilizando Visual Studio Code, he pensado que lo mejor es que la configuración de este curso interfiera lo menos posible con el resto de configuraciones. Por eso, os propongo hacer una configuración a nivel del espacio de trabajo.</p>
+  <p>Concretamente:</p>
   <ul>
     <li>Las extensiones se instalan a nivel global, pero se pueden inhabilitar a nivel de espacio de trabajo.</li>
-    <li>Las preferencias de trabajo se pueden guardar a nivel de espacio de trabajo.</li>
+    <li>Las preferencias de configuración se pueden guardar a nivel global o a nivel de espacio de trabajo.</li>
     <li>Las tareas se definen siempre a nivel de espacio de trabajo.</li>
-    <li>Los atajos se definen siempre a nivel global cuando se definen manualmente, lo que constituye un problema. Hasta ahora, los desarrolladores de Visual Studio Code no han atendido las peticiones de implementar atajos de teclado a nivel de espacio de trabajo y la solución que proponen es definir atajos de teclado. Así que he creado una extensión que os permitirá definir los atajos sin afectar a otros espacios de trabajo.</li>
+    <li>Los atajos se definen siempre a nivel global cuando se definen manualmente, lo que constituye un problema. Hasta ahora, los desarrolladores de Visual Studio Code no han atendido las peticiones de implementar atajos de teclado a nivel de espacio de trabajo y la solución que proponen es definir atajos de teclado mediante extensiones e inhabilitar las extensiones en los espacios de trabajo en los que no se quieran utilizar. He creado una extensión que os permitirá definir los atajos sin afectar a otros espacios de trabajo.</li>
   </ul>
 
-  <p>Si solo estáis utilizando Visual Studio Code para este curso, podéis crear los atajos de teclado manualmente, sin utilizar la extensión de atajos de teclado.</p>
+  <p>Si solo estáis utilizando Visual Studio Code para este curso, o estáis trabajando en una máquina virtual, podéis crear los atajos de teclado manualmente, sin utilizar la extensión de atajos de teclado. Las preferencias de configuración las podéis guardar a nivel global o a nivel de espacio de trabajo. Yo os aconsejaría hacerlo a nivel de espacio de trabajo.</p>
+
+  <p>En caso de que ya estéis utilizando Visual Studio Code y queráis que la configuración de este curso interfiera lo menos posible con el resto de vuestras configuraciones, podéis hacer una configuración toda ella a nivel del espacio de trabajo.</p>
 
   <section id="temas">
     <h2>Tema de color recomendado</h2>
@@ -627,9 +629,11 @@
 
       <p>Las siguientes tareas permiten abrir en los navegadores Firefox y Chrome las páginas que se están editando en Visual Studio Code.</p>
 
-      <p>Compruebe que la ruta de los ejecutables de los navegadores que aparecen en las tareas coinciden con las rutas de los ejecutables en su ordenador. Si en su ordenador los programas se encuentran en otra ubicación, escriba la ubicación separando los directorios con barras (/) o con contrabarras dobles (\\), pero no con contrabarras simples (\).</p>
+      <p>En Windows, compruebe que la ruta de los ejecutables de los navegadores que aparecen en las tareas coinciden con las rutas de los ejecutables en su ordenador. Si en su ordenador los programas se encuentran en otra ubicación, escriba la ubicación separando los directorios con barras (/) o con contrabarras dobles (\\), pero no con contrabarras simples (\).</p>
 
       <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes, pero las actualizaciones no cambian la ubicación del programa, por lo que si tiene Chrome instalado desde antes de 2020 la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
+
+      <p>En LliureX, compruebe en el terminal que los comandos que aparecen en la tarea (<i>firefox</i> y <i>google-chrome</i>) lanzan efectivamente los navegadores.</p>
 
       <div class="codigo">
         <pre>
@@ -644,6 +648,9 @@
       "windows": {
         "command": "<span class="codigo-resaltado">C:/Program Files/Mozilla Firefox/firefox.exe</span>"
       },
+      "linux": {
+          "command": "<span class="codigo-resaltado">firefox</span>"
+      },
       "args": [
           "${file}"
       ],
@@ -657,6 +664,9 @@
       "command": "explorer",
       "windows": {
         "command": "<span class="codigo-resaltado">C:/Program Files/Google/Chrome/Application/chrome.exe</span>"
+      },
+      "linux": {
+          "command": "<span class="codigo-resaltado">google-chrome</span>"
       },
       "args": [
         "${file}"
