@@ -25,26 +25,31 @@
       <h2>VS Code</h2>
 
       <ul>
-        <li><a href="#ejercicio-1">1 - Abrir páginas</a></li>
+        <li><a href="#ejercicio-1-a">1A - Abrir páginas</a></li>
+        <li><a href="#ejercicio-1-b">1B - Live Preview</a></li>
         <li><a href="#ejercicio-2">2 - HTMLHint</a></li>
         <li><a href="#ejercicio-3">3 - CSS Lint</a></li>
         <li><a href="#ejercicio-4">4 - Close Tag</a></li>
         <li><a href="#ejercicio-5">5 - Tag Inserter</a></li>
         <li><a href="#ejercicio-6">6 - Image Preview</a></li>
         <li><a href="#ejercicio-7">7 - CSScomb</a></li>
+        <li><a href="#ejercicio-8">8 - Lorem Ipsum</a></li>
       </ul>
     </div>
   </nav>
 
   <p>Estos ejercicios permiten comprobar que se ha configurado correctamente Visual Studio Code.</p>
 
-  <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="pm-vscode-plantillas.zip">plantillas de los ejercicios Visual Studio Code. Puesta en marcha</a>.</p>
+  <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="pm-vscode-plantillas.zip">plantillas de los ejercicios Visual Studio Code. Puesta en marcha</a>. Una vez descargado el fichero zip:</p>
+  <ol>
+    <li>Descomprima las plantillas en la carpeta <strong>ejercicios</strong>. Se creará una carpeta <strong>pm-vscode-plantillas</strong>.</li>
+    <li>Renombre la carpeta <strong>pm-vscode-plantillas</strong> como <strong>pm-vscode</strong>.</li>
+  </ol>
 
-  <section id="ejercicio-1">
-    <h2>VS Code 1 - Abrir páginas en el navegador</h2>
+  <section id="ejercicio-1-a">
+    <h2>VS Code 1 A - Abrir páginas en el navegador</h2>
 
     <ol>
-      <li>Descargue y descomprima las plantillas.</li>
       <li>Abra en Visual Studio Code la página <strong>vscode-1.html</strong>.</li>
       <li>Abra la página <strong>vscode-1.html</strong> en Firefox y Chrome con los atajos de teclado <span class="soft-atajo-teclado">Ctrl+Alt+f</span> y <span class="soft-atajo-teclado">Ctrl+Alt+c</span>.
         <p>Si no se abre el navegador correspondiente, revise los atajos de teclado creados en Visual Studio Code, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#atajos-teclado">Configuración de Visual Studio Code</a>.</p>
@@ -64,11 +69,32 @@
     </ol>
   </section>
 
+  <section id="ejercicio-1-b">
+    <h2>VS Code 1 A - Abrir páginas con Live Preview</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>vscode-1.html</strong>.</li>
+      <li>Abra la página <strong>vscode-1.html</strong> en Live Preview con el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+p</span>.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-live-preview-1.png" alt="VSC. Extensión Live Preview" width="1024" height="300">
+        </p>
+        <p>Si no se abre el servidor correspondiente ni se muestra la página en Visual Studio Code, revise los atajos de teclado creados en Visual Studio Code, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#atajos-teclado">Configuración de Visual Studio Code</a>.</p>
+      </li>
+      <li>Compruebe que la dirección de la página es <strong>http://127.0.0.1:3000/ejercicios/pm-vscode/vscode-1.html</strong> o similar.</li>
+      <li>Añada algo de texto a la página web y compruebe que aunque no guarde el fichero, en el navegador la vista se actualiza continuamente.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-live-preview-1.png" alt="VSC. Extensión Live Preview" width="1024" height="300">
+        </p>
+        <p>Lógicamente, Visual Studio Code mostrará un aviso de error hasta que escribamos la etiqueta de cierre <span class="html-eti">&lt;/p&gt;</span>.</p>
+      </li>
+    </ol>
+  </section>
+
   <section id="ejercicio-2">
     <h2>VS Code 2 - Extensión HTMLHint</h2>
 
     <ol>
-      <li>Cree en Visual Studio Code la página <strong>vscode-2.html</strong>.</li>
+      <li>Cree en Visual Studio Code la página <strong>vscode-2.html</strong> en la carpeta .</li>
       <li>Copie y pegue el siguiente código HTML en la página <strong>vscode-2.html</strong>:
         <div class="codigo">
           <pre>
@@ -128,7 +154,8 @@ a { }
   </pre>
         </div>
       </li>
-      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 7 avisos. Haga clic en él para ver los errores detectados.
+      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 7 errores y avisos como mínimo. Haga clic en él para ver los errores detectados.
+        <p>El número de avisos puede ser mayor si incluye también los avisos del fichero vscode-2.html del ejercicio anterior. En general, Visual Studio Code muestra los avisos correspondientes a todos los ficheros que se han ido abriendo. Si cierra toda las pestañas de documentos con errores y cierra y abre Visual Studio Code desaparecerán los mensajes de error.</p>
         <p class="mcl-captura">
           <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-csslint-1.png" alt="VSC. Errores CSS Lint" width="1024" height="576">
         </p>
@@ -168,13 +195,13 @@ a { }
         <p>Si la línea 11 no aparece rodeada de la etiqueta <span class="html-eti">&lt;h2&gt;</span>, compruebe que la extensión Tag Inserter está instalada.</p>
       </li>
       <li>Sitúe el cursor en la etiqueta <span class="html-eti">&lt;h2&gt;</span>. Compruebe que aparece un segundo cursor en la etiqueta de cierre. Borre el nombre de la etiqueta (sin borrar las desigualdades &lt; &gt;) y corríjalo por <span class="html-eti">&lt;h1&gt;</span>. Compruebe que se cambia simultáneamente la etiqueta de cierre <span class="html-eti">&lt;/h1&gt;</span>.
-      <p>Compruebe que también puede modificar ambas etiquetas editando la etiqueta de cierre.</p>
+        <p>Compruebe que también puede modificar ambas etiquetas editando la etiqueta de cierre.</p>
       </li>
     </ol>
   </section>
 
   <section id="ejercicio-6">
-    <h2>VS Code 6 - Extensión Image Preview</h2>
+    <h2>VS Code 6 - Extensión Image Preview / Emmet</h2>
 
     <ol>
       <li>Abra en Visual Studio Code la página <strong>vscode-6.html</strong>.</li>
@@ -191,8 +218,9 @@ a { }
       </li>
       <li>Sitúe el cursor encima del nombre de la imagen y observe como se muestra una ventana que contiene una miniatura de la imagen y su tamaño.
         <p>Si no se muestra la ventana, compruebe que la extensión Image Preview está instalada.</p>
+        <p><img src="../../../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"><strong>Nota</strong>: Debido a cambios en Visual Studio Code, la extensión Image Preview deja de funcionar correctamente hasta que el autor publica una nueva versión corrigiendo el problema. Desafortunadamente, parece que actualmente (abril de 2022), la extensión no funciona por lo que probablemente no se vea la miniatura de la imagen.</p>
       </li>
-      <li>Pulse el atajo <span class="soft-atajo-teclado">Ctrl+Alt+e Ctrl+Alt+t</span> y compruebe que se añaden los atributos <span class="html-atri">width</span> = <span class="html-atri-valor">100</span> y <span class="html-atri">height</span> = <span class="html-atri-valor">100</span>.</li>
+      <li>Haga clic en algún lugar de la etiqueta &lt;<span class="html-eti">img</span>&gt;. Pulse el atajo <span class="soft-atajo-teclado">Ctrl+Alt+e Ctrl+Alt+t</span> y compruebe que se añaden los atributos <span class="html-atri">width</span> = <span class="html-atri-valor">100</span> y <span class="html-atri">height</span> = <span class="html-atri-valor">100</span>.</li>
       <li>Guarde la página en Visual Studio Code y actualice la página en el navegador. Compruebe que la imagen ya se muestra al tamaño 100px x 100px.
         <p class="mcl-captura">
           <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-emmet-image-size-1.png" alt="VSC. Atributos width y height en imagen" width="1014" height="230">
@@ -245,9 +273,19 @@ h1 {
 </pre>
         </div>
         <p>Si no obtiene este resultado, compruebe que la extensión CSScomb está instalada y revise la configuración de la extensión CSScomb, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#csscomb">Configuración de Visual Studio Code</a>.</p>
-        <p><img src="../../../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> <strong>Nota</strong>: CSSComb no corrige los espacios iniciales de la primera línea y añade un segundo punto y coma en la propiedad reordenada que antes no tenía punto y coma. El 16/10/2019 abrí dos <i>issues</i> (<a href="https://github.com/csscomb/csscomb.js/issues/621">csscomb#621</a> y <a href="https://github.com/csscomb/csscomb.js/issues/622">csscomb#622</a>) en el repositorio del proyecto CSSComb para aclarar si es un problema de CSSComb o de la configuración propuesta en estos apuntes.</p>
+        <p><img src="../../../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> <strong>Nota</strong>: CSSComb no corrige los espacios iniciales de la primera línea y añade un segundo punto y coma en la propiedad reordenada que antes no tenía punto y coma. El 16/10/2019 abrí dos <i>issues</i> (<a href="https://github.com/csscomb/csscomb.js/issues/621">csscomb#621</a> y <a href="https://github.com/csscomb/csscomb.js/issues/622">csscomb#622</a>) en el repositorio del proyecto CSSComb para aclarar si es un problema de CSSComb o de la configuración propuesta en estos apuntes. Pero hasta que el desarrollo del proyecto CSSComb no se retome, estos problemas no tendrán solución y se deberán corregir manualmente.</p>
       </li>
       <li>Guarde la hoja de estilo y actualice la página en el navegador. Compruebe que la página se ve exactamente igual que antes.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-8">
+    <h2>VS Code 8 - Extensión Lorem Ipsum</h2>
+
+    <ol>
+      <li>Instale la extensión Lorem Ipsum de Daniel Imms.</li>
+      <li>Compruebe su funcionamiento</li>
+      <li>Defina atajos de teclado para esta extensión y compruebe su funcionamiento</li>
     </ol>
   </section>
 
