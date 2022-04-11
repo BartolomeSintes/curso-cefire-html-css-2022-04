@@ -4,7 +4,7 @@
 /*                                          */
 /* CSS curso: HTML y CSS                    */
 /*                                          */
-/* 5 de noviembre de 2021                   */
+/* 10 de abril de 2022                      */
 /*                                          */
 
 /* CSS comun */
@@ -142,6 +142,13 @@ a img {
   border: none;
 }
 
+.entidad-inline {
+    display: inline-block;
+    font-size: 200%;
+    line-height: 120%;
+    vertical-align: sub;
+}
+
 .soft-atajo-teclado {
   font-family: monospace;
   font-size: 120%;
@@ -171,6 +178,11 @@ a img {
   border: black 2px dotted;
   padding: 5px;
   vertical-align: middle;
+}
+
+.codigo-incorrecto {
+    text-decoration: underline wavy yellow;
+    text-decoration-skip-ink: none;
 }
 
 .codigo-resaltado {
