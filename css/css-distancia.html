@@ -30,9 +30,8 @@
         <li><a href="#unidades-relativas">Unidades relativas</a>
           <ul>
             <li><a href="#porcentajes"><span class="css-unidad">%</span></a></li>
-            <li><a href="#em"><span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span></a></li>
+            <li><a href="#em"><span class="css-unidad">em</span></a></li>
             <li><a href="#rem"><span class="css-unidad">rem</span></a></li>
-            <li><a href="#v-units"><span class="css-unidad">vw</span>, <span class="css-unidad">vh</span>, <span class="css-unidad">vmin</span> y <span class="css-unidad">vmax</span></a></li>
           </ul>
         </li>
         <li><a href="#unidades-absolutas">Unidades absolutas</a>
@@ -41,12 +40,11 @@
           </ul>
         </li>
         <li><a href="#unidades-recomendadas">Unidades recomendadas</a></li>
-        <li><a href="#calc">La función <span class="css-funcion">calc()</span></a></li>
       </ul>
     </div>
   </nav>
 
-  <p>En esta lección se comenta las unidades de distancia definidas en la futura recomendación <a href="https://www.w3.org/TR/css-values-3/">CSS Values and Units Module Level 3</a>. Aunque actualmente (octubre de 2021) esta recomendación no está formalmente aprobada, se considera parte de la <a href="https://www.w3.org/TR/2021/NOTE-css-2021-20211231//#css">definición oficial de CSS en CSS Snapshot 2021</a>.</p>
+  <p>En esta lección se comenta las unidades de distancia "clásicas" definidas en la futura recomendación <a href="https://www.w3.org/TR/css-values-3/">CSS Values and Units Module Level 3</a>. Aunque actualmente (abril de 2022) esta recomendación no está formalmente aprobada, se considera parte de la <a href="https://www.w3.org/TR/2021/NOTE-css-2021-20211231/#css">definición oficial de CSS en CSS Snapshot 2021</a>.</p>
 
   <section id="unidades">
     <h2>Unidades de distancias y tamaños</h2>
@@ -58,36 +56,17 @@
       <li>cuando el valor es cero, se aconseja no escribir la unidad (por ejemplo, escribir 0 en vez de 0px)</li>
     </ul>
 
-    <p>Las unidades relativas definidas respecto al tipo de letra son:</p>
+    <p>Las unidades relativas definidas respecto al tipo de letra más comunes son:</p>
     <ul>
       <li><span class="css-unidad">em</span>: el tamaño de fuente del elemento contenedor</li>
-      <li><span class="css-unidad">ex</span>: la altura de la letra x de la fuente del elemento contenedor</li>
-      <li><span class="css-unidad">ch</span>: la altura de la cifra 0 (cero) de la fuente del elemento contenedor</li>
       <li><span class="css-unidad">rem</span>: el tamaño de la fuente del elemento raíz de la página</li>
     </ul>
 
-    <p>En la práctica, las unidades relativas más utilizadas son <span class="css-unidad">em</span> y <span class="css-unidad">rem</span>.</p>
-
-    <p>Las unidades relativas definidas respecto a la pantalla son:</p>
-    <ul>
-      <li><span class="css-unidad">vw</span>: el 1% del ancho de la ventana (sin contar bordes, pestañas barras de desplazamiento, etc.)</li>
-      <li><span class="css-unidad">vh</span>: el 1% del alto de ventana (sin contar bordes, pestañas barras de desplazamiento, etc.)</li>
-      <li><span class="css-unidad">vmin</span>: el menor de los tamaños <span class="css-unidad">vw</span> y <span class="css-unidad">vh</span></li>
-      <li><span class="css-unidad">vmax</span>: el mayor de los tamaños <span class="css-unidad">vw</span> y <span class="css-unidad">vh</span></li>
-    </ul>
-
-    <p>Las unidades absolutas disponibles son:</p>
+    <p>Las unidades absolutas disponibles más comunes son:</p>
     <ul>
       <li><span class="css-unidad">px</span>: píxeles, la 96ava parte de una pulgada (96 px = 1in = 2.54cm)</li>
-      <li><span class="css-unidad">cm</span>: centímetros</li>
-      <li><span class="css-unidad">mm</span>: milímetros</li>
-      <li><span class="css-unidad">Q</span>: cuartos de milímetros</li>
-      <li><span class="css-unidad">in</span>: pulgadas (1in = 2.54cm = 25.4mm)</li>
-      <li><span class="css-unidad">pc</span>: picas, la sexta parte de una pulgada (1in = 6pc)</li>
       <li><span class="css-unidad">pt</span>: puntos, la doceava parte de una pica, es decir, la 72ava parte de una pulgada (1in = 6pc = 72pt)</li>
     </ul>
-
-    <p>En la práctica, las unidades absolutas más utilizadas son <span class="css-unidad">px</span> y <span class="css-unidad">pt</span>.</p>
   </section>
 
   <section id="unidades-relativas">
@@ -157,6 +136,29 @@
         </div>
         <div class="icono-enlace">
           <a href="ejemplos/distancia/distancia-porcentajes-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>En el ejemplo siguiente, las líneas horizontales ocupan el 50% del espacio disponible, por lo que la línea situada en la división (que a su vez ocupa el 50% del espacio disponible), ocupa en realidad el 25% del total (el 50% del 50%, 50% x 50% = 25%).</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">div {
+  width: 50%;
+  border: black 1px solid;
+}
+
+hr {
+  width: 50%;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/distancia/distancia-porcentajes-6.html" style="width: 100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/distancia/distancia-porcentajes-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
 
@@ -231,50 +233,25 @@ p {
       </div>
 
       <p>Esta composición de tamaños no siempre es conveniente y puede provocar cambios de tamaños indeseados debido a anidamientos no previstos. Para evitarlo, se puede utilizar la unidad relativa <span class="css-unidad">rem</span>, introducida en CSS 3.</p>
-
-      <p>En el ejemplo siguiente, las líneas horizontales ocupan el 50% del espacio disponible, por lo que la línea situada en la división (que a su vez ocupa el 50% del espacio disponible), ocupa en realidad el 25% del total (el 50% del 50%, 50% x 50% = 25%).</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-css">div {
-  width: 50%;
-  border: black 1px solid;
-}
-
-hr {
-  width: 50%;
-}</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/distancia/distancia-porcentajes-6.html" style="width: 100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/distancia/distancia-porcentajes-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
     </section>
 
     <section id="em">
-      <h3 class="con-aside">Unidades relativas respecto al tipo de letra <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span></h3>
+      <h3 class="con-aside">Unidades relativas respecto al tipo de letra <span class="css-unidad">em</span></h3>
 
       <aside class="enlace-norma">
         <p>
-          <span class="css-unidad">em ex ch</span><br>
+          <span class="css-unidad">em</span><br>
           <a href="https://www.w3.org/TR/css-values-3/#font-relative-lengths"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#Relative_length_units"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
         </p>
       </aside>
 
-      <p>Las unidades relativas <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span> permiten expresar el tamaño en función de la altura de un carácter:</p>
+      <p>Las unidades relativas <span class="css-unidad">em</span> permite expresar el tamaño en función de la altura de un carácter: </p>
       <ul>
         <li><span class="css-unidad">em</span> corresponde a la altura total del tipo de letra</li>
-        <li><span class="css-unidad">ex</span> corresponde a la altura del carácter "x"</li>
-        <li><span class="css-unidad">ch</span> corresponde a la altura del carácter "0"</li>
       </ul>
 
-      <p>En el ejemplo siguiente, los párrafos tienen un borde con un grosor expresado en <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span>.</p>
+      <p>En el ejemplo siguiente, los párrafos tienen un borde con un grosor expresado en <span class="css-unidad">em</span>.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -284,16 +261,16 @@ hr {
 }
 
 p.borde-ex {
-  border: green 1ex solid;
+  border: green 1.5em solid;
 }
 
 p.borde-ch {
-  border: blue 1ch solid;
+  border: blue 2em solid;
 }</code>
 </pre>
         </div>
         <div class="resultado-object">
-          <object type="text/html" data="ejemplos/distancia/distancia-relativas-1.html" style="width: 100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
+          <object type="text/html" data="ejemplos/distancia/distancia-relativas-1.html" style="width: 100%; height: 18em">ERROR (no puede mostrarse el objeto)</object>
         </div>
         <div class="icono-enlace">
           <a href="ejemplos/distancia/distancia-relativas-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -419,82 +396,6 @@ p {
         </div>
       </div>
     </section>
-
-    <section id="v-units">
-      <h3 class="con-aside">Unidades relativas respecto al tamaño de la pantalla <span class="css-unidad">vw</span>, <span class="css-unidad">vh</span>, <span class="css-unidad">vmin</span> y <span class="css-unidad">vmax</span></h3>
-
-      <aside class="enlace-norma">
-        <p>
-          <span class="css-unidad">vw vh vmin vmax</span><br>
-          <a href="https://www.w3.org/TR/css-values-3/#viewport-relative-lengths"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length#Viewport-percentage_lengths"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        </p>
-      </aside>
-
-      <p>Las unidades relativas <span class="css-unidad">vw</span> y <span class="css-unidad">vh</span> corresponden, respectivamente, al 1% del ancho y alto total disponibles para el documento.</p>
-
-      <div class="filaflex">
-        <div class="columnaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p&gt;Este párrafo ocupa la cuarta parte de la pantalla disponible.&lt;/p&gt;
-
-&lt;p&gt;Este párrafo ocupa la cuarta parte de la pantalla disponible.&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-css">p {
-  background-color: lightgray;
-  width: 50vw;
-  height: 50vh;
-}</code>
-</pre>
-          </div>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/distancia/distancia-relativas-5.html" style="width: 100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/distancia/distancia-relativas-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <p>Las unidades relativas <span class="css-unidad">vmin</span> y <span class="css-unidad">vmax</span> corresponden, respectivamente, al menor y mayor de los valores <span class="css-unidad">vw</span> y <span class="css-unidad">vh</span>.</p>
-
-      <div class="filaflex">
-        <div class="columnaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p class="min"&gt;Este párrafo cuadrado ocupa la mitad del lado más corto.&lt;/p&gt;
-
-&lt;p class="max"&gt;Este párrafo cuadrado ocupa la mitad del lado más largo.&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-css">p.min {
-  background-color: lightgray;
-  width: 50vmin;
-  height: 50vmin;
-}
-
-p.max {
-  background-color: lightgray;
-  width: 50vmax;
-  height: 50vmax;
-}</code>
-</pre>
-          </div>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/distancia/distancia-relativas-6.html" style="width: 100%; height: 19em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/distancia/distancia-relativas-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
   </section>
 
   <section id="unidades-absolutas">
@@ -511,81 +412,19 @@ p.max {
     <p>Todas las unidades absolutas están relacionadas, puesto que se trata de unidades de distancia: </p>
     <ul>
       <li><span class="css-unidad">px</span>: píxeles, la 96ava parte de una pulgada (96 px = 1in = 2.54cm)</li>
-      <li><span class="css-unidad">cm</span>: centímetros</li>
-      <li><span class="css-unidad">mm</span>: milímetros (10mm = 1cm)</li>
-      <li><span class="css-unidad">Q</span>: cuartos de milímetros (4Q = 1mm)</li>
-      <li><span class="css-unidad">in</span>: pulgadas (1in = 2.54cm = 25.4mm)</li>
-      <li><span class="css-unidad">pc</span>: picas, la sexta parte de una pulgada (6pc = 1in)</li>
       <li><span class="css-unidad">pt</span>: puntos, la doceava parte de una pica, es decir, la 72ava parte de una pulgada (72pt = 6pc = 1in)</li>
     </ul>
 
-    <p>La imagen siguiente muestra estas distancias a tamaño real y aumentado:</p>
-
-    <p class="mcl-svg-figura">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1100" viewBox="-110 -40 1100 280" style="background-color: white;" font-family="sans-serif" font-size="18">
-        <title>Unidades absolutas SVG a escala</title>
-        <text x="-10" y="0" text-anchor="end">Real:</text>
-        <line x1="0" y1="-10" x2="0" y2="10" stroke="red" stroke-width="2" />
-        <line x1="0" y1="0" x2="96" y2="0" stroke="red" stroke-width="2" />
-        <line x1="96" y1="-10" x2="96" y2="10" stroke="red" stroke-width="2" />
-        <text x="96" y="-20" text-anchor="middle">1in</text>
-        <line x1="37.8" y1="-10" x2="37.9" y2="10" stroke="red" stroke-width="2" />
-        <text x="37.8" y="-20" text-anchor="start">1cm</text>
-        <line x1="16" y1="-10" x2="16" y2="10" stroke="red" stroke-width="2" />
-        <text x="16" y="-20" text-anchor="middle">1pc</text>
-
-        <line x1="0" y1="0" x2="0" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-        <line x1="16" y1="0" x2="160" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-        <line x1="37.8" y1="0" x2="378" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-        <line x1="96" y1="0" x2="960" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-
-        <text x="-10" y="100" text-anchor="end">Aumentado:</text>
-        <line x1="0" y1="90" x2="0" y2="110" stroke="red" stroke-width="2" />
-        <line x1="0" y1="100" x2="960" y2="100" stroke="red" stroke-width="2" />
-        <line x1="960" y1="90" x2="960" y2="110" stroke="red" stroke-width="2" />
-        <text x="960" y="130" text-anchor="middle">1in</text>
-        <line x1="378" y1="90" x2="378" y2="110" stroke="red" stroke-width="2" />
-        <text x="378" y="130" text-anchor="middle">1cm</text>
-        <line x1="160" y1="90" x2="160" y2="110" stroke="red" stroke-width="2" />
-        <text x="160" y="130" text-anchor="middle">1pc</text>
-        <line x1="37.8" y1="90" x2="37.8" y2="110" stroke="red" stroke-width="2" />
-        <text x="37.8" y="80" text-anchor="start">1mm</text>
-        <line x1="13.3" y1="90" x2="13.3" y2="110" stroke="red" stroke-width="2" />
-        <text x="13.3" y="130" text-anchor="start">1pt</text>
-        <line x1="10" y1="90" x2="10" y2="110" stroke="red" stroke-width="2" />
-        <text x="15" y="80" text-anchor="middle">1px</text>
-        <line x1="9.4" y1="90" x2="9.4" y2="110" stroke="red" stroke-width="2" />
-        <text x="9.4" y="130" text-anchor="end">1Q</text>
-
-        <line x1="0" y1="100" x2="0" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-        <line x1="9.4" y1="100" x2="100" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-        <line x1="10" y1="100" x2="105.8" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-        <line x1="13.3" y1="100" x2="141.1" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-        <line x1="37.8" y1="100" x2="400" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
-
-        <text x="-10" y="200" text-anchor="end">Aumentado:</text>
-        <line x1="0" y1="190" x2="0" y2="210" stroke="red" stroke-width="2" />
-        <line x1="0" y1="200" x2="400" y2="200" stroke="red" stroke-width="2" />
-        <line x1="400" y1="190" x2="400" y2="210" stroke="red" stroke-width="2" />
-        <line x1="400" y1="190" x2="400" y2="210" stroke="red" stroke-width="2" />
-        <text x="400" y="180" text-anchor="start">1mm</text>
-        <line x1="141.1" y1="190" x2="141.1" y2="210" stroke="red" stroke-width="2" />
-        <text x="141.1" y="230" text-anchor="start">1pt</text>
-        <line x1="105.8" y1="190" x2="105.8" y2="210" stroke="red" stroke-width="2" />
-        <text x="100" y="180" text-anchor="start">1px</text>
-        <line x1="100" y1="190" x2="100" y2="210" stroke="red" stroke-width="2" />
-        <text x="100" y="230" text-anchor="end">1Q</text>
-      </svg>
-    </p>
+    <p>Es decir, que un punto es lo mismo que 8 píxeles.</p>
 
     <section id="css3-px">
       <h3>Redefinición de la unidad <span class="css-unidad">px</span> en CSS 3</h3>
 
       <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">En CSS 2 el píxel (<span class="css-unidad">px</span>) era una unidad relativa, ya que se refería al tamaño de un píxel físico de una pantalla. Cuando se redactó CSS 2, en los años 90, los píxeles de las pantallas tenían más o menos el mismo tamaño en todas las pantallas, por lo que al definir elementos en <span class="css-unidad">px</span>, el resultado era más o menos el mismo en todas las pantallas.</p>
 
-      <p>El problema es que desde hace unos años existen pantallas de alta densidad (sobre todo en los móviles) en los que los píxeles físicos son mucho más pequeños que en las pantallas de loas años 90. En estas pantallas, los elementos definidos en <span class="css-unidad">px</span> se ven mucho más pequeños, lo que convierte en ilegibles las páginas.</p>
+      <p>Pero la aparición de pantallas de alta densidad (sobre todo en los móviles) rompió ese equilibrio, ya que los píxeles físicos son mucho más pequeños que en las pantallas de loas años 90. En estas pantallas de alta densidad, los elementos definidos en <span class="css-unidad">px</span> se hubieran visto mucho más pequeños, lo que haría ilegibles las páginas.</p>
 
-      <p>Este problema se ha resuelto en CSS 3 redefiniendo la unidad <span class="css-unidad">px</span>, convirtiéndola en una distancia absoluta, independiente del tamaño del píxel de la pantalla. Para mantener cierta compatibilidad con la definición antigua, se ha tenido en cuenta que las pantallas de los años 90 tenían una densidad de píxeles de 96dpi (96dpi = 96 dots per inch = 96 puntos por pulgada), definiendo el nuevo <span class="css-unidad">px</span> de manera que 96 píxeles miden 1 pulgada (96<span class="css-unidad">px</span> = 1<span class="css-unidad">in</span>).</p>
+      <p>Este problema se resolvió en CSS 3 redefiniendo la unidad <span class="css-unidad">px</span>, convirtiéndola en una distancia absoluta, independiente del tamaño del píxel de la pantalla. Para mantener cierta compatibilidad con la definición antigua, se tuvo en cuenta que las pantallas de los años 90 tenían una densidad de píxeles de 96dpi (96dpi = 96 dots per inch = 96 puntos por pulgada), definiendo el nuevo <span class="css-unidad">px</span> de manera que 96 píxeles equivalen a 1 pulgada (96<span class="css-unidad">px</span> = 1<span class="css-unidad">in</span>).</p>
     </section>
   </section>
 
@@ -596,22 +435,8 @@ p.max {
     <ul>
       <li><span class="css-unidad">px</span> para distancias pequeñas (anchos de bordes, márgenes, etc.).</li>
       <li><span class="css-unidad">rem</span> para tamaños de fuente, salvo que se quiera aprovechar en el diseño la composición de tamaños, en cuyo caso se usarán porcentajes <span class="css-unidad">%</span>.</li>
-      <li><span class="css-unidad">vw</span>, <span class="css-unidad">vh</span> y porcentajes <span class="css-unidad">%</span> para tamaños de elementos grandes y distribución de elementos por la pantalla.</li>
+      <li>porcentajes <span class="css-unidad">%</span> para tamaños de elementos grandes y distribución de elementos por la pantalla.</li>
     </ul>
-  </section>
-
-  <section id="calc">
-    <h2 class="con-aside">La función <span class="css-funcion">calc()</span></h2>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="css-funcion">calc()</span><br>
-        <a href="https://www.w3.org/TR/css-values-3/#calc-notation"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-      </p>
-    </aside>
-
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Por escribir.</p>
   </section>
 
   <footer>
