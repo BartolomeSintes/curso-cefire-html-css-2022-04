@@ -1,0 +1,12 @@
+h1 {
+    text-shadow: lightgray 5 5;
+    text-trasform: capitalize;
+    word_spacing: 20 px;
+}
+
+p (
+    color: azul;
+)
+
+hr {
+}
