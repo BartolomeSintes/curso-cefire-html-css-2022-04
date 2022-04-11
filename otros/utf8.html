@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>El juego de caracteres UTF-8. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>El juego de caracteres UTF-8</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html.svg" alt="Home" title="Ir a página de inicio" width="42" height="48"></a>
+      <a href="../ejercicios/puesta-en-marcha/vscode/index.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../html/html-que-es.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">UTF-8</a>
+      </h2>
+
+      <ul>
+        <li><a href="#bits">Bits</a></li>
+        <li><a href="#bytes">Bytes</a></li>
+        <li><a href="#hexadecimal">Notación hexadecimal</a></li>
+        <li><a href="#ascii">ASCII</a></li>
+        <li><a href="#unicode">Unicode</a></li>
+        <li><a href="#html">Juego caracteres en HTML</a></li>
+        <li><a href="#fuentes">Tipos de letra Unicode</a></li>
+        <li><a href="#pictogramas">Pictogramas en Unicode</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8 y su uso en HTML y CSS.</p>
+
+  <section id="bits">
+    <h2>Bits</h2>
+
+    <p>En informática, los números no se guardan en notación decimal (con las cifras del 0 al 9), sino en notación binaria, utilizando únicamente el 0 y el 1. Como en la notación decimal, para escribir números en la notación binaria se utilizan varias cifras seguidas, pero en este caso utilizando únicamente ceros y unos.</p>
+
+    <p>Estos son los primeros números naturales escritos en notación decimal y binaria:</p>
+
+    <table style="text-align: right; border-spacing: 20px 0;">
+      <tr>
+        <th>Decimal</th>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <th>Binaria</th>
+        <td>0</td>
+        <td>1</td>
+        <td>10</td>
+        <td>11</td>
+        <td>100</td>
+        <td>101</td>
+        <td>110</td>
+        <td>111</td>
+        <td>1000</td>
+        <td>...</td>
+      </tr>
+    </table>
+
+    <p>La figura siguiente permite ver la notación decimal y binaria de los enteros entre 0 y 255. Para subir o bajar el valor, haga clic en los triángulos:</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="120" viewBox="-20 -20 700 240">
+        <rect x="-15" y="-10" width="680" height="215" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
+        <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
+        <line x1="110" y1="105" x2="665" y2="105" stroke-width="4" stroke="black" />
+        <polygon id="e1-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e1_cambia(1)" />
+        <polygon id="e1-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e1_cambia(-1)" />
+        <text id="e1-decimal" x="450" y="70" text-anchor="end" font-size="80">0</text>
+        <text x="470" y="60" text-anchor="start" font-size="50">Decimal</text>
+        <text id="e1-binario" x="450" y="185" text-anchor="end" font-size="80">0</text>
+        <text x="470" y="175" text-anchor="start" font-size="50">Binario</text>
+      </svg>
+    </p>
+
+    <script>
+      function e1_cambia(cambio) {
+        var decimal = document.getElementById("e1-decimal");
+        var binario = document.getElementById("e1-binario");
+        var sube = document.getElementById("e1-sube");
+        var baja = document.getElementById("e1-baja");
+        decimal.innerHTML = Number(decimal.innerHTML) + cambio;
+        binario.innerHTML = Number(decimal.innerHTML).toString(2);
+        if (Number(decimal.innerHTML) < 0) {
+          decimal.innerHTML = 0;
+          binario.innerHTML = 0;
+        }
+        if (Number(decimal.innerHTML) > 255) {
+          decimal.innerHTML = 255;
+          binario.innerHTML = Number(decimal.innerHTML).toString(2);
+        }
+        baja.style.visibility = (Number(decimal.innerHTML) == 0) ? "hidden" : "visible";
+        sube.style.visibility = (Number(decimal.innerHTML) == 255) ? "hidden" : "visible";
+      }
+    </script>
+
+    <p>En notación decimal, con <i>n</i> cifras podemos escribir 10<sup><i>n</i></sup> números. Es decir, con 1 cifra podemos escribir 10 números (del 0 al 9), con 2 cifras podemos escribir 100 números (del 00 al 99), con 3 cifras podemos escribir 1000 números (del 000 al 999), etc.</p>
+
+    <p>En notación binaria, con <i>n</i> cifras podemos escribir 2<sup><i>n</i></sup> números. Es decir, con 1 cifra podemos escribir 2 números (0 y 1), con 2 cifras podemos escribir 4 números (del 00 al 11, es decir, del 0 al 3), con 3 cifras podemos escribir 8 números (del 000 al 111, es decir, del 0 al 7), etc.</p>
+
+    <p>A las cifras binarias se les llama <i>bit</i>, es decir el número binario 1001 es un número de 4 bits, de la misma manera que el número decimal 329 es un número de 3 cifras decimales.</p>
+  </section>
+
+  <section id="bytes">
+    <h2>Bytes</h2>
+
+    <p>Para realizar su trabajo más rápido, los ordenadores no trabajan con cifras individuales (<i>bits</i>), sino con varias cifras a la vez. La agrupación más utilizada es el <i>byte</i>, que es la agrupación de 8 bits. Un byte puede representar por tanto 256 valores distintos (2<sup>8</sup>, del 00000000 al 11111111, es decir, del 0 al 255).</p>
+
+    <p>A medida que ha avanzado la informática, los ordenadores han ido trabajando con grupos de bits cada vez más grandes. En 1981, el primer PC tenía un procesador que trabajaba con grupos de 8 bits (1 byte). En 1984 los PCs empezaron a utilizar procesadores de 16 bits (2 bytes). En 1985 los PCs empezaron a utilizar procesadores de 32 bits (4 bytes). En 2003 los PCs empezaron a utilizar procesadores de 64 bits (8 bytes). Actualmente (abril de 2022) no existen PCs con procesadores de 128 bits (16 bytes), pero algunos componentes de los PCs como las procesadores gráficos ya trabajan con grupos de 256 o incluso 512 bits.</p>
+
+    <p>El byte se utiliza en Informática como unidad de medida en el almacenamiento de información (capacidad de los discos duros o memorias). Como las capacidades de los dispositivos son ahora tan grandes, normalmente se expresan en múltiplos que corresponden a potencias de 2. Habitualmente e históricamente estos múltiplos se suelen llamar Kilobytes, Megabytes, Gigabytes, Terabytes, etc. aunque realmente estos nombres no son correctos ya que, en este contexto, Kilo no significa mil (1000), sino 1024, ya que 1024 es una potencia de dos (2<sup>10</sup>= 1024), Mega no significa millón sino 1.048.576 (1024 x 1024), etc. Los nombres correctos para estas unidades son kibibyte (1 KiB = 1024 bytes), mebibyte (1 MiB = 1024 KiB = 1.048.576 bytes), gibibyte (1 GiB = 1024 MiB), tebibyte (1 TiB = 1024 GiB), etc. Estas unidades se definieron en 1998, pero raramente se usan.</p>
+  </section>
+
+  <section id="hexadecimal">
+    <h2>Notación hexadecimal</h2>
+
+    <p>El inconveniente de la notación binaria es que para escribir un número grande se necesitan muchos bits. Una manera de acortar los números en binario es utilizar la notación hexadecimal, que utiliza 16 dígitos distintos (del 0 al 9, A, B, C, D, E y F).</p>
+
+    <p>En notación hexadecimal, con <i>n</i> cifras podemos escribir 16<sup><i>n</i></sup> números. Es decir, con 1 cifra podemos escribir 16 números (del 0 a F), con 2 cifras podemos escribir 256 números (del 00 al FF, es decir, del 0 al 255), con 3 cifras podemos escribir 4096 números (del 000 al FFF, es decir, del 0 al 4095), etc.</p>
+
+    <p>Pasar de la notación binaria a la hexadecimal (o viceversa) es muy sencillo, porque cada cuatro bits de la notación binaria corresponden a un único carácter hexadecimal.</p>
+
+    <p>La figura siguiente permite ver la notación binaria, hexadecimal y decimal de los enteros entre 0 y 255. Para subir o bajar cada bit, haga clic en los triángulos:</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="565" height="220" viewBox="-320 -20 1130 440">
+        <rect x="-15" y="-10" width="820" height="420" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
+        <line x1="-15" y1="105" x2="805" y2="105" stroke-width="4" stroke="black" />
+        <line x1="-15" y1="210" x2="805" y2="210" stroke-width="4" stroke="black" />
+        <line x1="-15" y1="315" x2="805" y2="315" stroke-width="4" stroke="black" />
+        <line x1="300" y1="-10" x2="300" y2="410" stroke-width="4" stroke="black" />
+        <polygon id="e2-sube" points="340,5 320,45 360,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(128)" />
+        <polygon id="e2-baja" points="340,95 320,55 360,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-128)" />
+        <polygon points="400,5 380,45 420,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(64)" />
+        <polygon points="400,95 380,55 420,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-64)" />
+        <polygon points="460,5 440,45 480,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(32)" />
+        <polygon points="460,95 440,55 480,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-32)" />
+        <polygon points="520,5 500,45 540,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(16)" />
+        <polygon points="520,95 500,55 540,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-16)" />
+        <polygon points="580,5 560,45 600,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(8)" />
+        <polygon points="580,95 560,55 600,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-8)" />
+        <polygon points="640,5 620,45 660,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(4)" />
+        <polygon points="640,95 620,55 660,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-4)" />
+        <polygon points="700,5 680,45 720,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(2)" />
+        <polygon points="700,95 680,55 720,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-2)" />
+        <polygon points="760,5 740,45 780,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(1)" />
+        <polygon points="760,95 740,55 780,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-1)" />
+        <text id="e2-binario" x="790" y="185" text-anchor="end" font-size="100" font-family="monospace" letter-spacing="5">0</text>
+        <text x="0" y="175" text-anchor="start" font-size="50">Binario</text>
+        <text id="e2-hexadecimal" x="790" y="290" text-anchor="end" font-size="80">0</text>
+        <text x="0" y="280" text-anchor="start" font-size="50">Hexadecimal</text>
+        <text id="e2-decimal" x="790" y="395" text-anchor="end" font-size="80">0</text>
+        <text x="0" y="380" text-anchor="start" font-size="50">Decimal</text>
+      </svg>
+    </p>
+
+    <script>
+      function e2_cambia(cambio) {
+        var decimal = document.getElementById("e2-decimal");
+        var binario = document.getElementById("e2-binario");
+        var hexadecimal = document.getElementById("e2-hexadecimal");
+        // var sube = document.getElementById("e2-sube");
+        // var baja = document.getElementById("e2-baja");
+        decimal.innerHTML = Number(decimal.innerHTML) + cambio;
+        binario.innerHTML = Number(decimal.innerHTML).toString(2);
+        hexadecimal.innerHTML = Number(decimal.innerHTML).toString(16).toUpperCase();
+        if (Number(decimal.innerHTML) < 0) {
+          decimal.innerHTML = 0;
+          binario.innerHTML = 0;
+          hexadecimal.innerHTML = 0;
+        }
+        if (Number(decimal.innerHTML) > 255) {
+          decimal.innerHTML = 255;
+          binario.innerHTML = Number(decimal.innerHTML).toString(2);
+          hexadecimal.innerHTML = Number(decimal.innerHTML).toString(16).toUpperCase();
+        }
+        // baja.style.visibility = (Number(decimal.innerHTML) == 0) ? "hidden" : "visible";
+        // sube.style.visibility = (Number(decimal.innerHTML) == 255) ? "hidden" : "visible";
+      }
+    </script>
+  </section>
+
+  <section id="ascii">
+    <h2>El juego de caracteres ASCII</h2>
+
+    <p>En Informática toda la información se guarda en forma numérica, por lo que para guardar caracteres (letras, números, signos de puntuación, etc.) se necesita establecer una correspondencia entre los códigos numéricos y los caracteres. Al conjunto de correspondencias se le llama juego de caracteres. Los primeros ordenadores usaban cada uno su propio juego de caracteres, pero en los años 50 empezaron a proponerse estándares que facilitasen la comunicación entre diferentes sistemas. En los años 60 se creó el <a href="https://es.wikipedia.org/wiki/ASCII">código ASCII</a>, que definía 128 caracteres (33 caracteres de control y 95 imprimibles -letras minúsculas, mayúsculas, cifras, puntuación, etc.-) y que se convirtió en el estándar en informática.</p>
+
+    <p>La figura siguiente permite ver el carácter correspondiente a cada valor del código ASCII (algunos valores no son visibles).</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="120" viewBox="-20 -20 700 240">
+        <rect x="-15" y="-10" width="680" height="215" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
+        <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
+        <polygon id="e3-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e3_cambia(1)" />
+        <polygon id="e3-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e3_cambia(-1)" />
+        <text id="e3-decimal" x="380" y="70" text-anchor="end" font-size="80">80</text>
+        <text x="420" y="60" text-anchor="start" font-size="50">Decimal</text>
+        <text id="e3-caracter" x="380" y="175" text-anchor="end" font-size="80">P</text>
+        <text x="420" y="165" text-anchor="start" font-size="50">ASCII</text>
+      </svg>
+    </p>
+
+    <script>
+      function e3_cambia(cambio) {
+        var decimal = document.getElementById("e3-decimal");
+        var caracter = document.getElementById("e3-caracter");
+        var sube = document.getElementById("e3-sube");
+        var baja = document.getElementById("e3-baja");
+        var min = 0;
+        var max = 127;
+        decimal.innerHTML = Number(decimal.innerHTML) + cambio;
+        caracter.innerHTML = String.fromCharCode(Number(decimal.innerHTML));
+        if (Number(decimal.innerHTML) < min) {
+          decimal.innerHTML = min;
+          caracter.innerHTML = String.fromCharCode(Number(decimal.innerHTML));
+        }
+        if (Number(decimal.innerHTML) > max) {
+          decimal.innerHTML = max;
+          caracter.innerHTML = String.fromCharCode(Number(decimal.innerHTML));
+        }
+        baja.style.visibility = (Number(decimal.innerHTML) == min) ? "hidden" : "visible";
+        sube.style.visibility = (Number(decimal.innerHTML) == max) ? "hidden" : "visible";
+      }
+    </script>
+
+    <p>En el código ASCII cada carácter ocupaba precisamente 1 byte, es decir, 8 bits: 7 bits para codificar los 128 caracteres y 1 bit de paridad para comprobar errores. Ese juego de caracteres era suficiente para el idioma inglés, pero era insuficiente para otros idiomas, por lo que a medida que la informática se extendía por el mundo se tuvieron que crear otros juegos de caracteres.</p>
+
+    <hr class="corta">
+
+    <p>Una forma de ampliar los caracteres disponibles manteniendo el tamaño de un byte por carácter fue abandonar el bit de paridad y utilizar los ocho bits para codificar caracteres. De esa manera el juego de caracteres podía contener 256 caracteres distintos. Los primeros 128 eran los de ASCII, pero los siguientes se podían utilizar para incluir otros caracteres. El más utilizado de esos juegos es el <a href="https://es.wikipedia.org/wiki/ISO/IEC_8859-1">ISO 8859-1</a>, que incluye los caracteres que necesitan los idiomas de Europa occidental (acentos agudos, graves, diéresis, etc.). Windows utiliza un juego de caracteres, el <a href="https://es.wikipedia.org/wiki/Windows-1252">Windows-1252</a>, que tiene algunos caracteres distintos, pero que se suele considerar equivalente.</p>
+
+    <p>La figura siguiente permite ver el carácter correspondiente a cada valor del juego de caracteres Windows-1252 (algunos valores no son visibles).</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="120" viewBox="-20 -20 700 240">
+        <rect x="-15" y="-10" width="680" height="215" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
+        <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
+        <polygon id="e4-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e4_cambia(1)" />
+        <polygon id="e4-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e4_cambia(-1)" />
+        <text id="e4-decimal" x="380" y="70" text-anchor="end" font-size="80">126</text>
+        <text x="420" y="60" text-anchor="start" font-size="50">Decimal</text>
+        <text id="e4-caracter" x="380" y="175" text-anchor="end" font-size="80">&#126;</text>
+        <!-- 2018-10-30
+          Cuando hice este ejemplo puse como valor 128 (el euro) en vez de 126,
+          pero entonces el validador del W3C dice que la página no es válida
+          porque la entidad &#128; no es correcta (los valores 128 a 255 no están en utf-8)
+          https://marketing.adobe.com/resources/help/en_US/whitepapers/multibyte/multibyte_windows1252.html
+        -->
+        <text x="420" y="165" text-anchor="start" font-size="50">CP1252</text>
+      </svg>
+    </p>
+
+    <script>
+      function e4_cambia(cambio) {
+        var decimal = document.getElementById("e4-decimal");
+        var caracter = document.getElementById("e4-caracter");
+        var sube = document.getElementById("e4-sube");
+        var baja = document.getElementById("e4-baja");
+        // Windows code page 1252 Western European
+        var cp1252 = '\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7f\u20ac\ufffd\u201a\u0192\u201e\u2026\u2020\u2021\u02c6\u2030\u0160\u2039\u0152\ufffd\u017d\ufffd\ufffd\u2018\u2019\u201c\u201d\u2022\u2013\u2014\u02dc\u2122\u0161\u203a\u0153\ufffd\u017e\u0178\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff';
+        var min = 0;
+        var max = 255;
+        decimal.innerHTML = Number(decimal.innerHTML) + cambio;
+        caracter.innerHTML = '&#' + cp1252.charCodeAt(Number(decimal.innerHTML)) + ';';
+        if (Number(decimal.innerHTML) < min) {
+          decimal.innerHTML = min;
+          caracter.innerHTML = '&#' + cp1252.charCodeAt(Number(decimal.innerHTML)) + ';';
+        }
+        if (Number(decimal.innerHTML) > max) {
+          decimal.innerHTML = max;
+          caracter.innerHTML = '&#' + cp1252.charCodeAt(Number(decimal.innerHTML)) + ';';
+        }
+        baja.style.visibility = (Number(decimal.innerHTML) == min) ? "hidden" : "visible";
+        sube.style.visibility = (Number(decimal.innerHTML) == max) ? "hidden" : "visible";
+      }
+    </script>
+
+    <hr class="corta">
+
+    <p>Pero pronto los juegos de caracteres de un byte se encontraron con barreras importantes:</p>
+
+    <ul>
+      <li>por un lado, 256 caracteres son insuficientes para cubrir todos los idiomas, por lo que se utilizaban juegos de caracteres distintos para idiomas que necesitaban otros caracteres (por ejemplo, para el alfabeto cirílico). El problema es que escribir sistemas operativos y programas capaces de gestionar tantos juegos de caracteres diferentes es muy complicado.</li>
+      <li>por otro lado, muchos lenguajes escritos (sobre todo los asiáticos) utilizan más de 256 caracteres distintos, por lo que 1 byte era en cualquier caso insuficiente para codificar su juego de caracteres</li>
+    </ul>
+  </section>
+
+  <section id="unicode">
+    <h2>El juego de caracteres universal: Unicode</h2>
+
+    <p>La llegada de Internet y el aumento consiguiente del intercambio de información entre diferentes países hizo aún más patente la necesidad de creación de un juego de caracteres universal, que abarcara las necesidades de toda la humanidad. La idea se empezó a trabajar en 1987 y en 1991 se publicó la primera versión de Unicode, </p>
+
+    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y la última versión publicada en septiembre de 2021, <a href="http://blog.unicode.org/2021/09/announcing-unicode-standard-version-140.html">Unicode 14.0</a>, contiene más de 144.000 caracteres.</p>
+
+    <p>Las primeras versiones de Unicode se publicaron más o menos cada dos años pero desde 2009 Unicode se publica anualmente. La versión 14.0 se publicó con seis meses de retraso debido a la epidemia del coronavirus Covid-19, y a partir de esta versión Unicode se publicará en el tercer trimestre de cada año (en principio, en septiembre).</p>
+
+    <p class="mcl-svg-diagrama-temporal">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1200" viewBox="-120 -60 1200 120">
+        <title>Versiones de Unicode</title>
+        <text x="-110" y="5" text-anchor="start" fill="#990000" style="font-size: 120%; font-weight: bold">Unicode</text>
+        <line x1="-20" y1="0" x2="1100" y2="0" stroke-width="3" stroke="#990000" />
+        <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="0" y="-40" text-anchor="middle">1990</text>
+        <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="150" y="-40" text-anchor="middle">1995</text>
+        <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="300" y="-40" text-anchor="middle">2000</text>
+        <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="450" y="-40" text-anchor="middle">2005</text>
+        <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="600" y="-40" text-anchor="middle">2010</text>
+        <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="750" y="-40" text-anchor="middle">2015</text>
+        <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="900" y="-40" text-anchor="middle">2020</text>
+        <line x1="1050" y1="-30" x2="1050" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+        <text x="1050" y="-40" text-anchor="middle">2025</text>
+
+        <circle cx="54" cy="0" r="5" fill="#990000" />
+        <text x="54" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">1.0</text>
+        <circle cx="104" cy="0" r="5" fill="#990000" />
+        <text x="104" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">1.1</text>
+        <circle cx="196" cy="0" r="5" fill="#990000" />
+        <text x="196" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">2.0</text>
+        <circle cx="251" cy="0" r="5" fill="#990000" />
+        <text x="251" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">2.1</text>
+        <circle cx="291" cy="0" r="5" fill="#990000" />
+        <text x="286" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">3.0</text>
+        <circle cx="336" cy="0" r="5" fill="#990000" />
+        <text x="336" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">3.1</text>
+        <circle cx="366" cy="0" r="5" fill="#990000" />
+        <text x="366" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">3.2</text>
+        <circle cx="399" cy="0" r="5" fill="#990000" />
+        <text x="399" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">4.0</text>
+        <circle cx="456" cy="0" r="5" fill="#990000" />
+        <text x="465" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">4.1</text>
+        <circle cx="496" cy="0" r="5" fill="#990000" />
+        <text x="496" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">5.0</text>
+        <circle cx="549" cy="0" r="5" fill="#990000" />
+        <text x="549" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">5.1</text>
+        <circle cx="594" cy="0" r="5" fill="#990000" />
+        <text x="586" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">5.2</text>
+        <circle cx="624" cy="0" r="5" fill="#990000" />
+        <text x="624" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.0</text>
+        <circle cx="662" cy="0" r="5" fill="#990000" />
+        <text x="662" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.1</text>
+        <circle cx="682" cy="0" r="5" fill="#990000" />
+        <text x="682" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.2</text>
+        <circle cx="712" cy="0" r="5" fill="#990000" />
+        <text x="712" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.3</text>
+        <circle cx="734" cy="0" r="5" fill="#990000" />
+        <text x="734" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">7.0</text>
+        <circle cx="764" cy="0" r="5" fill="#990000" />
+        <text x="764" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">8.0</text>
+        <circle cx="794" cy="0" r="5" fill="#990000" />
+        <text x="794" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">9.0</text>
+        <circle cx="825" cy="0" r="5" fill="#990000" />
+        <text x="825" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">10.0</text>
+        <circle cx="853" cy="0" r="5" fill="#990000" />
+        <text x="853" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">11.0</text>
+        <circle cx="876" cy="0" r="5" fill="#990000" />
+        <text x="876" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">12.0</text>
+        <circle cx="906" cy="0" r="5" fill="#990000" />
+        <text x="918" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">13.0</text>
+        <circle cx="952" cy="0" r="5" fill="#990000" />
+        <text x="952" y="25" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">14.0</text>
+        <circle cx="982" cy="0" r="5" fill="white" stroke="#990000" stroke-width="2" />
+        <text x="982" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">15.0</text>
+      </svg>
+    </p>
+
+    <p>La primera versión de Unicode utilizaba dos bytes para codificar cada carácter, pero con el paso del tiempo los dos bytes se quedaron cortos y la norma actual utiliza cuatro bytes para codificar los caracteres. El inconveniente de utilizar 4 bytes para codificar los caracteres es que se ocupa cuatro veces más espacio que codificando con un byte y se necesita cuatro veces más tiempo para transmitirlos. Para optimizar, se decidió que los primeros valores de Unicode coincidieran con los de ASCII, de manera que los textos ingleses pudieran seguir utilizando un byte por carácter. Aunque el tema es bastante complejo, se puede resumir en que existen tres opciones:</p>
+
+    <ul>
+      <li>UTF-32: cada carácter ocupa cuatro bytes.</li>
+      <li>UTF-16: cada carácter ocupa dos bytes si está entre los primeros 65.536 (256x256) caracteres de Unicode y cuatro bytes para el resto de caracteres.</li>
+      <li>UTF-8: cada carácter ocupa un byte si está entre los primeros 128 caracteres de Unicode, 2 bytes si está entre los primeros 2048 caracteres, 3 bytes si está entre los primeros 65536 (256x256) o cuatro bytes para el resto de caracteres.</li>
+    </ul>
+
+    <p><strong>Notas:</strong></p>
+    <ul>
+      <li>Unicode no utiliza todos los bits de cada carácter. UTF-8 de 1 byte utiliza 7 bits (incluye 128 caracteres), UTF-16 de 2 bytes utiliza 11 bits (incluye 1920 caracteres de los 2048 posibles), etc.</li>
+      <li>Existen dos variantes de UTF-16: Big Endian, en la que el byte más significativo se pone en primera posición, y Little Endian, en la que el byte más significativo se pone en segunda posición.</li>
+    </ul>
+
+    <p>La tabla siguiente muestra algunos caracteres codificados en Windows-1252, UTF-8 o UTF-16:</p>
+
+    <table class="tabla-con-borde" style="text-align: center;">
+      <tr>
+        <th>Carácter</th>
+        <td>a</td>
+        <td>á</td>
+        <td>e</td>
+        <td>é</td>
+        <td>€</td>
+      </tr>
+      <tr>
+        <th>CP1252</th>
+        <td>61</td>
+        <td>E1</td>
+        <td>65</td>
+        <td>E9</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <th>UTF-8</th>
+        <td>61</td>
+        <td>C3 A1</td>
+        <td>65</td>
+        <td>C3 A9</td>
+        <td>E2 82 AC</td>
+      </tr>
+      <tr>
+        <th>UTF-16 (BE)</th>
+        <td>00 61</td>
+        <td>00 E1</td>
+        <td>00 65</td>
+        <td>00 E9</td>
+        <td>20 AC</td>
+      </tr>
+      <tr>
+        <th>UTF-16 (LE)</th>
+        <td>61 00</td>
+        <td>E1 00</td>
+        <td>65 00</td>
+        <td>E9 00</td>
+        <td>AC 20</td>
+      </tr>
+      <tr>
+        <th>UTF-32</th>
+        <td>00 00 00 61</td>
+        <td>00 00 00 E1</td>
+        <td>00 00 00 65</td>
+        <td>00 00 00 E9</td>
+        <td>00 00 20 AC</td>
+      </tr>
+    </table>
+
+    <!-- Intento fracasado de hacer un convertidor de caracteres a códigos UTF-8 y UTF-16
+
+    <p>La figura siguiente permite ver el carácter correspondiente a cada valor del juego de caracteres Windows-1252 (algunos valores no son visibles).</p>
+
+    <p><input type="text" id="e4-letras" value="aáa" />
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="-20 -20 800 240">
+        <rect x="-15" y="-10" width="880" height="215" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
+        <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
+        <polygon id="e4-convierte" points="10,10 10,100 90,50" fill="black" stroke-width="1" stroke="black" onclick="e5_convierte()" />
+        <text x="120" y="60" text-anchor="start" font-size="50">UTF-8</text>
+        <text id="e4-utf8" x="350" y="60" text-anchor="start" font-size="80"></text>
+        <text x="120" y="165" text-anchor="start" font-size="50">UTF-16</text>
+      </svg>
+    </p>
+
+    <script>
+      function e5_convierte() {
+        var utf8 = document.getElementById("e5-utf8");
+        var letras = document.getElementById("e4-letras");
+        // Windows code page 1252 Western European
+        utf8.innerHTML = '';
+        var len = letras.value.length;
+        for (var i = 0; i < len; i++) {
+          utf8.innerHTML += String(letras.value.codePointAt(i)) + ' ';
+        }
+      }
+    </script>
+  -->
+
+    <p>Se puede consultar el <a href="http://www.unicode.org/charts/">juego de caracteres Unicode completo</a>, dividido en secciones correspondientes a sistemas de escritura y conjuntos de símbolos.</p>
+
+    <p>Anuncio de nuevas versiones Unicode:
+      <a href="http://blog.unicode.org/2009/10/unicode-announcement-unicode-520.html">5.2 (2009)</a> -
+      <a href="http://blog.unicode.org/2010/10/unicode-version-60-support-for-popular.html">6.0 (2010)</a> -
+      <a href="http://blog.unicode.org/2012/01/announcing-unicode-standard-version-61.html">6.1 (2012)</a> -
+      <a href="http://blog.unicode.org/2012/09/announcing-unicode-standard-version-62.html">6.2 (2012)</a> -
+      <a href="http://blog.unicode.org/2013/09/announcing-unicode-standard-version-63.html">6.3 (2013)</a> -
+      <a href="http://blog.unicode.org/2014/06/announcing-unicode-standard-version-70.html">7.0 (2014)</a> -
+      <a href="http://blog.unicode.org/2015/06/announcing-unicode-standard-version-80.html">8.0 (2015)</a> -
+      <a href="http://blog.unicode.org/2016/06/announcing-unicode-standard-version-90.html">9.0 (2016)</a> -
+      <a href="http://blog.unicode.org/2017/06/announcing-unicode-standard-version-100.html">10.0 (2017)</a> -
+      <a href="http://blog.unicode.org/2018/06/announcing-unicode-standard-version-110.html">11.0 (2018)</a> -
+      <a href="http://blog.unicode.org/2019/03/announcing-unicode-standard-version-120.html">12.0 (2019)</a> -
+      <a href="http://blog.unicode.org/2019/05/unicode-12-1-en.html">12.1 (2019)</a> -
+      <a href="http://blog.unicode.org/2020/03/announcing-unicode-standard-version-130.html">13.0 (2020)</a> -
+      <a href="http://blog.unicode.org/2020/09/emoji-131-now-final-to-be-widely.html">13.1 (2020)</a> -
+      <a href="http://blog.unicode.org/2021/09/announcing-unicode-standard-version-140.html">14.0 (2021)</a>
+    </p>
+
+  </section>
+
+  <section id="html">
+    <h2>Juegos de caracteres en páginas web</h2>
+
+    <p>En las primeras versiones de HTML se especificaba que el juego de caracteres utilizado por las páginas web debía ser el juego de caracteres ISO 8859-1, más conocido como Latin-1.</p>
+
+    <p>En 1997 con la norma <a href="https://datatracker.ietf.org/doc/html/rfc2070">RFC 2070</a> se permitió el juego de caracteres ISO 10646 (equivalente a Unicode).</p>
+
+    <p>En 2008 UTF-8 ya era el formato más utilizado en la web.</p>
+
+    <p>En 2014 la recomendación HTML 5 especificaba que UTF-8 era el juego caracteres predeterminado.</p>
+  </section>
+
+  <section id="fuentes">
+    <h2>Tipos de letra Unicode</h2>
+
+    <p>Para poder mostrar los caracteres Unicode, se necesita disponer de tipos de letra que los incluyan. Cada sistema operativo incluye sus propios tipos de letra predeterminados, que poco a poco van incluyendo más caracteres Unicode, con más o menos retraso con respecto a la norma. Los navegadores a veces utilizan sus propios tipos de letra.</p>
+
+    <ul>
+      <li>En Windows, las fuentes que incluyen los caracteres Unicode son las fuentes <a href="https://docs.microsoft.com/es-es/typography/font-list/segoe-ui-symbol">Segoe UI Symbol</a> y <a href="https://docs.microsoft.com/es-es/typography/font-list/segoe-ui-emoji">Segoe IU Emoji</a>, que incluyen tanto la representación en modo texto, en blanco y negro, como la representación en modo emoji, en color. Hay que tener en cuenta que Windows 10 y Windows 11 tienen versiones distintas de estas fuentes, que sólo se van actualizando en Windows 11.</li>
+      <li>Las distribuciones GNU/Linux solían incluir la fuente <a href="https://dn-works.com/ufas/">Symbola</a>, a veces bajo un nombre distinto. Es una fuente en blanco y negro, que hasta enero de 2018 se distribuía con una licencia permisiva, pero a partir de la versión 11.0 (publicada en junio de 2018), pasó a ser solo gratuita para usos no comerciales ni educativos. [<a href="https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EC6I35ILFICKY5W5XTHYJC6UH36B2UQS/">hilo sobre Symbola en Fedora (2018)</a>]. Actualmente, suelen incluir las fuentes <a href="https://fonts.google.com/noto">Noto</a> de Google.</li>
+    </ul>
+
+    <p>Existen algunos proyectos de creación de tipos de letra libres que incluyan al menos los caracteres de Unicode que corresponden a pictogramas. El problema es que las fuentes en color pueden usar hasta cuatro formatos distintos (SBIX, COLR, SVG-in-OpenType, CBDT/CBLC) cuyo soporte es bastante desigual [<a href="https://pixelambacht.nl/chromacheck/">ChromaCheck</a> permite comprobar el soporte de esos formatos en el navegador].</p>
+    <ul>
+      <li><a href="https://github.com/twitter/twemoji">Twemoji</a>, un proyecto creado por Twitter en 2014. Es una fuente en color, en formato SVG-in-OpenType, que Google Chrome actualmente (abril de 2022) no es capaz de mostrar.</li>
+      <li><a href="https://github.com/mozilla/twemoji-colr">twemoji-colr</a>, un proyecto de Mozilla que rehace la fuente Twemoji en formato COLR. Es una fuente en color, en formato COLR, que admiten tanto Firefox como Google Chrome.</li>
+      <li><a href="https://github.com/googlefonts/noto-emoji">Noto Emoji</a>, un proyecto creado por Google en 2014. Es una fuente en color, en formato CBDT/CBLC, que Firefox actualmente (abril de 2022) no es capaz de mostrar. También incluye una fuente en blanco y negro, pero se considera obsoleta.</li>
+      <li><a href="https://github.com/EmojiTwo/emojitwo">EmojiTwo</a>, un <i>fork</i> de <a href="https://www.joypixels.com/">EmojiOne</a> (un proyecto creado en 2014 que en 2017 se convirtió en un proyecto comercial) que no ha avanzado prácticamente nada por el momento.</li>
+    </ul>
+  </section>
+
+  <section id="pictogramas">
+    <h2>Pictogramas en Unicode</h2>
+
+    <p>Unicode no solamente contiene caracteres para todas las lenguas del mundo, sino que también incluye una gran cantidad de pictogramas. Una gran parte de ellos son símbolos gráficos e iconos de amplia difusión que ya estaban incluidos en juegos de caracteres anteriores, pero desde 2009 (Unicode 5.2) se están incorporando también imágenes más sofisticadas, como los <a href="https://es.wikipedia.org/wiki/Emoticono">emoticonos</a> o los <a href="https://es.wikipedia.org/wiki/Emoji">emojis</a>, creados en Japón a finales de los 90 para los dispositivos móviles. Además, mediante el mecanismo de las <a href="html-unicode-secuencias.html">secuencias de caracteres</a>, introducido en Unicode 4.1 (2005), se han ido añadiendo nuevos dibujos, como las banderas, y especialmente las variantes de género, color de piel o grupos de individuos</p>
+
+    <p>Unicode contiene así miles de pictogramas, que se irán ampliando en las próximas versiones (véase <a href="http://www.unicode.org/alloc/Pipeline.html">Unicode roadmap</a>).</p>
+
+    <p>Estos son, por ejemplo, los emojis añadidos en las últimas versiones de Unicode:
+      <a href="https://unicode.org/emoji/charts-14.0/emoji-released.html">14.0 (2021)</a> -
+      <a href="https://unicode.org/emoji/charts-13.1/emoji-released.html">13.1 (2020)</a> -
+      <a href="https://unicode.org/emoji/charts-13.0/emoji-released.html">13.0 (2020)</a> -
+      <a href="https://unicode.org/emoji/charts-12.1/emoji-released.html">12.1 (2019)</a> -
+      <a href="https://unicode.org/emoji/charts-12.0/emoji-released.html">12.0 (2019)</a> -
+      <a href="https://unicode.org/emoji/charts-11.0/emoji-released.html">11.0 (2018)</a>
+    </p>
+
+    <p>Estos son algunas de las tablas de caracteres de Unicode que contienen pictogramas:</p>
+    <ul>
+      <li><a href="unicode/U00000-c0-controls-and-basic-latin.pdf">PDF</a> - Controles y Latín básico</li>
+      <li><a href="unicode/U00080-c1-controls-and-latin-1-supplement.pdf">PDF</a> - Controles y Latín 1 (suplemento)</li>
+      <li><a href="unicode/U02000-general-punctuation.pdf">PDF</a> - Puntuación</li>
+      <li><a href="unicode/U020A0-currency-symbols.pdf">PDF</a> - Símbolos de monedas</li>
+      <li><a href="unicode/U02100-letterlike-symbols.pdf">PDF</a> - Símbolos con letras</li>
+      <li><a href="unicode/U02190-arrows.pdf">PDF</a> - Flechas</li>
+      <li><a href="unicode/U02300-miscellaneous-technical.pdf">PDF</a> - Símbolos técnicos misceláneos</li>
+      <li><a href="unicode/U02460-enclosed-alphanumerics.pdf">PDF</a> - Símbolos alfanuméricos con círculo alrededor</li>
+      <li><a href="unicode/U02500-box-drawing.pdf">PDF</a> - Cajas</li>
+      <li><a href="unicode/U025A0-geometric-shapes.pdf">PDF</a> - Formas geométricas</li>
+      <li><a href="unicode/U02600-miscellaneous-symbols.pdf">PDF</a> - Símbolos misceláneos</li>
+      <li><a href="unicode/U02700-dingbats.pdf">PDF</a> - Dingbats</li>
+      <li><a href="unicode/U02900-supplemental-arrows-b.pdf">PDF</a> - Flechas suplementarias B</li>
+      <li><a href="unicode/U02B00-miscellaneous-symbols-and-arrows.pdf">PDF</a> - Símbolos y flechas misceláneos</li>
+      <li><a href="unicode/U03000-cjk-symbols-and-punctuation.pdf">PDF</a> - Símbolos y puntuación CJK</li>
+      <li><a href="unicode/U03200-enclosed-cjk-letters-and-months.pdf">PDF</a> - Símbolos CJK con círculo alrededor</li>
+      <li><a href="unicode/U1F000-mahjong-tiles.pdf">PDF</a> - Fichas de Mahjong</li>
+      <li><a href="unicode/U1F030-domino-tiles.pdf">PDF</a> - Fichas de dominó</li>
+      <li><a href="unicode/U1F0A0-playing-cards.pdf">PDF</a> - Cartas</li>
+      <li><a href="unicode/U1F100-enclosed-alphanumeric-supplement.pdf">PDF</a> - Alfanuméricos con círculo alrededor (suplemento)</li>
+      <li><a href="unicode/U1F200-enclosed-ideographic-supplement.pdf">PDF</a> - Ideográficos con círculo alrededor (suplemento)</li>
+      <li><a href="unicode/U1F650-ornamental-dingbats.pdf">PDF</a> - Dingbats decorativos</li>
+      <li><a href="unicode/U1F700-alchemical-symbols.pdf">PDF</a> - Símbolos alquímicos</li>
+      <li><a href="unicode/U1F780-geometric-shapes-extended.pdf">PDF</a> - Formas geométricas extendidas</li>
+      <li><a href="unicode/U1F300-miscellaneous-symbols-and-pictographs.pdf">PDF</a> - Símbolos y pictogramas misceláneos</li>
+      <li><a href="unicode/U1F600-emoticons.pdf">PDF</a> - Emoticonos</li>
+      <li><a href="unicode/U1F680-transport-and-map-symbols.pdf">PDF</a> - Símbolos de transporte y mapas</li>
+      <li><a href="unicode/U1F900-supplemental-symbols-and-pictographs.pdf">PDF</a> - Símbolos y pictogramas misceláneos suplementarios</li>
+      <li><a href="unicode/U1FA70-symbols-and-pictographs-extended-a.pdf">PDF</a> - Símbolos y pictogramas extendidos A</li>
+      <li><a href="unicode/U1FB00-symbols-legacy-computing.pdf">PDF</a> - Símbolos informáticos antiguos</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 11 de abril de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
