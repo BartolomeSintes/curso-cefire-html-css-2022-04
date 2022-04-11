@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Guía de estilo. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>HTML. Guía de estilo</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html.svg" alt="Home" title="Ir a página de inicio" width="42" height="48"></a>
+      <a href="html-que-es.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../css/css-que-es.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML Guía de estilo</a>
+      </h2>
+
+      <ul>
+        <li><a href="#generalidades">Generalidades</a></li>
+        <li><a href="#etiquetas">Etiquetas</a></li>
+        <li><a href="#atributos">Atributos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>La sintaxis de HTML es bastante flexible y permite variaciones en el marcado. En esta página se muestran algunas de esas variaciones permitidas, pero en estos apuntes se recomienda utilizar siempre un mismo estilo, para facilitar el mantenimiento de las páginas en un futuro. El estilo recomendado se indica con el icono <span class="entidad-inline">&#128077;</span>.</p>
+
+  <p>Por otro lado, hay que tener en cuenta los navegadores intentan mostrar las páginas aunque contengan errores. Aún así, en estos apuntes se aconseja validar y corregir los documentos para asegurar que los navegadores puedan mostrarlos correctamente.</p>
+
+  <section id="generalidades">
+    <h2>Generalidades</h2>
+
+    <ul>
+      <li>En HTML, los espacios, tabuladores o saltos de línea colapsan a un único espacio. En estos apuntes se recomienda separar las etiquetas de bloques con saltos de línea y utilizar un sangrado de dos espacios en los elementos de bloques anidados, para mejorar la legibilidad.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;HTML&lt;/title&gt;&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En HTML el texto puede no estar incluido en ninguna etiqueta. En estos apuntes se recomienda no dejar texto sin incluir en alguna etiqueta.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;AAAA&lt;/p&gt;
+&lt;p&gt;BBBB&lt;/p&gt;
+&lt;p&gt;CCCC&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;AAAA&lt;/p&gt;
+BBBB
+&lt;p&gt;CCCC&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En HTML, los nombres de elementos y atributos pueden escribirse en minúsculas o mayúsculas. En estos apuntes se recomienda escribirlos siempre en minúsculas.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="xxx"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;P&gt;AAAA&lt;/P&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p CLASS="xxx"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En HTML, las referencias a entidades en hexadecimal pueden escribirse en minúsculas o mayúsculas. En estos apuntes se recomienda escribirlos siempre en minúsculas.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&amp;#x3b1; &amp;#x3b2; &amp;#x3c0;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&amp;#X3b1; &amp;#x3B2; &amp;#X3C0;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En HTML no es necesario indicar que un elemento <span class="html-eti">&lt;html&gt;</span> contiene código JavaScript con el atributo <span class="html-atri">type</span>.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;script&gt;
+    ...
+&lt;/script&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;script type="text/javascript"&gt;
+    ...
+&lt;/script&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="etiquetas">
+    <h2>Elementos (etiquetas)</h2>
+
+    <ul>
+      <li>Los documentos HTML pueden tener o no un único elemento raíz de todo el documento, el elemento <span class="html-eti">&lt;html&gt;</span>. En estos apuntes se recomienda escribir siempre la etiqueta <span class="html-eti">&lt;html&gt;</span>.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En HTML, los elementos no vacíos (los que tienen etiqueta de apertura) pueden tener o no etiqueta de cierre. En estos apuntes se recomienda escribir siempre las etiquetas de cierre.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;AAAA&lt;/p&gt;
+&lt;p&gt;BBBB&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;AAAA
+&lt;p&gt;BBBB&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En HTML, las etiquetas de los elementos vacíos pueden o no acabar en "/&gt;", pero no puede haber etiqueta de cierre. En estos apuntes se recomienda no escribir la barra / en la etiqueta.
+        <p>Las etiquetas vacías (<i>void</i>) de HTML son <span class="html-eti">&lt;area&gt;</span>, <span class="html-eti">&lt;base&gt;</span>, <span class="html-eti">&lt;br&gt;</span>, <span class="html-eti">&lt;col&gt;</span>, <span class="html-eti">&lt;embed&gt;</span>, <span class="html-eti">&lt;hr&gt;</span>, <span class="html-eti">&lt;img&gt;</span>, <span class="html-eti">&lt;input&gt;</span>, <span class="html-eti">&lt;link&gt;</span>, <span class="html-eti">&lt;meta&gt;</span>, <span class="html-eti">&lt;param&gt;</span>, <span class="html-eti">&lt;source&gt;</span>, <span class="html-eti">&lt;track&gt;</span> y <span class="html-eti">&lt;wbr&gt;</span>.</p>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr /&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr&gt;&lt;/hr&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="atributos">
+    <h2>Atributos</h2>
+
+    <ul>
+      <li>En HTML los valores de los atributos pueden escribirse en minúsculas o en mayúsculas. En estos apuntes se recomienda escribirlos en minúsculas, salvo que sea necesario escribirlos con alguna mayúscula (por ejemplo, porque estamos indicando una ruta a un archivo cuyo nombre contiene mayúsculas).
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&lt;input type="text"&gt;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&lt;input type="TEXT"&gt;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+
+      <li>En HTML, los valores de los atributos pueden escribirse o no entre comillas (dobles o simples), excepto si el valor del atributo contiene espacios en blanco, en cuyo caso se deben escribir entre comillas. En estos apuntes se recomienda escribir los valores siempre entre comillas y en estos apuntes se utilizan las comillas dobles.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="xxx"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class=xxx&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p style="color: red"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p style=color:red&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p style=color: red&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En HTML, los atributos booleanos (los que solo pueden tener un valor) pueden escribirse sin indicar el valor, dándoles un valor vacío o dándoles como valor el nombre del atributo. En estos apuntes se recomienda no escibir ningún valor, sino únicamente el nombre del atributo.
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <span class="entidad-inline">&#128077;</span>
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;ol reversed&gt;
+  &lt;li&gt;AAA&lt;/li&gt;
+  &lt;li&gt;BBB&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;ol reversed=""&gt;
+  &lt;li&gt;AAA&lt;/li&gt;
+  &lt;li&gt;BBB&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;ol reversed="reversed"&gt;
+  &lt;li&gt;AAA&lt;/li&gt;
+  &lt;li&gt;BBB&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 11 de abril de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
