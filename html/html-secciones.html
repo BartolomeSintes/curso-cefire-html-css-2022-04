@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Secciones. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>HTML. Secciones</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html.svg" alt="Home" title="Ir a página de inicio" width="42" height="48"></a>
+      <a href="html-metadatos.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="html-bloques.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML Secciones</a>
+      </h2>
+
+      <ul>
+        <li><a href="#etiqueta-body">Cuerpo<span class="html-eti">&lt;body&gt;</span></a></li>
+        <li><a href="#etiqueta-hn">Títulos <span class="html-eti">&lt;h1&gt; ...&lt;h6&gt;</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se comentan las etiquetas "clásicas" de secciones: <span class="html-eti">&lt;body&gt;</span> y los título <span class="html-eti">&lt;h1&gt;</span> a <span class="html-eti">&lt;h6&gt;</span>.</p>
+
+  <section id="etiqueta-body">
+    <h2 class="con-aside">Cuerpo del documento: <span class="html-eti">&lt;body&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;body&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;body&gt;</span> abarca todo el contenido de la página web que se visualiza en el navegador. Por ello, una página web sólo puede tener un elemento <span class="html-eti">&lt;body&gt;</span>.</p>
+  </section>
+
+  <section id="etiqueta-hn">
+    <h2 class="con-aside">Títulos: <span class="html-eti">&lt;h1&gt;</span> <span class="html-eti">&lt;h2&gt;</span> <span class="html-eti">&lt;h3&gt;</span> <span class="html-eti">&lt;h4&gt;</span> <span class="html-eti">&lt;h5&gt;</span> <span class="html-eti">&lt;h6&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;h1&gt;</span> <span class="html-eti">&lt;h2&gt;</span> <span class="html-eti">&lt;h3&gt;</span> <span class="html-eti">&lt;h4&gt;</span> <span class="html-eti">&lt;h5&gt;</span> <span class="html-eti">&lt;h6&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Las etiquetas <span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, <span class="html-eti">&lt;h3&gt;</span>, <span class="html-eti">&lt;h4&gt;</span>, <span class="html-eti">&lt;h5&gt;</span> y <span class="html-eti">&lt;h6&gt;</span> están pensadas para marcar los títulos y subtítulos de los apartados de un documento.</p>
+
+    <p>La hoja de estilo por omisión de los navegadores suele mostrar los títulos en tamaño cada vez más pequeño (incluso más pequeño que el tamaño de los párrafos <span class="html-eti">&lt;p&gt;</span>), en negrita y con márgenes mayores que los los párrafos <span class="html-eti">&lt;p&gt;</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;h1&gt;Título 1&lt;/h1&gt;
+
+&lt;h2&gt;Título 2&lt;/h2&gt;
+
+&lt;h3&gt;Título 3&lt;/h3&gt;
+
+&lt;h4&gt;Título 4&lt;/h4&gt;
+
+&lt;h5&gt;Título 5&lt;/h5&gt;
+
+&lt;h6&gt;Título 6&lt;/h6&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/secciones/secciones-1.html" style="width: 100%; height: 19em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/secciones/secciones-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En principio, los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> se deben utilizar de forma jerárquica, es decir, no saltándose niveles y utilizando títulos del mismo nivel para contenido de la misma categoría (apartados principales, subapartados, etc.).</p>
+
+    <ul>
+      <li><span class="html-eti">&lt;h1&gt;</span> se suele reservar para el título principal del documento (no confundir con la etiqueta <span class="html-eti">&lt;title&gt;</span>, que corresponde al texto de la pestaña del navegador en la que se muestra la página),</li>
+      <li><span class="html-eti">&lt;h2&gt;</span> para los títulos de los apartados del documento,</li>
+      <li><span class="html-eti">&lt;h3&gt;</span> para los subapartados de cada apartado,</li>
+      <li>y así sucesivamente.</li>
+    </ul>
+
+    <p>Hasta que los navegadores implementen el concepto de esquema (<i>outline</i>), los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> definen de forma implícita las secciones anidadas en el esquema (outline) de la página web, como muestra el ejemplo siguiente, en el que las secciones implícitas están marcadas con un trazo discontinuo.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="40" y="40" width="1840" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="60" y="100" font-family="sans-serif" font-size="50">h1</text>
+
+        <rect x="60" y="140" width="1800" height="420" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="80" y="160" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="100" y="220" font-family="sans-serif" font-size="50">h2</text>
+
+        <rect x="100" y="260" width="1720" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="120" y="280" width="1680" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="140" y="340" font-family="sans-serif" font-size="50">h3</text>
+
+        <rect x="60" y="600" width="1800" height="420" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="80" y="620" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="100" y="680" font-family="sans-serif" font-size="50">h2</text>
+
+        <rect x="100" y="720" width="1720" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="120" y="740" width="1680" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="140" y="800" font-family="sans-serif" font-size="50">h3</text>
+      </svg>
+    </p>
+
+    <hr class="corta">
+
+    <p>Si algún día los navegadores implementan el concepto de esquema (<i>outline</i>), las etiquetas de secciones <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span> también crearán secciones en el esquema de la página web y las etiquetas de título se interpretarán teniendo en cuenta la sección en que están incluidas. Así, el documento siguiente será equivalente al anterior.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" viewBox="0 0 1920 1240" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1200" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="40" y="40" width="1840" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="60" y="100" font-family="sans-serif" font-size="50">h1</text>
+
+        <rect x="60" y="140" width="1800" height="500" fill="white" stroke="black" stroke-width="3" />
+        <text x="80" y="200" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="220" width="1740" height="390" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="120" y="240" width="1700" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="140" y="300" font-family="sans-serif" font-size="50">h1</text>
+
+        <rect x="120" y="340" width="1700" height="240" fill="white" stroke="black" stroke-width="3" />
+        <text x="140" y="400" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="140" y="420" width="1660" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="160" y="440" width="1620" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="180" y="500" font-family="sans-serif" font-size="50">h4</text>
+
+        <rect x="60" y="680" width="1800" height="500" fill="white" stroke="black" stroke-width="3" />
+        <text x="80" y="740" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="760" width="1740" height="390" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="120" y="780" width="1700" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="140" y="840" font-family="sans-serif" font-size="50">h6</text>
+
+        <rect x="120" y="880" width="1700" height="240" fill="white" stroke="black" stroke-width="3" />
+        <text x="140" y="940" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="140" y="960" width="1660" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+
+        <rect x="160" y="980" width="1620" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="180" y="1040" font-family="sans-serif" font-size="50">h1</text>
+      </svg>
+    </p>
+
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 11 de abril de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
