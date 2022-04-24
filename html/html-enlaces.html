@@ -17,7 +17,7 @@
     <p>
       <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
       <a href="html-imagenes.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
-      <a href="../index.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+      <a href="../css/css-selectores.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -33,14 +33,6 @@
             <li><a href="#destinos">Destinos</a></li>
             <li><a href="#otros-enlaces">Otros enlaces</a></li>
             <li><a href="#target">Atributo <span class="html-atri">target</span></a></li>
-          </ul>
-        </li>
-        <li><a href="#intentos-censura">Intentos censura</a>
-          <ul>
-            <li><a href="#censura-fiscalia">Fiscalía General Estado</a></li>
-            <li><a href="#censura-biblioteca">Biblioteca Cervantes</a></li>
-            <li><a href="#censura-p2p">Enlaces P2P</a></li>
-            <li><a href="#censura-enlaces">Enlaces secundarios</a></li>
           </ul>
         </li>
       </ul>
@@ -282,7 +274,7 @@
           <hr class="corta">
 
           <p>
-            <img src="../varios/iconos/icono-obsoleto.svg" alt="Obsoleto" title="Obsoleto" width="48" height="48" class="izquierda">Como se comenta en la <a href="../html/html-obsoletos.html#a-name">lección sobre elementos obsoletos</a>, en HTML 3.2 y anteriores los destinos se identificaban mediante la etiqueta <span class="html-eti">&lt;a&gt;</span> y el atributo <span class="html-atri">name</span>. En HTML 4.X y XHTML 1.0, los destinos se podían seguir identificando así, pero se recomendaba utilizar el entonces nuevo atributo <span class="html-atri">id</span>. En XHTML 1.1 se eliminó el atributo <span class="html-atri">name</span> de la etiqueta <span class="html-eti">&lt;a&gt;</span> y sólo se podía utilizar el atributo <span class="html-atri">id</span> para identificar los destinos. En HTML 5 también se eliminó el atributo <span class="html-atri">name</span> de la etiqueta <span class="html-eti">&lt;a&gt;</span> y sólo se podía utilizar el atributo <span class="html-atri">id</span> para identificar los destinos.</p>
+            <img src="../varios/iconos/icono-obsoleto.svg" alt="Obsoleto" title="Obsoleto" width="48" height="48" class="izquierda">En HTML 3.2 y anteriores los destinos se identificaban mediante la etiqueta <span class="html-eti">&lt;a&gt;</span> y el atributo <span class="html-atri">name</span>. En HTML 4.X y XHTML 1.0, los destinos se podían seguir identificando así, pero se recomendaba utilizar el entonces nuevo atributo <span class="html-atri">id</span>. En XHTML 1.1 se eliminó el atributo <span class="html-atri">name</span> de la etiqueta <span class="html-eti">&lt;a&gt;</span> y sólo se podía utilizar el atributo <span class="html-atri">id</span> para identificar los destinos. En HTML 5 también se eliminó el atributo <span class="html-atri">name</span> de la etiqueta <span class="html-eti">&lt;a&gt;</span> y sólo se podía utilizar el atributo <span class="html-atri">id</span> para identificar los destinos.</p>
         </li>
       </ul>
     </section>
@@ -449,121 +441,8 @@
     <p>En 2018 los navegadores empezaron a tratar de impedir este tipo de ataque, aplicando automáticamente el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>" a cualquier página que contenga <span class="html-atri">target</span>="<span class="html-atri-valor">_blank</span>". Safari lo hace <a href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#Security-and-Privacy">desde Safari 12.1</a> (octubre de 2018). Firefox lo <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/79#html">hace desde Firefox 79</a> (julio de 2020). Google Chrome lo hace <a href="https://developer.chrome.com/blog/new-in-chrome-88/#more">desde Chrome 88</a> (enero de 2021).</p>
   </section>
 
-  <section id="intentos-censura">
-    <h2>Intentos de censura</h2>
-
-    <p>Algunas personas e instituciones parecen no entender la naturaleza de la web y pretenden decir qué enlaces se pueden hacer e incluso cómo hacerlos.</p>
-
-    <p>España es uno de los países con la legislación más regresiva en este sentido, pero es un problema que se ha ido agravando a nivel mundial. Entre 2015 y 2019 hubo una iniciativa <a href="https://web.archive.org/web/20190321140527/https://savethelink.org/">Save The Link</a> para detener estas agresiones a la naturaleza libre y enlazada de la web.</p>
-
-    <section id="censura-fiscalia">
-      <h3>Fiscalía General del Estado (España)</h3>
-
-      <p>Hasta 2021, la <a href="https://www.fiscal.es/">Fiscalía General del Estado de España</a>, en su "<a href="https://www.fiscal.es/web/fiscal/aviso-legal">Aviso legal</a>" decía que no permitía que se enlazaran páginas de su web. Actualmente, (noviembre de 2021) el aviso legal ha eliminado esos términos absurdos.</p>
-
-      <p>En febrero de 2007, ese aviso legal decía:</p>
-
-      <blockquote>
-        <p>LA FISCALÍA GENERAL DEL ESTADO le facilita el acceso a otras páginas Web que consideramos pueden ser de su interés. El objetivo de dichos enlaces es únicamente facilitarle la búsqueda de los recursos que le puedan interesar a través de Internet. No obstante, dichas páginas no le pertenecen, ni hace una revisión de sus contenidos y, por ello, no puede hacerse responsable de los mismos, del funcionamiento de la página enlazada o de los posibles daños que puedan derivarse del acceso o uso de la misma.</p>
-
-        <p>No se permitirá el enlace de ninguna página Web o de una dirección de correo electrónico al Portal, salvo con la autorización expresa por escrito de la Fiscalía General del Estado.</p>
-
-        <p>Adicionalmente, dichos enlaces deberán respetar las siguientes condiciones:</p>
-
-        <p>(a) únicamente podrán realizarse enlaces con la Página de Inicio de esta Web;</p>
-
-        <p>(b) el establecimiento del enlace no supondrá ningún tipo de acuerdo, contrato, patrocinio ni recomendación por parte de la Fiscalía General del Estado de la página que realiza el enlace.</p>
-
-        <p>En cualquier momento, La Fiscalía General del Estado podrá retirar la autorización mencionada en el párrafo anterior, sin necesidad de alegar causa alguna. En tal caso, la página que haya realizado el enlace deberá proceder a su inmediata supresión, tan pronto como reciba la notificación de la revocación de la autorización por parte de la Fiscalía General del Estado.</p>
-      </blockquote>
-
-      <p>El texto puede <a href="http://web.archive.org/web/20070208202711/www.fiscal.es/fiscal/public/!ut/p/_s.7_0_A/7_0_9J?cID=6_2_6A&amp;nID=7_0_9E&amp;WPS_Param=AvisoLegal&amp;cs_strutsAction=actionManager.do">consultarse en archive.org</a> (copia de febrero de 2007). En enero de 2021 todavía se encontraba redactada en los mismos términos (<a href="http://web.archive.org/web/20210126130106/https://www.fiscal.es/web/fiscal/aviso-legal">copia en archive.org enero de 2021</a>), aunque con un diseño más moderno..</p>
-    </section>
-
-    <section id="censura-biblioteca">
-      <h3>Biblioteca Virtual Miguel de Cervantes</h3>
-
-      <p>La <a href="https://www.cervantesvirtual.com/">Biblioteca Virtual Miguel de Cervantes</a> también ha pretendido y pretende imponer las condiciones de enlace a su web.</p>
-
-      <p>En enero de 2007, esas condiciones especificaban ¡hasta el tamaño y el color de la letra!:</p>
-
-      <blockquote>
-        <p>2.2.- Aspecto del hiperenlace: el hiperenlace podrá consistir tanto en un texto como en un gráfico.</p>
-        <ul>
-          <li>1.2.1.- En el primer caso, el texto deberá expresar rotundamente que enlaza con la BIBLIOTECA VIRTUAL MIGUEL DE CERVANTES.
-
-            <p>La fuente utilizada será «Arial», el estilo «negrita», el tamaño de un mínimo de «12» y el color deberá tener las siguientes características: «rojo 155, verde 23, azul 26, matiz 254, saturación 189 y luminosidad 89».</p>
-          </li>
-          <li>1.2.2.- En el segundo caso, sólo se podrá utilizar el logotipo de «cervantesvirtual.com» tal y como puede encontrarse en la URL https://www.cervantesvirtual.com/marcolegal/normas_graficas.jsp.
-
-            <p>El logotipo de la BIBLIOTECA VIRTUAL MIGUEL DE CERVANTES, deberá estar situado a una distancia de separación de 25 píxeles con respecto a cualquier otro elemento de la página web en la que se inserte.</p>
-          </li>
-          <li>1.2.3.- Con carácter general, el aspecto, el efecto visual, la ubicación y, en general, las características del hiperenlace deberán invariablemente evidenciar que el mismo conduce al sitio web de la BIBLIOTECA VIRTUAL MIGUEL DE CERVANTES y que éste es independiente y no está unido por una relación, ni de colaboración, asociación, patrocinio, laboral ni de ningún otro tipo, a la página web que contiene el hiperenlace.</li>
-        </ul>
-      </blockquote>
-
-      <p>Ese texto ya no está disponible en la página web de la Biblioteca Virtual Miguel de Cervantes, pero puede <a href="http://web.archive.org/web/20070126103448/www.cervantesvirtual.com/marcolegal/enlaces_a_bibl.jsp">consultarse en archive.org</a> (copia realizada el 26 de enero de 2007).</p>
-
-      <p>Curiosamente, cuando la prensa se hizo eco de estas condiciones (por ejemplo, <a href="https://www.elmundo.es/elmundo/2007/01/30/catalejo/1170175509.html">El Mundo, 30/01/07</a>), las condiciones se modificaron, aunque siguieron incluyendo condiciones peregrinas, aunque posiblemente bienintencionadas como que:</p>
-
-      <blockquote>
-        <p>Toda página que inserte enlaces a la Biblioteca deberá respetar la dignidad y la libertad humanas, así como los derechos y libertades fundamentales recogidos en la Declaración Universal de Derechos Humanos.</p>
-      </blockquote>
-
-      <p>Ese texto absurdo se retiró en 2011 (o finales de 2010), pero puede <a href="http://web.archive.org/web/20100929172404/https://www.cervantesvirtual.com/marcolegal/enlaces_a_bibl.jsp">consultarse en archive.org</a> (copia realizada el 29 de septiembre de 2009).</p>
-
-      <blockquote>
-        <p><strong>Inserción de enlaces a la Biblioteca Virtual Miguel de Cervantes</strong></p>
-
-        <p>...</p>
-
-        <p>Toda página que contenga un enlace a la Biblioteca Virtual Miguel de Cervantes respetará estas condiciones particulares, las condiciones generales de uso de la Biblioteca y todas las disposiciones legales aplicables.</p>
-
-        <p>Toda página que inserte enlaces a la Biblioteca deberá respetar la dignidad y la libertad humanas, así como los derechos y libertades fundamentales recogidos en la Declaración Universal de Derechos Humanos.</p>
-
-        <p>Queda prohibido realizar enlaces a la Biblioteca desde páginas con contenidos contrarios a o incompatibles con la difusión y la promoción en Internet de la literatura y la cultura hispánicas.</p>
-
-        <p>...</p>
-
-        <p>La autorización para insertar enlaces no supone un consentimiento para reproducir los aspectos visuales y funcionales («look and feel») de la Biblioteca ni para crear un entorno o barra de navegación sobre las páginas de la Biblioteca.</p>
-
-        <p>...</p>
-
-        <p>El enlace identificará mediante el atributo title que su destino es la Biblioteca Virtual Miguel de Cervantes.</p>
-
-        <p>En el caso de que el origen del enlace sea una imagen, se utilizará el logo de la Biblioteca, que puede descargarse de esta página.</p>
-
-        <p>El logo de la Biblioteca Virtual Miguel de Cervantes estará separado 25 píxeles del resto de los elementos de la página.</p>
-      </blockquote>
-
-      <p>Desde entonces, el <a href="https://www.cervantesvirtual.com/marco-legal/#enlaces">apartado dedicado a los enlaces</a> es más breve y hace referencia a unas "normas de hiperenlaces disponible en esta web" que no parecen estar disponibles en ningún sitio.</p>
-    </section>
-
-    <section id="censura-p2p">
-      <h3>Enlaces a redes P2P</h3>
-
-      <p>Menos anecdótico que los ejemplos anteriores, otras páginas que han sufrido amenazas legales son las páginas con enlaces a archivos P2P. Aunque sigue siendo un tema polémico, actualmente (octubre de 2014) los tribunales que han dictado sentencias en estos casos siguen declarando la legalidad de dichas páginas (<a href="https://www.bufetalmeida.com/51/sentencias-propiedad-intelectual">recopilación de sentencias en Bufet Almeida</a>), siempre que las páginas contuvieran enlaces a los archivos, pero no los propios archivos.</p>
-
-      <p>La <a href="https://es.wikipedia.org/wiki/Ley_Sinde#La_.22Ley_Sinde.22">Ley Sinde</a> (llamada así por el nombre de la entonces Ministra de Cultura Ángeles González Sinde -gobierno del PSOE-, pero realmente es una disposición de la Ley 2/2011 de Economía Sostenible), completada por el Reglamento aprobado en diciembre de 2011 (gobierno del PP), es el último intento de acabar con las páginas de enlaces.</p>
-
-      <p>El diario 20 minutos publicó en marzo de 2012 una <a href="https://www.20minutos.es/noticia/910058/0/cronologia/ley/sinde/">cronología de la Ley Sinde desde diciembre de 2009 a marzo de 2012</a>.</p>
-
-      <p>En 2014 se anunció otra reforma de la Ley de Propiedad Intelectual dirigida a perseguir con más fuerza y arbitrariedad las webs de enlaces (<a href="https://www.elmundo.es/tecnologia/2014/10/29/5450b3caca4741943c8b4572.html">resumen de la reforma en El Mundo</a>), ampliando la persecución a cualquier servicio de Internet.</p>
-
-      <p>En 2017 se publicó <a href="https://www.elconfidencial.com/tecnologia/2017-11-08/dallas-buyer-club-p2p-david-bravo-san-sebastian-bilbao_1474941/">la primera sentencia absolutoria en España de un usuario de redes P2P</a>.</p>
-
-      <p>Referencias: <a href="https://davidbravo.es/articulos-entrevistas/">David Bravo</a> - <a href="https://www.elmundo.es/blogs/elmundo/jaqueperpetuo/">Carlos Sánchez Almeida</a> - <a href="https://www.bufetalmeida.com/51/sentencias-propiedad-intelectual">Bufet Almeida</a> - <a href="https://www.derechoynormas.com/">David Maeztu</a></p>
-    </section>
-
-    <section id="censura-enlaces">
-      <h3>Enlaces a contenidos: Copyright secundario (ancillary copyright)</h3>
-
-      <p>Referencias: <a href="https://felixreda.eu/2015/11/ancillary-copyright-2-0-the-european-commission-is-preparing-a-frontal-attack-on-the-hyperlink/">Propuesta de la Comisión Europea (noviembre 2015)</a></p>
-    </section>
-  </section>
-
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de abril de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 24 de abril de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
