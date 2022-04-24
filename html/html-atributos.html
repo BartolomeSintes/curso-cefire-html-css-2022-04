@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Atributos. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>HTML. Atributos</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="html-unicode-twemoji.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="html-clases.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML Atributos</a>
+      </h2>
+
+      <ul>
+        <li><a href="#que-es">Qué es un atributo</a></li>
+        <li><a href="#atributo-class">Atributo <span class="html-atri">class</span></a></li>
+        <li><a href="#atributo-id">Atributo <span class="html-atri">id</span></a></li>
+        <li><a href="#atributo-style">Atributo <span class="html-atri">style</span></a></li>
+        <li><a href="#atributo-title">Atributo <span class="html-atri">title</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="que-es">
+    <h2>Qué es un atributo</h2>
+
+    <p>Cualquier etiqueta HTML puede contener uno o más atributos, separados por espacios, que permiten especificar la etiqueta. El código fuente tiene el siguiente aspecto:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-html">&lt;etiqueta atributo="valor-de-atributo"&gt; ... &lt;/etiqueta&gt;
+
+&lt;etiqueta atributo-1="valor-de-atributo-1" atributo-2="valor-de-atributo-2"&gt; ... &lt;/etiqueta&gt;
+
+&lt;etiqueta atributo-3&gt; ... &lt;/etiqueta&gt;</code>
+</pre>
+    </div>
+
+    <p>Existen una serie de atributos comunes a todas las etiquetas (salvo la etiqueta <span class="html-eti">&lt;html&gt;</span>) y algunas etiquetas tienen unos atributos específicos. En esta lección se comentan los atributos comunes; los atributos específicos se comentan en las lecciones dedicadas a las etiquetas correspondientes (imágenes, tablas, etc).</p>
+  </section>
+
+  <section id="atributo-class">
+    <h2>Atributo <span class="html-atri">class</span></h2>
+
+    <p>El atributo <span class="html-atri">class</span> permite definir clases de elementos. Dada su importancia, se explica en la <a href="html-clases.html">lección sobre Clases</a>.</p>
+
+    <p>Las hojas de estilo pueden hacer referencia a los elementos con atributo <span class="html-atri">class</span>, como se comenta en la <a href="../css/css-selectores.html#tipo">lección sobre Selectores</a>.</p>
+  </section>
+
+  <section id="atributo-id">
+    <h2>Atributo <span class="html-atri">id</span></h2>
+
+    <p>El atributo <span class="html-atri">id</span> permite identificar de forma unívoca un elemento en un documento. Por ello, en una página web no puede haber dos elementos con el mismo valor en el atributo <span class="html-atri">id</span>. Además, un elemento sólo puede tener un atributo <span class="html-atri">id</span>, es decir, el atributo <span class="html-atri">id</span> no puede contener espacios en blanco.</p>
+
+    <p>En HTML 4 el valor de un atributo <span class="html-atri">id</span> tenía que empezar con una letra (mayúscula o minúscula, caracteres latinos) y puede contener dígitos, guiones medios (-), guiones bajos (_), comas y puntos. Si el nombre contenía puntos, a continuación del punto tenía que haber una letra. Además, algunos elementos no podían tener atributo <span class="html-atri">id</span> (<span class="html-eti">&lt;base&gt;</span>, <span class="html-eti">&lt;head&gt;</span>, <span class="html-eti">&lt;html&gt;</span>, <span class="html-eti">&lt;meta&gt;</span>, <span class="html-eti">&lt;param&gt;</span>, <span class="html-eti">&lt;script&gt;</span>, <span class="html-eti">&lt;style&gt;</span> y <span class="html-eti">&lt;title&gt;</span>).</p>
+
+    <p>En HTML el atributo <span class="html-atri">id</span> puede empezar y contener cualquier carácter (salvo espacios en blanco). Además, todos los elementos pueden tener el atributo <span class="html-atri">id</span>.</p>
+
+    <p>Los elementos con atributo <span class="html-atri">id</span> pueden ser destinos de enlaces, como se comenta en la <a href="html-enlaces.html#destinos">lección sobre Enlaces</a>.</p>
+
+    <p>Las hojas de estilo pueden hacer referencia a un elemento con atributo <span class="html-atri">id</span>, como se comenta en la <a href="../css/css-selectores.html#tipo">lección sobre Selectores</a>.</p>
+  </section>
+
+  <section id="atributo-style">
+    <h2>Atributo <span class="html-atri">style</span></h2>
+
+    <p>El atributo <span class="html-atri">style</span> permite definir propiedades de estilo a un elemento determinado.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p style="color:red"&gt;Esto es un párrafo &amp;lt;p&amp;gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto es otro párrafo &lt;span style="color: red;"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto es otro párrafo &lt;span style="color: red; font-weight: bold"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;.&lt;/p&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/atributos/style.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/atributos/style.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En estos apuntes se desaconseja el uso de este atributo, puesto que uno de los principios del diseño de páginas web mediante hojas de estilo es precisamente concentrar todo lo relacionado con el formato en las hojas de estilo.</p>
+
+    <p>Si sólo se escribe una propiedad, el punto y coma final puede omitirse (en el ejemplo anterior el punto y coma se ha omitido en el primer caso y se ha incluido en el segundo). Si se incluyen varias propiedades en un atributo <span class="html-atri">style</span>, el punto y coma es necesario entre propiedades (como puede verse en el tercer caso del ejemplo anterior).</p>
+  </section>
+
+  <section id="atributo-title">
+    <h2>Atributo <span class="html-atri">title</span></h2>
+
+    <p>El atributo <span class="html-atri">title</span> contiene el texto que se muestra en forma de "tip" (cuadrito amarillo que aparece cuando se sitúa el ratón encima del elemento).</p>
+
+    <p>En el ejemplo siguiente se muestra un "tip" cuando se sitúa el ratón sobre el primer párrafo o sobre el término "&lt;p&gt;" del segundo párrafo.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p title="Esto es un tip"&gt;Esto es un párrafo &amp;lt;p&amp;gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto es otro párrafo &lt;span title="Esto es un &amp;quot;tip&amp;quot;"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;.&lt;/p&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/atributos/title.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/atributos/title.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de abril de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
