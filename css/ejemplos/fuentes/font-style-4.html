@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Latin Modern Roman oblique e italic. Tipo de letra (fuente). Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: 'Latin Modern Roman';
+      font-style: normal;
+      src: url("latin-modern-roman10-regular.woff2");
+    }
+
+    @font-face {
+      font-family: 'Latin Modern Roman';
+      font-style: italic;
+      src: url("latin-modern-roman10-italic.woff2");
+    }
+
+    @font-face {
+      font-family: 'Latin Modern Roman';
+      font-style: oblique;
+      src: url("latin-modern-roman10-oblique.woff2");
+    }
+
+    p {
+      font-family: "Latin Modern Roman";
+      font-size: 125%;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+
+    .oblique {
+      font-style: oblique;
+    }
+
+  </style>
+</head>
+
+<body>
+  <p>Esto es un párrafo con tipo de letra Latin Modern Roman y sin font-style.</p>
+
+  <p class="oblique">Esto es un párrafo con tipo de letra Latin Modern Roman y font-style oblique.</p>
+
+  <p class="italic">Esto es un párrafo con tipo de letra Latin Modern Roman y font-style italic.</p>
+</body>
+</html>

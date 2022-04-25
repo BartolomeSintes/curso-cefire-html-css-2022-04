@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Tipo de letra (fuente) (1). CSS. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>CSS. Tipo de letra (fuente) (1)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="css-selectores.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../html/html-imagenes-formatos.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">CSS Fuente (1)</a>
+      </h2>
+
+      <ul>
+        <li><a href="#line-height">Interlineado: <span class="css-prop">line-height</span></a></li>
+        <li><a href="#font-family">Tipo de letra: <span class="css-prop">font-family</span></a></li>
+        <li><a href="#font-size">Tamaño: <span class="css-prop">font-size</span></a>
+          <ul>
+            <li><a href="#valor-numerico">Valor absoluto</a></li>
+            <li><a href="#valor-relativo">Valor relativo</a></li>
+          </ul>
+        </li>
+        <li><a href="#subfamilias-tipograficas">Subfamilias tipográficas</a>
+          <ul>
+            <li><a href="#font-weight">Negrita: <span class="css-prop">font-weight</span></a></li>
+            <li><a href="#font-style">Itálica: <span class="css-prop">font-style</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se comentan algunas de las propiedades CSS definidas en la recomendación <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/">CSS Fonts Module Level 3</a>, publicada en septiembre de 2018.</p>
+
+  <p>Estas propiedades permiten elegir con todo detalle el tipo de letra que se mostrará en el navegador del usuario.</p>
+
+  <p>En esta lección se comentan las propiedades "clásicas", que ya estaban incluidas en CSS 2, publicada en mayo de 1998.</p>
+
+  <section id="line-height">
+    <h2 class="con-aside">Interlineado: <span class="css-prop">line-height</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">line-height</span><br>
+        <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">line-height</span> permite establecer el interlineado de un bloque de texto. El valor se puede expresar en cualquier unidad de longitud, aunque lo más lógico es utilizar porcentajes o em. Si se expresa en porcentajes, el valor 100% corresponde al interlineado normal.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  line-height: 100%;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/line-height-1.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/line-height-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  line-height: 200%;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/line-height-2.html" style="width: 100%; height: 6em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/line-height-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  line-height: 150%;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/line-height-3.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/line-height-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  line-height: 75%;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/line-height-4.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/line-height-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  line-height: 1.5em;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/line-height-5.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/line-height-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="font-family">
+    <h2 class="con-aside">Tipo de letra: <span class="css-prop">font-family</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">font-family</span><br>
+        <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-family-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">font-family</span> permite establecer el tipo de letra (fuente) del elemento.</p>
+
+    <p>La propiedad <span class="css-prop">font-family</span> puede tomar como valor el nombre concreto de una fuente. El nombre de la fuente debe escribirse entre comillas si contiene espacios (y puede escribirse entre comillas si no contiene espacios). Si el ordenador no tiene instalada la fuente indicada, el navegador utilizará una fuente de la familia genérica <span class="css-valor">serif</span> (que se explica a continuación). En los ejemplos siguientes si no está instalada alguna de las fuentes Arial, Segoe UI u Homer Simpson, el ejemplo se verá en el mismo tipo de letra que el cuarto ejemplo.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: Arial;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-06.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-06.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Segoe UI";
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-07.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-07.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Homer Simpson UI";
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-08.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-08.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-09.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-09.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+    <p>Para evitar este problema se puede utilizar uno de los nombres de familia de fuentes genéricos <span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">monospace</span>, <span class="css-valor">cursive</span> y <span class="css-valor">fantasy</span>. Los navegadores tienen asociados a cada nombre genérico una fuente que sí que está instalada en el ordenador (salvo en el caso de la familia genérica <span class="css-valor">fantasy</span> que puede no tener asociada ninguna fuente especial).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-01.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-01.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-02.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-02.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: monospace;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-05.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-05.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: cursive;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-03.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-03.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: fantasy;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-04.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-04.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1150" viewBox="-50 0 1150 200" style="background-color: white;">
+
+        <text x="50" y="50" text-anchor="middle" font-family="sans-serif" font-size="30">serif</text>
+        <text x="50" y="125" text-anchor="middle" font-family="serif" font-size="70">afim10</text>
+
+        <text x="350" y="50" text-anchor="middle" font-family="sans-serif" font-size="30">sans-serif</text>
+        <text x="350" y="125" text-anchor="middle" font-family="sans-serif" font-size="70">afim10</text>
+
+
+        <text x="650" y="50" text-anchor="middle" font-family="sans-serif" font-size="30">monospace</text>
+        <text x="650" y="125" text-anchor="middle" font-family="monospace" font-size="70">afim10</text>
+
+        <text x="950" y="50" text-anchor="middle" font-family="sans-serif" font-size="30">cursive</text>
+        <text x="950" y="125" text-anchor="middle" font-family="cursive" font-size="70">afim10</text>
+      </svg>
+    </p>
+
+    <p>Si el valor de la propiedad <span class="css-prop">font-family</span> son varios nombres de fuentes separados por comas, el navegador aplicará la primera fuente de la lista que esté instalada en el ordenador. Por ello es conveniente incluir en último lugar uno de los nombres genéricos, por si acaso el resto de fuentes no estuvieran disponibles. Hay que tener en cuenta también que si una fuente no contiene un carácter determinado, el navegador busca ese carácter en las siguientes fuentes de la lista.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Constantia", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-11.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Segoe IU", sans-serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-12.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Consolas", monospace;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-13.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Los nombres de fuentes se pueden escribir en mayúsculas o minúsculas. En lo ejemplos siguientes se escribe la fuente Arial de cuatro maneras distintas. La última forma es incorrecta (porque el nombre de la fuente está escrito con espacios), por lo que el ejemplo se ve con una fuente <span class="css-valor">serif</span>.</p>
+
+    <p><strong>Nota</strong>: En una enumeración de fuentes, lo lógico es poner al final la familia genérica a la que pertenecen el resto de fuentes. Así, en los ejemplos siguientes lo lógico sería haber escrito la familia genérica <span class="css-valor">sans-serif</span>. Pero estos ejemplos no se ha hecho así para que se pueda identificar fácilmente cuándo el navegador no puede aplicar la fuente (concretamente, en el último ejemplo).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "arial", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-21.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-21.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "ARIAL", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-22.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-22.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "ArIaL", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-23.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-23.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "a r i a l", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-24.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-24.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="font-size">
+    <h2 class="con-aside">Tamaño del tipo de letra: <span class="css-prop">font-size</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">font-size</span><br>
+        <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-size-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">font-size</span> permite establecer el tamaño del tipo de letra (fuente) del elemento. Se puede expresar el tamaño de varias maneras, entre ellas valores numéricos, aunque generalmente se aconseja utilizar unidades relativas (<span class="css-unidad">%</span> o <span class="css-unidad">em</span>).</p>
+
+    <section id="valor-numerico">
+      <h3>Valor numérico con unidades absolutas</h3>
+
+      <p>Se puede definir un tamaño concreto, por ejemplo, 14pt, 3cm, 20px, etc.</p>
+
+      <p><strong>Nota</strong>: Hace años (antes de 2010) se desaconsejaba utilizar estas unidades de forma indiscriminada porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-size: 16pt;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-size-3.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-size-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="valor-relativo">
+      <h3>Valor numérico con unidades relativas</h3>
+
+      <p>Se puede definir el tamaño de cada elemento mediante porcentajes (o <span class="css-unidad">em</span> o <span class="css-unidad">rem</span>, teniendo en cuenta que 1em = 100% y que 1rem = 100%), que se interpretan con respecto al tamaño base.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-size: 150%;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-size-4.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-size-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-size: 120%;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-size-5.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-size-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-size: 80%;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-size-6.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-size-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="subfamilias-tipograficas">
+    <h2>Subfamilias tipográficas</h2>
+
+    <p>En Tipografía existen lo que se llaman subfamilias tipográficas, es decir, fuentes que son variaciones de una fuente determinada. Algunas de las posibles variaciones son:</p>
+
+    <ul>
+      <li>el <a href="#font-weight">grosor</a> del trazo</li>
+      <li>la <a href="#font-style">inclinación</a></li>
+      <li><a href="css-fuente-2.html#variantes">Otras características</a></li>
+    </ul>
+
+    <p>Las propiedades <span class="css-prop">font-weight</span>, <span class="css-prop">font-style</span> y <span class="css-prop">font-variant</span> le indican al navegador qué variación es la que debería mostrar. El navegador es el que tiene que decidir qué fuente (de las instaladas en el ordenador en el que se están viendo las páginas) debe utilizar o, si es capaz de ello, simular la propiedad.</p>
+
+    <section id="font-weight">
+      <h3 class="con-aside">Grosor del trazo (negrita): <span class="css-prop">font-weight</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="css-prop">font-weight</span><br>
+          <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-weight-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        </p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">font-weight</span> permite elegir el grosor del trazo. Existen nueve valores numéricos (<span class="css-valor">100</span>, <span class="css-valor">200</span>, <span class="css-valor">300</span>, <span class="css-valor">400</span>, <span class="css-valor">500</span>, <span class="css-valor">600</span>, <span class="css-valor">700</span>, <span class="css-valor">800</span>, <span class="css-valor">900</span>), del más fino al más grueso. Además, existen los valores <span class="css-valor">normal</span> y <span class="css-valor">bold</span> que deben coincidir respectivamente, con los valores numéricos <span class="css-valor">400</span> y <span class="css-valor">700</span>. Y por último, existen los valores <span class="css-valor">lighter</span> y <span class="css-valor">bolder</span> que significan, respectivamente, un valor inferior y superior en la lista de valores numéricos y se interpretan respecto del elemento padre.</p>
+
+      <p>Al definir el grosor con valores numéricos, los navegadores muestran tres grosores distintos (de <span class="css-valor">100</span> a <span class="css-valor">500</span> como <span class="css-valor">normal</span>, <span class="css-valor">600</span> y <span class="css-valor">700</span> como <span class="css-valor">bold</span> y <span class="css-valor">800</span> y <span class="css-valor">900</span> más grueso que <span class="css-valor">bold</span>). Esos grosores no se aprecian de la misma manera en cada tipo de letra. En la siguiente lista, cada valor está en el grosor indicado por el propio valor:</p>
+
+      <ul>
+        <li>Fuente <span class="css-valor">sans-serif</span>
+          <ul>
+            <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+            <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+            <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+          </ul>
+        </li>
+        <li>Fuente <span class="css-valor">serif</span>
+          <ul style="font-family: serif;">
+            <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+            <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+            <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+          </ul>
+        </li>
+        <li>Fuente <span class="css-valor">monospace</span>
+          <ul style="font-family: monospace;">
+            <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+            <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+            <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+          </ul>
+        </li>
+        <li>Fuente <span class="css-valor">cursive</span>
+          <ul style="font-family: cursive;">
+            <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+            <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+            <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p { font-family: sans-serif; }
+
+p.g400 { font-weight: 400; }
+
+p.n { font-weight: normal; }
+
+p.g700 { font-weight: 700; }
+
+p.b { font-weight: bold; }
+
+p.g900 { font-weight: 900; }</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-weight-1.html" style="width: 100%; height: 13em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-weight-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>El valor <span class="css-valor">bolder</span> hace que el elemento se muestre, si es posible, con un grosor mayor que el del elemento en el que está incluido. En el siguiente ejemplo, cada lista se muestra con un grosor mayor que la anterior:</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-weight: normal;
+}
+
+ul {
+  font-family: sans-serif;
+  font-weight: bolder;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-weight-2.html" style="width: 100%; height: 10em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-weight-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="font-style">
+      <h3 class="con-aside">Inclinación (itálica): <span class="css-prop">font-style</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="css-prop">font-style</span><br>
+          <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-style-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        </p>
+      </aside>
+
+      <p>Una forma de obtener una variante de un tipo de letra es inclinar las letras. En Tipografía se distinguen dos formas de inclinación:</p>
+
+      <ul>
+        <li>oblicua: la forma de la letra no cambia, simplemente se inclina</li>
+        <li>itálicas: además de inclinarse, la forma de algunas letras cambia</li>
+      </ul>
+
+      <p>Para distinguir si una fuente es oblicua o itálica, es necesario fijarse en letras como la "a". La imagen siguiente muestra un ejemplo: la primera línea corresponde a la fuente Aldine (normal e itálica) y la segunda línea corresponde a la fuente Arial (normal y oblicua).</p>
+
+      <p class="mcl-captura">
+        <img src="../img/otros/ejemplo-font-style.png" alt="Ejemplo de fuente oblique e italic" title="Ejemplo de fuente oblique e italic" width="105" height="125">
+      </p>
+
+      <p>La propiedad <span class="css-prop">font-style</span> permite elegir la inclinación: <span class="css-valor">normal</span>, <span class="css-valor">oblique</span> o <span class="css-valor">italic</span>. Para que los navegadores puedan mostrar las variantes oblicua e itálica es necesario que en el ordenador esté instaladas fuentes de ambas variantes, lo que no suele ser habitual.</p>
+
+      <p>En general, si no hay instaladas fuentes específicas, los navegadores simplemente inclinan el tipo de letra normal, tanto para <span class="css-valor">oblique</span> como <span class="css-valor">italic</span>. Como esto correspondería más bien a la variante oblicua, se aconseja dar el valor <span class="css-valor">oblique</span> en vez de <span class="css-valor">italic</span>.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+  font-size:150200%;
+  font-style: normal;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-style-1.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-style-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+  font-size: 150%;
+  font-style: italic;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-style-2.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-style-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+  font-size: 150%;
+  font-style: oblique;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-style-3.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-style-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <hr class="corta">
+
+      <p>Para probar si realmente los navegadores distinguen entre <span class="css-valor">italic</span> y <span class="css-valor">oblique</span>, se debe utilizar una fuente que tenga ambas variantes, por ejemplo, la fuente libre <a href="https://www.fontsquirrel.com/fonts/latin-modern-roman">Latin Modern Roman</a>. El ejemplo siguiente utiliza fuentes web para mostrar esa fuente aunque no esté instalada en el ordenador del usuario.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p.oblique {
+  font-family: "Latin Modern Roman";
+  font-style: oblique;
+}
+
+p.italic {
+  font-family: "Latin Modern Roman";
+  font-style: italic;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-style-4.html" style="width: 100%; height: 13em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-style-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="../otros/diferencias-listado.html#css-fuente-font-style"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
+        </div>
+      </div>
+
+      <p><strong>Nota</strong>: Firefox aplica esta propiedad correctamente, mientras que Chrome no lo hace, como se comenta en la <a href="../otros/diferencias-listado.html#css-fuente-font-style">página de diferencias entre navegadores</a>.</p>
+    </section>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 23 de abril de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
