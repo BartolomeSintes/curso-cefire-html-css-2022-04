@@ -31,7 +31,7 @@
         <li><a href="#ejercicio-3">3 - Imágenes</a></li>
         <li><a href="#ejercicio-4">4 - Imágenes flotantes</a></li>
         <li><a href="#ejercicio-5">5 - Fuentes</a></li>
-        <li><a href="#ejercicio-6">6 - Unicode</a></li>
+        <li><a href="#ejercicio-6">6 - Emojis</a></li>
       </ul>
     </div>
   </nav>
@@ -74,7 +74,7 @@
         </ul>
       </li>
       <li>Cree la hoja de estilo <strong>texto-en-linea.css</strong></li>
-      <li>Añada las sentencias en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
+      <li>Añada las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
     </ol>
 
     <p>
@@ -110,7 +110,7 @@
         </ul>
       </li>
       <li>Cree la hoja de estilo <strong>clases.css</strong></li>
-      <li>Añada las sentencias en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
+      <li>Añada las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
     </ol>
 
     <p>
@@ -163,7 +163,7 @@
         </ul>
       </li>
       <li>Cree la hoja de estilo <strong>imagenes-flotantes.css</strong></li>
-      <li>Añada las sentencias en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
+      <li>Añada las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
     </ol>
   </section>
 
@@ -200,11 +200,67 @@
       <span style="background-color: hsl(180, 100%, 20%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(180, 100%, 20%) y
       <span style="background-color: hsl(270, 50%, 90%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(270, 50%, 90%).
     </p>
-
   </section>
 
   <section id="ejercicio-6">
-    <h2>S3 6 - Carácteres Unicode</h2>
+    <h2>S3 6 - Emojis</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>emojis.html</strong>.</li>
+      <li>Añada las entidades numéricas correspondientes a cada uno de los emojis a partir de la captura siguiente:
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s3-6-1.png" alt="Ejercicio S3 1" width="1012" height="295">
+            </p>
+          </li>
+        </ul>
+        <p style="line-height: 3rem">
+          Las entidades numéricas son las siguientes:
+          <span style="font-size: 3rem;">&#x1F30D;</span> &amp;#x1F30D; -
+          <span style="font-size: 3rem;">&#x1F411;</span> &amp;#x1F411; -
+          <span style="font-size: 3rem;">&#x1F435;</span> &amp;#x1F435; -
+          <span style="font-size: 3rem;">&#x1F470;</span> &amp;#x1F470; -
+          <span style="font-size: 3rem;">&#x1F47B;</span> &amp;#x1F47B; -
+          <span style="font-size: 3rem;">&#x1F480;</span> &amp;#x1F480; -
+          <span style="font-size: 3rem;">&#x1F507;</span> &amp;#x1F507; -
+          <span style="font-size: 3rem;">&#x1F52A;</span> &amp;#x1F52A; -
+          <span style="font-size: 3rem;">&#x1F52B;</span> &amp;#x1F52B; -
+          <span style="font-size: 3rem;">&#x1F6BF;</span> &amp;#x1F6BF;
+        </p>
+      </li>
+      <li>Cree la hoja de estilo <strong>emojis.css</strong></li>
+      <li>Añada las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo siguiente.
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Utilice clases para distinguir el párrafo de texto con la pregunta de los párrafos con los emojis, ya que el tamaño de fuente es distinto en cada caso. Como se comenta en la <a href="../../html/html-clases.html#n-clases">lección sobre Clases</a> se pueden crear dos clases (una para el texto y otra para los emojis) o crear una sola clase (la del texto) y la propiedad que tendríamos que poner en la clase de los emojis ponerla en la regla de los párrafos sin clase.</li>
+          </ul>
+        </details>
+        <ul>
+          <li>Vista <strong>con</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s3-6-2.png" alt="Ejercicio S3 1" width="1012" height="590">
+            </p>
+          </li>
+        </ul>
+        <p><span class="entidad-inline">&#9888;&#65039;</span> Un problema con los emojis es que para verlos bien normalmente hay que ampliar su tamaño y al ampliar el <span class="css-prop">font-size</span> del párrafo, la separación entre párrafos se hace muy grande. Una solución es eliminar la separación entre párrafos con la propiedad <span class="css-prop">margin</span> que veremos en detalle la semana que viene. En este ejercicio puede añadir la siguiente regla:</p>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+    margin: 0;
+}</code>
+</pre>
+        </div>
+      </li>
+
+      <p>
+        <strong>Nota</strong>: Colores empleados:
+        <span style="background-color: hsl(35, 100%, 30%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(35, 100%, 30%),
+        <span style="background-color: hsl(35, 100%, 50%);">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(35, 100%, 50%) y
+        <span style="background-color: hsl(35, 100%, 90%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(35, 100%, 90%).
+      </p>
+    </ol>
 
   </section>
 
