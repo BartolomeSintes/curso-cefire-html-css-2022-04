@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicios S3. HTML / CSS. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism-copy.js"></script>
+  <script src="../../varios/prism.js"></script>
+  <script src="../../varios/clipboard.min.js"></script>
+</head>
+
+<body>
+  <h1>HTML / CSS. Ejercicios S3</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="../../css/css-posicionamiento-flotante.html"><img src="../../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Índice" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2><a href="#">Ejercicios S3</a></h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">1 - Texto en línea</a></li>
+        <li><a href="#ejercicio-2">2 - Clases</a></li>
+        <li><a href="#ejercicio-3">3 - Imágenes</a></li>
+        <li><a href="#ejercicio-4">4 - Imágenes flotantes</a></li>
+        <li><a href="#ejercicio-5">5 - Fuentes</a></li>
+        <li><a href="#ejercicio-6">6 - Unicode</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios tratan sobre los temas tratados en la Semana 3 del curso.</p>
+
+  <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="s3-plantillas.zip">plantillas de los ejercicios S3</a>. Una vez descargado el fichero zip:</p>
+  <ol>
+    <li>Descomprima las plantillas en la carpeta <strong>ejercicios</strong>. Se creará una carpeta <strong>s3-plantillas</strong>.</li>
+    <li>Renombre la carpeta <strong>s3-plantillas</strong> como <strong>s3</strong>.</li>
+  </ol>
+
+  <p>Las capturas de pantalla están tomadas con un ancho de ventana de 1024px aproximadamente.</p>
+
+  <section id="ejercicio-1">
+    <h2>S3 1 - Texto en línea</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>texto-en-linea.html</strong>.</li>
+      <li>Añada las etiquetas <span class="html-eti">strong</span>, <span class="html-eti">em</span> y <span class="html-eti">em</span> a partir de las capturas siguientes:
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>En la vista sin estilo, la etiqueta <span class="html-eti">strong</span> se ve en negrita.</li>
+            <li>En la vista sin estilo, la etiqueta <span class="html-eti">em</span> se ve en cursiva.</li>
+            <li>En la vista sin estilo, la etiqueta <span class="html-eti">span</span> no se identifica, ya que el navegador no le asigna ningún estilo predeterminado.</li>
+          </ul>
+        </details>
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s3-1-1.png" alt="Ejercicio S3 1" width="1024" height="420">
+            </p>
+          </li>
+          <li>Vista <strong>con</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s3-1-2.png" alt="Ejercicio S3 1" width="1024" height="420">
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>Cree la hoja de estilo <strong>texto-en-linea.css</strong></li>
+      <li>Añada las sentencias en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>S3 2 - Clases</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>clases.html</strong>.</li>
+      <li>Añada las etiquetas con clases a partir de las capturas siguientes:
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Los fragmentos en color llevarán etiquetas <span class="html-eti">span</span> ya que en la vista sin estilo, el navegador no les asigna ningún estilo predeterminado.</li>
+            <li>Asigne clases (atributos <span class="html-atri">class</span>) a cada etiqueta <span class="html-eti">span</span> dependiendo del resultado deseado en cada una. Intente elegir un nombre de clase que no esté asociado al resultado visual (el color), sino a la categoría del texto correspondiente.</li>
+          </ul>
+        </details>
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s3-2-1.png" alt="Ejercicio S3 2" width="1024" height="420">
+            </p>
+          </li>
+          <li>Vista <strong>con</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s3-2-2.png" alt="Ejercicio S3 2" width="1024" height="420">
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>Cree la hoja de estilo <strong>clases.css</strong></li>
+      <li>Añada las sentencias en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>S3 3 - Imágenes</h2>
+
+    <ol>
+      <li>Descargue una imagen en formato JPG de algún repositorio de imágenes libres (<a href="https://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a>, <a href="https://www.flickr.com/commons/">Flick Commons</a>, etc.).</li>
+      <li>Convierta la imagen JPG a un tamaño más reducido manteniendo el formato JPG utilizando <a href="https://squoosh.app/">Squoosh</a>.</li>
+      <li>Convierta la imagen JPG al formato WebP utilizando <a href="https://squoosh.app/">Squoosh</a>.</li>
+      <li>Convierta la imagen JPG al formato AVIF utilizando <a href="https://squoosh.app/">Squoosh</a>.</li>
+      <li>Guarde las cuatro imágenes en la carpeta <strong>s3-3</strong>.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>S3 4 - Imágenes flotantes</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>imagenes-flotantes.html</strong>.</li>
+      <li>Añada las etiquetas de imagen en los lugares adecuados a partir de la captura siguiente:
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Las imágenes deben colocarse al principio del bloque con el que la imagen vaya a quedar alineada, independientemente de que la imagen vaya a quedar a la izquierda o a la derecha.</li>
+            <li>La vista sin estilo permite saber más fácilmente la posición de las imágenes.
+              <ul>
+                <li>Vista <strong>sin</strong> estilo:
+                  <p class="mcl-captura">
+                    <img src="s3-4-1.png" alt="Ejercicio S3 4" width="1024" height="420">
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </details>
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s3-4-1.png" alt="Ejercicio S3 4" width="1024" height="420">
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>Cree la hoja de estilo <strong>imagenes-flotantes.css</strong></li>
+      <li>Añada las sentencias en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>S3 5 - Carácteres Unicode</h2>
+
+  </section>
+
+  <section id="ejercicio-6">
+    <h2>S3 6 - Carácteres Unicode</h2>
+
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 25 de abril de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
