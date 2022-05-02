@@ -1,0 +1,13 @@
+body {
+  background: url("fondo201x201.png") no-repeat top left fixed;
+  margin: 50px;
+}
+
+div {
+  border: black 2px solid;
+  padding: 5px;
+}
+
+p.confondo {
+  background: url("fondo201x201.png") no-repeat right top fixed orange;
+}
