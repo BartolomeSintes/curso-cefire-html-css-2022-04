@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Fuentes web. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>CSS. Fuentes web</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="../ejercicios/s3/index.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../html/html-divisiones.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">CSS Fuentes web</a>
+      </h2>
+
+      <ul>
+        <li><a href="#woff">Fuentes WOFF</a></li>
+        <li><a href="#font-face">Regla arroba <span class="css-arroba">@font-face</span></a></li>
+        <li><a href="#google-fonts">Google Fonts</a>
+          <ul>
+            <li><a href="#google-fonts-enlazar">Enlazar <span class="css-arroba">@import</span> o <span class="html-eti">link</span></a></li>
+            <li><a href="#google-fonts-descargar-woff2">Descargar WOFF2</a></li>
+          </ul>
+        </li>
+        <li><a href="#posicion-import">Posición <span class="css-arroba">@import</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se comentan las propiedades CSS definidas en la recomendación <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/">CSS Fonts Module Level 3</a>, publicada en septiembre de 2018, relacionadas con las fuentes web, es decir fuentes que pueden mostrarse en el navegador sin necesidad de estar instaladas en el ordenador ya que se descargan automáticamente.</p>
+
+  <p>Estas propiedades permiten elegir con todo detalle el tipo de letra que se mostrará en el navegador del usuario.</p>
+
+  <section id="woff">
+    <h2 class="con-aside">Fuentes WOFF (Web Open Font Format)</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <strong>woff</strong><br>
+        <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/"><img src="../varios/iconos/icono-w3c.svg" alt="Recomendación W3C" title="Recomendación W3C" width="47" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        <a href="https://caniuse.com/#feat=woff"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
+      </p>
+
+      <p>
+        <strong>woff2</strong><br>
+        <a href="https://www.w3.org/TR/2018/REC-WOFF2-20180301/"><img src="../varios/iconos/icono-w3c.svg" alt="Recomendación W3C" title="Recomendación W3C" width="47" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        <a href="https://caniuse.com/#feat=woff2"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
+      </p>
+    </aside>
+
+    <p>En 2009 se desarrolló un formato de fuentes llamado WOFF (Web Open Font Format) pensado para la web. En realidad no se trata de un nuevo formato, puesto que una fuente WOFF no es más que una fuente TrueType, OpenType, Open Font o SVG comprimida y con metadatos para indicar detalles como el origen de la fuente o la licencia.</p>
+
+    <p>En abril de 2010, Mozilla, Microsoft y Opera presentaron este formato al W3C, que aprobó la recomendación <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/">WOFF File Format 1.0</a> en diciembre de 2012.</p>
+
+    <p>En marzo de 2018 se aprobó la recomendación <a href="https://www.w3.org/TR/2018/REC-WOFF2-20180301/">WOFF File Format 2.0</a>. Gracias al nuevo algoritmo de compresión <a href="https://es.wikipedia.org/wiki/Brotli">Brotli</a>, esta recomendación consigue reducir el tamaño de las fuentes a la cuarta parte, aumentar la velocidad de descompresión y reducir los requisitos de memoria, como se explica en el <a href="https://www.w3.org/TR/WOFF20ER/">WOFF 2.0 Evaluation Report</a> publicado por el W3C en marzo de 2016 o en este <a href="https://lwn.net/Articles/573348/">artículo en lwn.net sobre WOFF2 (13/11/2013)</a>.</p>
+
+    <p>El formato WOFF 2 es mucho mejor que el formato WOFF 1 y servicios como Google Fonts ya sólo ofrecen WOFF 2.</p>
+
+    <p>Para crear fuentes WOFF se puede utilizar webs como <a href="https://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel</a> en la que subiendo una fuente TTF u OTF podemos descargar la misma fuente en los formatos WOFF2, WOFF, EOT y SVG.</p>
+  </section>
+
+  <section id="font-face">
+    <h2 class="con-aside">La regla arroba <span class="css-arroba">@font-face</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-arroba">@font-face</span><br>
+        <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-face-rule"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La recomendación <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/">CSS Fonts Module Level 3</a>, publicada en septiembre de 2018, permite la utilización de fuentes web mediante el uso de la regla-arroba <span class="css-arroba">@font-face</span>, como muestra el ejemplo siguiente:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">@font-face {
+    font-family: "Mystery Quest";
+    src: url("mystery-quest.woff2");
+}
+
+p {
+    font-family: "Mystery Quest", cursive;
+    font-size: 150%;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes-web/fuentes-web-1.html" style="width: 100%; height: 8em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes-web/fuentes-web-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En la regla <span class="css-arroba">@font-face</span>:</p>
+    <ul>
+      <li>La propiedad <span class="css-prop">font-family</span> establece cómo tenemos que llamar a la fuente en la hoja de estilo. Si el nombre contiene espacios en blanco, es necesario escribir el nombre entre comillas.</li>
+      <li>La propiedad <span class="css-prop">src</span> indica el camino (absoluto o relativo) del fichero de la fuente. En el caso de indicar un camino relativo, el camino relativo es el camino relativo de la fuente con respecto a la hoja de estilo, no respecto a la página web.</li>
+    </ul>
+
+    <p>Una vez definido el nombre de la fuente, se puede hacer referencia a ella en las propiedades <span class="css-prop">font-family</span>.</p>
+
+    <hr class="corta">
+
+    <p>La recomendación no impone ningún formato específico para los tipos de letra, pero nombra algunos como posibilidad: woff (WOFF Web Open Font Format, .woff), truetype (TrueType, .ttf), opentype (OpenType, .ttf, .otf), embedded-opentype (Embedded OpenType, .eot), svg (SVG Font, .svg, .svgz).</p>
+
+    <p>Entre ellos, se recomienda utilizar el formato WOFF 2 (Web Open Font Format, .woff2), definido en la recomendación <a href="https://www.w3.org/TR/2018/REC-WOFF2-20180301/">WOFF File Format 2.0</a> de marzo de 2018, o en su defecto, el formato WOFF (.woff) definido en la recomendación <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/">WOFF File Format 1.0</a> de diciembre de 2012.</p>
+
+    <hr class="corta">
+
+    <p><strong>Nota</strong>: La regla-arroba <span class="css-arroba">@font-face</span> estaba incluida en la recomendación <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#font-descriptions">CSS 2</a>, pero no se incluyó en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, por lo que en CSS 2 se consideraba obsoleta. Sin embargo, esta regla-arroba se recuperó en la recomendación <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-face-rule">CSS Fonts Module Level 3</a>, publicado en septiembre de 2018.</p>
+  </section>
+
+  <section id="font-family">
+    <h2 class="con-aside">Tipos de letra alternativos con <span class="css-prop">font-family</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">font-family</span><br>
+        <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-family-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">font-family</span> puede tomar como valor el nombre concreto de una fuente. El nombre de la fuente debe escribirse entre comillas si contiene espacios (y puede escribirse entre comillas si no contiene espacios). Si el ordenador no tiene instalada la fuente indicada, el navegador utilizará una fuente de la familia genérica <span class="css-valor">serif</span> (que se explica a continuación). En los ejemplos siguientes si no está instalada alguna de las fuentes Arial, Segoe UI u Homer Simpson, el ejemplo se verá en el mismo tipo de letra que el cuarto ejemplo.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: Arial;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-06.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-06.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Segoe UI";
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-07.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-07.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Homer Simpson UI";
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-08.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-08.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-09.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-09.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Si el valor de la propiedad <span class="css-prop">font-family</span> son varios nombres de fuentes separados por comas, el navegador aplicará la primera fuente de la lista que esté instalada en el ordenador. Por ello es conveniente incluir en último lugar uno de los nombres genéricos, por si acaso el resto de fuentes no estuvieran disponibles. Hay que tener en cuenta también que si una fuente no contiene un carácter determinado, el navegador busca ese carácter en las siguientes fuentes de la lista.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Constantia", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-11.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Segoe IU", sans-serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-12.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Consolas", monospace;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-13.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Los nombres de fuentes se pueden escribir en mayúsculas o minúsculas. En lo ejemplos siguientes se escribe la fuente Arial de cuatro maneras distintas. La última forma es incorrecta (porque el nombre de la fuente está escrito con espacios), por lo que el ejemplo se ve con una fuente <span class="css-valor">serif</span>.</p>
+
+    <p><strong>Nota</strong>: En una enumeración de fuentes, lo lógico es poner al final la familia genérica a la que pertenecen el resto de fuentes. Así, en los ejemplos siguientes lo lógico sería haber escrito la familia genérica <span class="css-valor">sans-serif</span>. Pero estos ejemplos no se ha hecho así para que se pueda identificar fácilmente cuándo el navegador no puede aplicar la fuente (concretamente, en el último ejemplo).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "arial", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-21.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-21.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "ARIAL", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-22.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-22.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "ArIaL", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-23.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-23.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "a r i a l", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-24.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-24.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="google-fonts">
+    <h2>Google Fonts / Google Fonts API</h2>
+
+    <p>Google ofrece un servicio de alojamiento de fuentes libres, <a href="https://fonts.google.com/">Google Fonts</a>.</p>
+
+    <p>Google Fonts permite descargar las fuentes en formato TTF a nuestro ordenador para utilizarlas por ejemplo en un procesador de textos. Para ello, hay añadir las fuentes deseadas a una colección y descargar la colección completa.</p>
+
+    <p>Lo más interesante de Google Fonts es que las fuentes pueden utilizarse en nuestras páginas web sin necesidad de alojarlas en nuestro propio servidor. Eso tiene la ventaja de que nos ahorramos el tráfico que genera la fuente, pero tiene el inconveniente de que en cualquier momento pueden no estar disponibles. Para intentar evitar este problema conviene indicar varias fuentes, poniendo en último lugar una de las familias genéricas.</p>
+
+    <p>Si queremos alojar nosotros las fuentes, Google Fonts ofrece la posibilidad de descargarla en formato TTF, pero a continuación podemos o bien convertir la fuente TTF al formato woff mediante alguna de las páginas web citadas en el apartado <a href="#woff">Fuentes WOFF</a>, o bien descargarla de Google Fonts utilizando el procedimiento comentado en el apartado <a href="#google-fonts-descargar-woff2">Descargar las fuentes de Google Fonts en formato WOFF2</a>.</p>
+
+    <p>Las fuentes incluidas en Google Fonts también se encuentran disponibles como repositorio de GitHub: <a href="https://github.com/google/fonts/">https://github.com/google/fonts/</a>.</p>
+
+    <section id="google-fonts-enlazar">
+      <h3>Enlazar las fuentes de Google Fonts</h3>
+
+      <p>Para utilizar Google Fonts, la documentación oficial propone dos métodos equivalentes, aunque yo recomiendo el primero ya que toda la información se encuentra en la hoja de estilo.</p>
+
+      <ol>
+        <li>Incluir al principio de la hoja de estilo una regla-arroba <span class="css-arroba">@import</span> y la fuente se puede utilizar en la hoja de estilo como una familia más, como muestra el ejemplo siguiente:
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">@import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+
+p {
+    font-family: "Mystery Quest", cursive;
+    font-size: 150%;
+}</code>
+</pre>
+            </div>
+            <div class="resultado-object">
+              <object type="text/html" data="ejemplos/fuentes-web/fuentes-web-2.html" style="width: 100%; height: 8em">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+            <div class="icono-enlace">
+              <a href="ejemplos/fuentes-web/fuentes-web-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+            </div>
+          </div>
+
+          <p>Las reglas <span class="css-arroba">@import</span> deben escribirse obligatoriamente al principio de la hoja de estilo, como se comenta en el apartado <a href="#posicion-import">Posición de <span class="css-arroba">@import</span></a> de esta lección.</p>
+        </li>
+        <li>Incluir en el documento html un enlace como si fuera un enlace a una hoja de estilo y la fuente se puede utilizar en la hoja de estilo como una familia más, como muestra el ejemplo siguiente:
+
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;head&gt;
+ ...
+  &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mystery+Quest"&gt;
+ ...
+&lt;/head&gt;</code>
+</pre>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-css">p {
+    font-family: "Mystery Quest", cursive;
+    font-size: 150%;
+}</code>
+</pre>
+              </div>
+            </div>
+            <div class="resultado-object">
+              <object type="text/html" data="ejemplos/fuentes-web/fuentes-web-3.html" style="width: 100%; height: 8em">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+            <div class="icono-enlace">
+              <a href="ejemplos/fuentes-web/fuentes-web-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <p>Se muestra a continuación cómo encontrar en Google Fonts el código de los ejemplos anteriores:</p>
+      <ul>
+        <li>Seleccione la fuente haciendo clic en el cuadro de la fuente:
+          <p class="mcl-captura">
+            <img src="../img/google-fonts/google-fonts-01.png" alt="Google Fonts" width="994" height="530">
+          </p>
+        </li>
+        <li>Haga clic en el enlace "Select this style" del estilo que desee utilizar:
+          <p class="mcl-captura">
+            <img src="../img/google-fonts/google-fonts-02.png" alt="Google Fonts" width="994" height="600">
+          </p>
+        </li>
+        <li>Haga clic en el icono situado en la esquina superior derecha de la ventana (el punto rojo en el icono significa que se ha seleccionado un estilo):
+          <p class="mcl-captura">
+            <img src="../img/google-fonts/google-fonts-03.png" alt="Google Fonts" width="994" height="649">
+          </p>
+        </li>
+        <li>Se mostrará el código a insertar como enlace a hoja de estilo. De forma predeterminada, se muestra el enlace como etiqueta &lt;<span class="html-eti">link</span>&gt;, pero en estos apuntes se recomienda hacerlo como regla-arroba <span class="css-arroba">@import</span>, que se muestra en el punto siguiente, porque de esa manera se escribe todo en la hoja de estilo:
+          <p class="mcl-captura">
+            <img src="../img/google-fonts/google-fonts-04.png" alt="Google Fonts" width="994" height="626">
+          </p>
+        </li>
+        <li>Haga clic en <span class="css-arroba">@import</span> y se mostrará el código a insertar como regla-arroba <span class="css-arroba">@import</span> (recomendado):
+          <p class="mcl-captura">
+            <img src="../img/google-fonts/google-fonts-05.png" alt="Google Fonts" width="994" height="626">
+          </p>
+        </li>
+      </ul>
+
+      <p><strong>Nota:</strong></p>
+
+      <ul>
+        <li>Por motivos de seguridad, Google Chrome y Firefox (a partir de la versión 26), obligan a que el contenido mixto activo se obtenga mediante https en vez de por http (<a href="https://web.archive.org/web/20201102165720/https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content">explicación en Mozilla Developer Network [archive.org]</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy (CSP) [MDN]</a>). Es decir, que si una página que se sirve por https (conexión segura) incluye elementos enlazados por http (conexión insegura), estos elementos no se descargarán.
+
+          <p>Se recomienda por tanto que el enlace a Google Fonts se haga mediante https en vez de http, por si en el futuro nuestra página, que enlaza a Google Fonts, se sirve mediante https.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="google-fonts-descargar-woff2">
+      <h3>Descargar las fuentes de Google Fonts en formato WOFF2</h3>
+
+      <p>Cuando se descarga una fuente de <a href="https://fonts.google.com/">Google Fonts</a>, tan sólo se incluye la fuente en formato TTF. Para obtenerla en formato WOFF2 puede utilizar alguno de estos procedimientos:</p>
+
+      <ul>
+        <li>Actualmente (mayo de 2022), la forma más sencilla es utilizar páginas como <a href="https://canonicalized.com/local-font/">https://canonicalized.com/local-font/</a>, que permiten elegir una fuente y descargar un fichero zip con la fuente en varios formatos (WOFF2, WOFF, TTF, EOT, SVG).
+          <p class="mcl-captura">
+            <img src="../img/google-fonts/canonicalized.png" alt="Canonicalized" width="995" height="390">
+          </p>
+        </li>
+        <li>Si la página anterior no está disponible, puede descargar de Google Fonts la fuente en formato TTF y convertirlas utilizando páginas como <a href="https://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel</a>.</li>
+        <li>Por último, también es posible descargar de Google Fonts una fuente en formato WOFF2, aunque el procedimiento es un poco laborioso:
+          <ol>
+            <li>Seleccione la fuente y muestre el código a insertar como enlace a hoja de estilo. En &lt;<span class="html-eti">link</span>&gt; o  <span class="css-arroba">@import</span>, seleccione y copie la dirección web <strong>https://fonts.googleapis.com/css2?family=...</strong>:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-1.png" alt="Google Fonts" width="1006" height="552">
+              </p>
+            </li>
+            <li>Pegue esa dirección en la barra de dirección del navegador y pulse <kbd>Intro</kbd>. Se mostrará un documento de texto en el que se puede encontrar la dirección web de un archivo woff2. Puede haber varias versiones de la misma fuente (en la captura el documento contiene dos enlaces a diferentes versiones de la fuente). Normalmente, la versión a descargar es la versión <strong>latin</strong>, pero si esa versión no contiene todos los caracteres necesarios (acentos, etc.), a veces es necesario descargar la versión <strong>latin-extended</strong> u otras. Copie la dirección web de la versión elegida.
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-2.png" alt="Google Fonts" width="1024" height="400">
+              </p>
+            </li>
+            <li>Pegue esa dirección en la barra de dirección del navegador y pulse <kbd>Intro</kbd>. Automáticamente, el navegador le dará la opción de guardar la fuente. Haga clic en Guardar archivo y en Aceptar:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-3.png" alt="Google Fonts" width="1024" height="470">
+              </p>
+            </li>
+            <li>En la carpeta de descargas se mostrará el archivo woff2 descargado:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-4.png" alt="Google Fonts" width="1024" height="220">
+              </p>
+            </li>
+            <li>Cambie el nombre del fichero al nombre de la fuente para facilitar su uso posterior:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-5.png" alt="Google Fonts" width="1024" height="220">
+              </p>
+            </li>
+          </ol>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <section id="posicion-import">
+    <h2>Posición de <span class="css-arroba">@import</span> en la hoja de estilo</h2>
+
+    <p>La regla <span class="css-arroba">@import</span> debe escribirse al principio de la hoja de estilo, sin otras reglas delante, ni siquiera reglas <span class="css-arroba">@font-face</span>, como muestran los siguientes ejemplos:</p>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+
+@font-face {
+    font-family: "Mystery Quest";
+    src: url("mystery-quest.woff2");
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes-web/import-font-face-1.html" style="width: 100%; height: 13em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes-web/import-font-face-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">@font-face {
+    font-family: "Mystery Quest";
+    src: url("mystery-quest.woff2");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes-web/import-font-face-2.html" style="width: 100%; height: 13em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes-web/import-font-face-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 2 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
