@@ -1,0 +1,6 @@
+html, body {
+  background-image: url("cuadricula.png");
+  background-position: center center;
+  background-repeat: repeat-x;
+}
+

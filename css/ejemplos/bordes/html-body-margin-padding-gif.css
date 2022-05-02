@@ -1,0 +1,18 @@
+html {
+  background: url("../img/fondos/listas-menus-.gif") lightblue;
+  margin: 10px;
+  padding: 10px;
+}
+
+body {
+  background: url("../img/fondos/listas-menus-.gif") lightyellow;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+}
+
+h1 {
+  border: black 2px solid;
+  margin: 0;
+}
