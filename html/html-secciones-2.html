@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Secciones (2). HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>HTML. Secciones (2)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="html-divisiones.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../css/css-modelo-caja.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML Secciones (2)</a>
+      </h2>
+
+      <ul>
+        <li><a href="#secciones-esquema">Secciones y esquema</a></li>
+        <li><a href="#etiqueta-header">Encabezamiento <span class="html-eti">&lt;header&gt;</span></a></li>
+        <li><a href="#etiqueta-nav">Navegación <span class="html-eti">&lt;nav&gt;</span></a></li>
+        <li><a href="#etiqueta-section">Sección <span class="html-eti">&lt;section&gt;</span></a></li>
+        <li><a href="#etiqueta-article">Artículo <span class="html-eti">&lt;article&gt;</span></a></li>
+        <li><a href="#etiqueta-aside">Lateral <span class="html-eti">&lt;aside&gt;</span></a></li>
+        <li><a href="#etiqueta-footer">Pie <span class="html-eti">&lt;footer&gt;</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Las secciones son las partes temáticas en las que se puede dividir el contenido de una página web.</p>
+
+  <p>En HTML 4 / XHTML 1 la única etiqueta para definir agrupaciones de contenido era prácticamente la etiqueta <span class="html-eti">&lt;div&gt;</span>. Por ello, cualquier página de tamaño medio acababa teniendo muchos elementos <span class="html-eti">&lt;div&gt;</span>, en algunos casos para organizar el contenido de la página, pero también para aplicar estilos de carácter decorativo. El código fuente resultaba así difícil de entender y mantener.</p>
+
+  <p>La imagen siguiente muestra una página típica HTML 4 / XHTML 1, en la que para organizar las diferentes partes de la página se tenían que crear varias divisiones <span class="html-eti">&lt;div&gt;</span> y distinguirlas mediante clases para darles estilos diferenciados.</p>
+
+  <p class="mcl-svg-figura">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+      <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+      <text x="40" y="80" font-family="sans-serif" font-size="50">body</text>
+
+      <rect x="60" y="100" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
+      <text x="80" y="160" font-family="sans-serif" font-size="50">div class="cabecera"</text>
+
+      <rect x="60" y="270" width="200" height="590" fill="white" stroke="black" stroke-width="3" />
+      <text x="80" y="330" font-family="sans-serif" font-size="50">div</text>
+      <text x="80" y="380" font-family="sans-serif" font-size="50">class</text>
+      <text x="80" y="430" font-family="sans-serif" font-size="50">=</text>
+      <text x="80" y="480" font-family="sans-serif" font-size="50">"menu"</text>
+
+      <rect x="280" y="270" width="1580" height="590" fill="white" stroke="black" stroke-width="3" />
+      <text x="300" y="330" font-family="sans-serif" font-size="50">div class="contenido"</text>
+
+      <rect x="320" y="350" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
+      <text x="340" y="410" font-family="sans-serif" font-size="50">div class="apartado"</text>
+
+      <rect x="320" y="510" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
+      <text x="340" y="570" font-family="sans-serif" font-size="50">div class="apartado"</text>
+
+      <circle cx="1000" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
+      <circle cx="1050" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
+      <circle cx="1100" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
+
+      <rect x="320" y="700" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
+      <text x="340" y="760" font-family="sans-serif" font-size="50">div class="apartado"</text>
+
+      <rect x="60" y="880" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
+      <text x="80" y="940" font-family="sans-serif" font-size="50">div class="pie"</text>
+    </svg>
+  </p>
+
+  <p>En HTML 5 se ha querido mejorar esa situación introduciendo varias etiquetas para definir diferentes tipos de secciones: <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span>, <span class="html-eti">&lt;aside&gt;</span>, <span class="html-eti">&lt;header&gt;</span> y <span class="html-eti">&lt;footer&gt;</span> (y también la etiqueta <span class="html-eti">&lt;main&gt;</span>, aunque esta no se considere una etiqueta de sección sino de bloque).</p>
+
+  <p>La página del ejemplo anterior se convertiría así en:</p>
+
+  <p class="mcl-svg-figura">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+      <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+      <text x="40" y="80" font-family="sans-serif" font-size="50">body</text>
+
+      <rect x="60" y="100" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
+      <text x="80" y="160" font-family="sans-serif" font-size="50">header</text>
+
+      <rect x="60" y="270" width="200" height="590" fill="white" stroke="black" stroke-width="3" />
+      <text x="80" y="330" font-family="sans-serif" font-size="50">nav</text>
+
+      <rect x="280" y="270" width="1580" height="590" fill="white" stroke="black" stroke-width="3" />
+      <text x="300" y="330" font-family="sans-serif" font-size="50">main</text>
+
+      <rect x="320" y="350" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
+      <text x="340" y="410" font-family="sans-serif" font-size="50">section</text>
+
+      <rect x="320" y="510" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
+      <text x="340" y="570" font-family="sans-serif" font-size="50">section</text>
+
+      <circle cx="1000" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
+      <circle cx="1050" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
+      <circle cx="1100" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
+
+      <rect x="320" y="700" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
+      <text x="340" y="760" font-family="sans-serif" font-size="50">section</text>
+
+      <rect x="60" y="880" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
+      <text x="80" y="940" font-family="sans-serif" font-size="50">footer</text>
+    </svg>
+  </p>
+
+  <p>Al utilizar etiquetas específicas para tipos de contenido específico, se mejora la legibilidad y facilidad de reutilización tanto del código HTML como de las hojas de estilo.</p>
+
+  <p>La etiqueta <span class="html-eti">&lt;div&gt;</span> se mantiene en la recomendación HTML 5, pero reservada ya al resto de agrupaciones no consideradas por las etiquetas anteriores, es decir, con fines principalmente decorativos.</p>
+
+  <p><strong>Nota</strong>: Para simplificar las ilustraciones, en los ejemplos del resto de esta página no se ha dibujado la etiqueta <span class="html-eti">&lt;body&gt;</span>.</p>
+
+  <section id="secciones-esquema">
+    <h2 class="con-aside">Secciones y esquema (outline) del documento</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        outline<br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#outlines">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>En HTML 4 la "jerarquía" de los apartados de una página web venía determinada por las etiquetas de título (<span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span>). La recomendación HTML 5 redefinió el concepto de esquema (en inglés, <i>outline</i>) de una página web, de manera que las secciones de un documento ya no se deberían definir mediante las etiquetas de título, sino mediante las cuatro etiquetas <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span>. Pero aunque actualmente (mayo de 2022) el concepto de esquema sigue formando parte de la norma HTML, como en realidad ningún navegador lo ha implementado nunca, se recomienda no utilizar el concepto de esquema. Es decir, sí que se recomienda utilizar las etiquetas de secciones introducidas en HTML 5 comentadas en esta lección porque permiten organizar mejor el contenido de las páginas, pero se recomienda mantener la <a href="html-secciones.html#etiqueta-hn">jerarquía de títulos clásica del HTML 4</a>.</p>
+  </section>
+
+  <section id="etiqueta-header">
+    <h2 class="con-aside">Encabezamiento: <span class="html-eti">&lt;header&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;header&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;header&gt;</span> está pensada para agrupar el contenido inicial de una página web. Puede contener únicamente los elementos que aparecen en las páginas de un sitio (el logotipo y un menú general, por ejemplo) o incluir también elementos particulares de la página (el título principal <span class="html-eti">&lt;h1&gt;</span> de la página, enlaces de navegación dentro de la página, texto de introducción, por ejemplo).</p>
+
+    <p>El elemento <span class="html-eti">&lt;header&gt;</span> puede estar incluido en <span class="html-eti">&lt;body&gt;</span> y entonces se entiende que es el encabezado de la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span> y entonces se entiende que es el encabezado del elemento que lo contiene.</p>
+
+    <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;header&gt;</span>:</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="150" fill="gold" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="20" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="250" font-family="sans-serif" font-size="50">nav</text>
+
+        <rect x="60" y="270" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="330" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="290" y="190" width="1340" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="310" y="250" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="330" y="270" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
+        <text x="350" y="320" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="370" y="350" width="1220" height="120" fill="gold" stroke="black" stroke-width="3" />
+        <text x="390" y="410" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="330" y="590" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
+        <text x="350" y="650" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="370" y="670" width="1220" height="120" fill="gold" stroke="black" stroke-width="3" />
+        <text x="390" y="730" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="1650" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="1670" y="250" font-family="sans-serif" font-size="50">aside</text>
+
+        <rect x="1690" y="270" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
+        <text x="1710" y="330" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="20" y="920" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
+      </svg>
+    </p>
+  </section>
+
+  <section id="etiqueta-nav">
+    <h2 class="con-aside">Navegación: <span class="html-eti">&lt;nav&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;nav&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;nav&gt;</span> está pensada para agrupar los enlaces a otras páginas o los enlaces a los apartados de la propia página.</p>
+
+    <p>Una página puede contener varios elementos <span class="html-eti">&lt;nav&gt;</span>, aunque no es necesario que todos los grupos de enlaces estén en elementos <span class="html-eti">&lt;nav&gt;</span> (por ejemplo, los enlaces de contacto que se suelen incluir en el elemento <span class="html-eti">&lt;footer&gt;</span> no requieren el uso de <span class="html-eti">&lt;nav&gt;</span>).</p>
+
+    <p>La imagen siguiente muestra una página con tres elementos <span class="html-eti">&lt;nav&gt;</span>:</p>
+
+    <ul>
+      <li>El <span class="html-eti">&lt;nav&gt;</span> de <span class="html-eti">&lt;header&gt;</span> puede contener enlaces globales a otras páginas de sitio web.</li>
+      <li>El <span class="html-eti">&lt;nav&gt;</span> de <span class="html-eti">&lt;body&gt;</span> puede contener enlaces a las secciones de la página.</li>
+      <li>El <span class="html-eti">&lt;nav&gt;</span> de <span class="html-eti">&lt;aside&gt;</span> puede contener enlaces a otros sitios webs relacionados con el contenido de la página.</li>
+    </ul>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="200" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="60" y="100" width="1820" height="100" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">nav</text>
+
+        <rect x="20" y="240" width="250" height="660" fill="gold" stroke="black" stroke-width="3" />
+        <text x="40" y="300" font-family="sans-serif" font-size="50">nav</text>
+
+        <rect x="290" y="240" width="1340" height="660" fill="white" stroke="black" stroke-width="3" />
+        <text x="310" y="300" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="1650" y="240" width="250" height="660" fill="white" stroke="black" stroke-width="3" />
+        <text x="1670" y="300" font-family="sans-serif" font-size="50">aside</text>
+
+        <rect x="1690" y="320" width="190" height="300" fill="gold" stroke="black" stroke-width="3" />
+        <text x="1730" y="380" font-family="sans-serif" font-size="50">nav</text>
+
+        <rect x="20" y="920" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
+      </svg>
+    </p>
+  </section>
+
+  <section id="etiqueta-section">
+    <h2 class="con-aside">Sección: <span class="html-eti">&lt;section&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;section&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;section&gt;</span> está pensada para agrupar los apartados del contenido principal del documento. Normalmente, las secciones <span class="html-eti">&lt;section&gt;</span> empiezan con un título (<span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, etc.) que hace referencia al tema tratado en la sección.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="240" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="380" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="640" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="720" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="860" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+      </svg>
+    </p>
+
+    <p>Un elemento <span class="html-eti">&lt;section&gt;</span> puede contener elementos <span class="html-eti">&lt;section&gt;</span>. Las secciones interiores se entienden como subsecciones de la sección exterior.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="180" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="240" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="320" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="380" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="640" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="660" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="720" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="800" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="860" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+      </svg>
+    </p>
+
+    <p>Un elemento <span class="html-eti">&lt;section&gt;</span> puede contener elementos <span class="html-eti">&lt;article&gt;</span> y viceversa.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="240" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="380" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="60" y="580" width="1820" height="380" fill="white" stroke="black" stroke-width="3" />
+        <text x="80" y="640" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="720" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="860" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+      </svg>
+    </p>
+
+    <p>Las etiquetas <span class="html-eti">&lt;section&gt;</span> y <span class="html-eti">&lt;article&gt;</span> son similares. La diferencia entre ellas es que <span class="html-eti">&lt;article&gt;</span> es para partes que forman una unidad en sí mismas y <span class="html-eti">&lt;section&gt;</span> es para partes de una unidad mayor.</p>
+  </section>
+
+  <section id="etiqueta-article">
+    <h2 class="con-aside">Artículo: <span class="html-eti">&lt;article&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;article&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;article&gt;</span> está pensada para agrupar el contenido de la página que forma una unidad en sí misma desde el punto de vista temático. Es decir, que un artículo debería poder publicarse y leerse como documento independiente, aunque una página puede estar formada por varios artículos de temática relacionada o no.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="240" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="380" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="640" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="720" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="860" font-family="sans-serif" font-size="50">h2</text>
+
+        <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+      </svg>
+    </p>
+
+    <p>Un elemento <span class="html-eti">&lt;article&gt;</span> puede contener otros elementos <span class="html-eti">&lt;article&gt;</span> que están relacionados con el contenido del <span class="html-eti">&lt;article&gt;</span> que los contiene.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="100" y="180" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="240" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="320" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="380" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="640" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="100" y="660" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="720" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="800" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="120" y="860" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+      </svg>
+    </p>
+
+    <p>Un elemento <span class="html-eti">&lt;article&gt;</span> puede contener elementos <span class="html-eti">&lt;section&gt;</span> y viceversa.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="240" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="380" font-family="sans-serif" font-size="50">section</text>
+
+        <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="940" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+        <circle cx="980" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
+
+        <circle cx="900" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="60" y="580" width="1820" height="380" fill="white" stroke="black" stroke-width="3" />
+        <text x="80" y="640" font-family="sans-serif" font-size="50">section</text>
+
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="720" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="120" y="860" font-family="sans-serif" font-size="50">article</text>
+
+        <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
+      </svg>
+    </p>
+
+    <p>Las etiquetas <span class="html-eti">&lt;article&gt;</span> y <span class="html-eti">&lt;section&gt;</span> son similares. La diferencia entre ellas es que <span class="html-eti">&lt;article&gt;</span> es para partes que forman una unidad en sí mismas y <span class="html-eti">&lt;section&gt;</span> es para partes de una unidad mayor.</p>
+
+    <p>Si la página trata de un único tema y se va a utilizar un único elemento <span class="html-eti">&lt;article&gt;</span>, es preferible utilizar la etiqueta <span class="html-eti">&lt;main&gt;</span>.</p>
+  </section>
+
+  <section id="etiqueta-aside">
+    <h2 class="con-aside">Lateral: <span class="html-eti">&lt;aside&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;aside&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;aside&gt;</span> está pensada para agrupar contenido secundario y tangencial al contenido al que acompaña (por ejemplo, un bloque de anuncios, un grupo de enlaces externos relacionados, una cita del texto). Normalmente se suele mostrar en los lados del documento.</p>
+
+    <p>El elemento <span class="html-eti">&lt;aside&gt;</span> puede estar incluido en <span class="html-eti">&lt;body&gt;</span> y entonces se entiende que se trata de contenido secundario con respecto a la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article&gt;</span> o <span class="html-eti">&lt;section&gt;</span> y entonces se entiende que se trata de contenido secundario con respecto al elemento que lo contiene.</p>
+
+    <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;aside&gt;</span>:</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="20" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="250" font-family="sans-serif" font-size="50">nav</text>
+
+        <rect x="290" y="190" width="1340" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="310" y="250" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="330" y="270" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
+        <text x="350" y="320" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="1340" y="290" width="250" height="260" fill="gold" stroke="black" stroke-width="3" />
+        <text x="1360" y="350" font-family="sans-serif" font-size="50">aside</text>
+
+        <rect x="330" y="590" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
+        <text x="350" y="650" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="1340" y="610" width="250" height="260" fill="gold" stroke="black" stroke-width="3" />
+        <text x="1360" y="670" font-family="sans-serif" font-size="50">aside</text>
+
+        <rect x="1650" y="190" width="250" height="710" fill="gold" stroke="black" stroke-width="3" />
+        <text x="1670" y="250" font-family="sans-serif" font-size="50">aside</text>
+
+        <rect x="20" y="920" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
+      </svg>
+    </p>
+  </section>
+
+  <section id="etiqueta-footer">
+    <h2 class="con-aside">Pie: <span class="html-eti">&lt;footer&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;footer&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;footer&gt;</span> está pensada para contener información general sobre el documento, información que se suele poner al final del documento: autor, direcciones de contacto, licencia o condiciones de uso, enlaces a otros documentos relacionados, etc.</p>
+
+    <p>El elemento <span class="html-eti">&lt;footer&gt;</span> puede estar incluido en <span class="html-eti">&lt;body&gt;</span> y entonces se entiende que es el pie de página de la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span> y entonces se entiende que es el pie de página del elemento que lo contiene.</p>
+
+    <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;footer&gt;</span>:</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
+
+        <rect x="20" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="40" y="250" font-family="sans-serif" font-size="50">nav</text>
+
+        <rect x="60" y="270" width="190" height="120" fill="white" stroke="black" stroke-width="3" />
+        <text x="80" y="330" font-family="sans-serif" font-size="50">header</text>
+
+        <circle cx="100" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="140" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="180" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="60" y="760" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
+        <text x="80" y="820" font-family="sans-serif" font-size="50">footer</text>
+
+        <rect x="290" y="190" width="1340" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="310" y="250" font-family="sans-serif" font-size="50">main</text>
+
+        <rect x="330" y="270" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
+        <text x="350" y="320" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="370" y="350" width="1220" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="390" y="410" font-family="sans-serif" font-size="50">header</text>
+
+        <circle cx="900" cy="460" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="460" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="460" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="370" y="480" width="1220" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="390" y="540" font-family="sans-serif" font-size="50">footer</text>
+
+        <rect x="330" y="590" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
+        <text x="350" y="650" font-family="sans-serif" font-size="50">article</text>
+
+        <rect x="370" y="670" width="1220" height="80" fill="white" stroke="black" stroke-width="3" />
+        <text x="390" y="730" font-family="sans-serif" font-size="50">header</text>
+
+        <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="370" y="800" width="1220" height="80" fill="gold" stroke="black" stroke-width="3" />
+        <text x="390" y="860" font-family="sans-serif" font-size="50">footer</text>
+
+        <rect x="1650" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
+        <text x="1670" y="250" font-family="sans-serif" font-size="50">aside</text>
+
+        <rect x="1690" y="270" width="190" height="120" fill="white" stroke="black" stroke-width="3" />
+        <text x="1710" y="330" font-family="sans-serif" font-size="50">header</text>
+
+        <circle cx="1730" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="1770" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
+        <circle cx="1810" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
+
+        <rect x="1690" y="760" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
+        <text x="1710" y="820" font-family="sans-serif" font-size="50">footer</text>
+
+        <rect x="20" y="920" width="1880" height="150" fill="gold" stroke="black" stroke-width="3" />
+        <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
+      </svg>
+    </p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 2 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
