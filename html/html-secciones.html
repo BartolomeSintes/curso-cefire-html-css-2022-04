@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Secciones. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <title>Secciones (1). HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1>HTML. Secciones</h1>
+  <h1>HTML. Secciones (1)</h1>
 
   <nav>
     <p>
@@ -22,17 +22,20 @@
 
     <div class="toc">
       <h2>
-        <a href="#">HTML Secciones</a>
+        <a href="#">HTML Secciones (1)</a>
       </h2>
 
       <ul>
         <li><a href="#etiqueta-body">Cuerpo<span class="html-eti">&lt;body&gt;</span></a></li>
         <li><a href="#etiqueta-hn">Títulos <span class="html-eti">&lt;h1&gt; ...&lt;h6&gt;</span></a></li>
+        <li><a href="#etiqueta-address">Dirección <span class="html-eti">&lt;address&gt;</span></a></li>
       </ul>
     </div>
   </nav>
 
-  <p>En esta lección se comentan las etiquetas "clásicas" de secciones: <span class="html-eti">&lt;body&gt;</span> y los título <span class="html-eti">&lt;h1&gt;</span> a <span class="html-eti">&lt;h6&gt;</span>.</p>
+  <p>En esta lección se comentan las etiquetas "clásicas" de secciones: <span class="html-eti">&lt;body&gt;</span>, los títulos <span class="html-eti">&lt;h1&gt;</span> a <span class="html-eti">&lt;h6&gt;</span> y dirección <span class="html-eti">&lt;address&gt;</span>.</p>
+
+  <p>En la lección <a href="html-secciones-2.html">Secciones (2)</a> se comentan las etiquetas de secciones que se introdujeron en HTML 5.</p>
 
   <section id="etiqueta-body">
     <h2 class="con-aside">Cuerpo del documento: <span class="html-eti">&lt;body&gt;</span></h2>
@@ -177,11 +180,51 @@
         <text x="180" y="1040" font-family="sans-serif" font-size="50">h1</text>
       </svg>
     </p>
+  </section>
 
+  <section id="etiqueta-address">
+    <h2 class="con-aside">Dirección <span class="html-eti">&lt;address&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;address&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/sections.html#the-address-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;address&gt;</span> está pensada para contener información de contacto del autor de la información (dirección de correo, teléfono, etc.), pero no otro tipo de información. Normalmente se incluye en el pie de página <span class="html-eti">&lt;footer&gt;</span> general de <span class="html-eti">&lt;body&gt;</span> o en el pie de página <span class="html-eti">&lt;footer&gt;</span> de un <span class="html-eti">&lt;article&gt;</span>.</p>
+
+    <p>La hoja de estilo por omisión de los navegadores suele mostrar el bloque de dirección <span class="html-eti">&lt;address&gt;</span> en cursiva.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;footer&gt;
+  &lt;address&gt;
+    Autor: Bartolomé Sintes Marco&lt;br&gt;
+    correo: bartolome.sintes@example.com
+  &lt;/address&gt;
+
+  &lt;p&gt;Última modificación: 28 de noviembre de 2017&lt;/p&gt;
+&lt;/footer&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/secciones/address-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/secciones/address-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de abril de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 2 de mayo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
