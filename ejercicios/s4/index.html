@@ -35,6 +35,7 @@
       <li><a href="#ejercicio-3-b">3 B - Márgenes A</a></li>
       <li><a href="#ejercicio-3-c">3 C - Márgenes A</a></li>
       <li><a href="#ejercicio-4">4 - Fondos</a></li>
+      <li><a href="#ejercicio-5">5 - Tamaños</a></li>
     </ul>
   </nav>
 
@@ -192,7 +193,7 @@
           <img src="s4-3-1.png" alt="Ejercicio S4 3" width="1012" height="360">
         </p>
       </li>
-      <li>La parte inferior de la página posterior a los párrafos (de color rosado) puede ser más o menos larga dependiendo del tamaño de la ventana.</li>
+      <li>La parte inferior de la página posterior a los párrafos (de color rosado) puede ser más o menos larga dependiendo del tamaño de la ventana. No os preocupéis por ella.</li>
       <li>Recuerde que la hoja de estilo predeterminada de los navegadores asigna <span class="css-prop">margin</span> a algunos elementos. A veces es necesario eliminar ese margen exterior añadiendo la regla <span class="css-prop">margin</span>: 0;</li>
       <li>Normalmente, cada ejercicio se puede realizar de varias maneras. Cualquiera de ellas es válida. Lo más importante es intentar no escribir propiedades innecesarias para no complicar la hoja de estilo (por ejemplo, dar <span class="css-prop">padding</span>: 0 a un párrafo <span class="html-eti">p</span> en estos ejercicios sería innecesario, porque los párrafos no tienen <span class="css-prop">padding</span> predeterminado. Una manera de utilizar menos propiedades es utilizar la propiedad compuesta <span class="css-prop">margin</span> en vez de las propiedades individuales <span class="css-prop">margin-top</span>, <span class="css-prop">margin-right</span>, <span class="css-prop">margin-bottom</span> y <span class="css-prop">margin-bottom</span> (lo mismo con <span class="css-prop">padding</span>), pero se puede hacer de cualquiera de las dos formas.</li>
     </ol>
@@ -259,7 +260,100 @@
   <section id="ejercicio-4">
     <h2>S4 4 - Fondos</h2>
 
-    <p>Por completar</p>
+    <ol>
+      <li>En este ejercicio se trata de hacer tres diseños distintos de la misma página.</li>
+      <li>La página de partida muestra el siguiente aspecto:
+        <p class="mcl-captura">
+          <img src="s4-4-1.png" alt="Ejercicio S4 4" width="1012" height="460">
+        </p>
+      </li>
+      <li>Además de las etiquetas <span class="html-eti">h1</span>, <span class="html-eti">h2</span> y <span class="html-eti">p</span>, la página incluye dos etiquetas <span class="html-eti">section</span> agrupando los títulos de los apartados y los dos párrafos siguientes.</li>
+      <li>La parte inferior de la página posterior a los párrafos puede ser más o menos larga dependiendo del tamaño de la ventana. No os preocupéis por ella.</li>
+      <li>Normalmente, cada ejercicio se puede realizar de varias maneras. Cualquiera de ellas es válida. Os aconsejo utilizar las propiedades individuales <span class="css-prop">background-image</span>, <span class="css-prop">background-size</span>, etc. en vez de la propiedad compuesta <span class="css-prop">background</span>.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-4-a">
+    <h2>S4 4 A - Fondos A</h2>
+
+    <ol>
+      <li>Añada propiedades en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura siguiente.
+        <p class="mcl-captura">
+          <img src="s4-4-2.png" alt="Ejercicio S4 4" width="1012" height="560">
+        </p>
+      </li>
+      <li>Las imágenes se han obtenido de la web <a href="https://www.patterncooler.com">PatternCooler</a>, que permite un uso no comercial.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-4-b">
+    <h2>S4 4 B - Fondos B</h2>
+
+    <ol>
+      <li>Añada propiedades en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura siguiente.
+        <p class="mcl-captura">
+          <img src="s4-4-3.png" alt="Ejercicio S4 4" width="1012" height="520">
+        </p>
+      </li>
+      <li>Como la imagen de la luna (last-quarter-moon-with-face-1f31c.svg) es una imagen SVG que no tiene tamaño definido, para ajustar su tamaño se debe utilizar la propiedad <span class="css-prop">background-size</span>.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-4-c">
+    <h2>S4 4 C - Fondos C</h2>
+
+    <ol>
+      <li>Añada propiedades en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura siguiente.
+        <p class="mcl-captura">
+          <img src="s4-4-4.png" alt="Ejercicio S4 4" width="1012" height="520">
+        </p>
+      </li>
+      <li>Como las dos imágenes de la luna (last-quarter-moon-with-face-1f31c.svg y first-quarter-moon-with-face-1f31b.svg) son imágenes SVG que no tienen tamaño definido, para ajustar su tamaño se debe utilizar la propiedad <span class="css-prop">background-size</span>.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>S4 5 - Tamaños</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>murphy.html</strong>.</li>
+      <li>Añada las etiquetas necesarias a partir de la captura siguiente:
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s4-5-1.png" alt="Ejercicio S4 5" width="1188" height="280">
+            </p>
+          </li>
+        </ul>
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>En la vista sin estilo, se identifican las etiquetas <span class="html-eti">h1</span> y <span class="html-eti">p</span>.</li>
+          </ul>
+        </details>
+      </li>
+      <li>Cree la hoja de estilo <strong>murphy.css</strong> y añada el enlace a la hoja de estilo.</li>
+      <li>Añada las etiquetas necesarias en la página web y las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo siguiente.
+        <ul>
+          <li>Vista <strong>con</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s4-5-2.png" alt="Ejercicio S4 5" width="1012" height="630">
+            </p>
+          </li>
+        </ul>
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Para poder hacer más grande el emoji se puede añadir una etiqueta <span class="html-eti">span</span>.</li>
+            <li>Para hacer cuadrado los párrafos, utilice las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>.</li>
+            <li>Para poner los párrafos uno al lado del otro, use posicionamiento flotante con <span class="css-prop">float</span>. Al cambiar el ancho de ventana, los párrafos se recolocarán ocupando el espacio disponible, como muestra la siguiente captura con un acnho mayor:
+              <p class="mcl-captura">
+                <img src="s4-5-3.png" alt="Ejercicio S4 5" width="1171" height="601">
+              </p></li>
+          </ul>
+        </details>
+      </li>
+    </ol>
   </section>
 
   <footer>
