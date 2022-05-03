@@ -25,12 +25,245 @@
     <div class="toc">
       <h2><a href="#">Ejercicios S4</a></h2>
     </div>
+
+    <ul>
+      <li><a href="#ejercicio-1-a">1 A - Fuentes web locales</a></li>
+      <li><a href="#ejercicio-1-b">1 B - Fuentes web remotas</a></li>
+      <li><a href="#ejercicio-2">2 - Divisiones y bordes</a></li>
+      <li><a href="#ejercicio-3">3 - Márgenes</a></li>
+      <li><a href="#ejercicio-3-a">3 A - Márgenes A</a></li>
+      <li><a href="#ejercicio-3-b">3 B - Márgenes A</a></li>
+      <li><a href="#ejercicio-3-c">3 C - Márgenes A</a></li>
+      <li><a href="#ejercicio-4">4 - Fondos</a></li>
+    </ul>
   </nav>
 
-  <p>He estado desde el jueves con una faringitis que me ha impedido trabajar normalmente hasta ayer domingo. Subiré los ejercicios este lunes por la noche. Disculpad las molestias.</p>
+  <p>Estos ejercicios tratan sobre los temas tratados en la Semana 4 del curso.</p>
+
+  <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="s4-plantillas.zip">plantillas de los ejercicios S4</a>. Una vez descargado el fichero zip:</p>
+  <ol>
+    <li>Descomprima las plantillas en la carpeta <strong>ejercicios</strong>. Se creará una carpeta <strong>s4-plantillas</strong>.</li>
+    <li>Renombre la carpeta <strong>s4-plantillas</strong> como <strong>s4</strong>.</li>
+  </ol>
+
+  <p>Las capturas de pantalla están tomadas con un ancho de ventana de 1024px aproximadamente.</p>
+
+  <p><span class="entidad-inline">&#9888;&#65039;</span> En algunos aspectos, no es necesario que el resultado sea absolutamente exacto, sobre todo porque algunos detalles no tienen importancia. Por ejemplo, basta con que la ventana del navegador sea un poco más ancha o estrecha para que las palabras salten de una línea a la siguiente. Los valores de tamaños y distancias utilizados suelen ser valores "redondos", pero acertar el valor exacto puede necesitar varios intentos. Con que el parecido sea razonable, es suficiente. Otros aspectos sí que me gustaría que fueran idénticos, por ejemplo los tipos de letra, la posición de las imágenes o qué palabras se han resaltado.</p>
+
+  <p>Formatee con Visual Studio Code tanto la página web como la hoja de estilo (con CSScomb).</p>
+
+  <section id="ejercicio-1-a">
+    <h2>S4 1 A - Fuentes web locales</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>web-fonts.html</strong>.</li>
+      <li>Añada las etiquetas necesarias a partir de la captura siguiente:
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s4-1-1.png" alt="Ejercicio S4 1" width="1012" height="84">
+            </p>
+          </li>
+        </ul>
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>En la vista sin estilo, se identifican dos párrafos <span class="html-eti">p</span>.</li>
+          </ul>
+        </details>
+      </li>
+      <li>Cree la hoja de estilo <strong>web-fonts.css</strong> y añada el enlace a la hoja de estilo.</li>
+      <li>Añada las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo siguiente.
+        <ul>
+          <li>Vista <strong>con</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s4-1-2.png" alt="Ejercicio S4 1" width="995" height="677">
+            </p>
+          </li>
+        </ul>
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Escriba reglas-arroba <span class="css-arroba">@font-face</span> para cada fuente. Los nombres de las fuentes son Sedgwick Ave y Lobster.</li>
+            <li>Asigne clases a los dos párrafos.</li>
+            <li>Ajuste el color de fondo de la página en cualquiera de las etiquetas globales <span class="html-eti">html</span> o <span class="html-eti">body</span>.</li>
+            <li>Ajuste el tipo de letra, el color, el tamaño y la alineación de las dos clases de párrafos. Al asignar el tipo de letra, recuerde añadir un segundo valor con una fuente genérica (teniendo en cuenta que ambas son fuentes que imitan la escritura manual).</li>
+          </ul>
+        </details>
+      </li>
+    </ol>
+
+    <p>
+      <strong>Nota</strong>: Colores empleados:
+      <span style="background-color: white; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> white,
+      <span style="background-color: hsl(45 55% 55%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(45 55% 55%) y
+      <span style="background-color: hsl(225 80% 35%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(225 80% 35%)
+    </p>
+  </section>
+
+  <section id="ejercicio-1-b">
+    <h2>S4 1 B - Fuentes web remotas</h2>
+
+    <ol>
+      <li>Copie los ficheros <strong>web-fonts.html</strong> y <strong>web-fonts.css</strong> del ejercicio 1 A en la carpeta del ejercicio 1 B (pero no los ficheros de las fuentes WOFF2.</li>
+      <li>Abra en Visual Studio Code la hoja de estilo <strong>web-fonts.css</strong>.</li>
+      <li>Modifique la hoja de estilo haciendo que las fuentes Sedgwick Ave y Lobster se descarguen de Google Fonts, de manera que al abrir la página web en un navegador el contenido se vea como en el ejercicio anterior.
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Susituya las reglas <span class="css-arroba">@font-face</span> por las reglas <span class="css-arroba">@import</span> que muestra Google Fotns al seleccionar cada fuente.</li>
+          </ul>
+        </details>
+      </li>
+    </ol>
+
+    <p>
+      <strong>Nota</strong>: Colores empleados:
+      <span style="background-color: white; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> white,
+      <span style="background-color: hsl(45 55% 55%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(45 55% 55%) y
+      <span style="background-color: hsl(225 80% 35%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(225 80% 35%)
+    </p>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>S4 2 - Divisiones y bordes</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>bordes.html</strong>.</li>
+      <li>Añada las etiquetas necesarias a partir de las capturas siguientes:
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s4-2-1.png" alt="Ejercicio S4 1" width="1012" height="415">
+            </p>
+          </li>
+          <li>Vista <strong>con</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s4-2-2.png" alt="Ejercicio S4 1" width="1012" height="590">
+            </p>
+          </li>
+        </ul>
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>En la vista sin estilo, se identifican un título <span class="html-eti">h1</span> y varios párrafos <span class="html-eti">p</span>.</li>
+            <li>En la vista con estilo, se identifican tres etiquetas que agrupan los párrafos que forman cada chiste. La etiqueta puede ser <span class="html-eti">div</span>, aunque también podría haber sido <span class="html-eti">article</span> o <span class="html-eti">section</span></li>
+          </ul>
+        </details>
+      </li>
+      <li>Cree la hoja de estilo <strong>bordes.css</strong> y añada el enlace a la hoja de estilo.</li>
+      <li>Añada las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura con estilo anterior.
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Asigne clases a las tres divisiones.</li>
+            <li>Asigne los diferentes bordes a cada clase y al título.</li>
+          </ul>
+        </details>
+      </li>
+      <li>Para que el contenido de las divisiones se separe de los bordes y que las divisones se separen entre sí, añada la sentencia siguiente:
+        <div class="codigo">
+          <pre>
+<code class="language-css">div {
+  margin: 20px;
+  padding: 0 10px;
+}</code>
+</pre>
+        </div>
+      </li>
+    </ol>
+
+    <p>
+      <strong>Nota</strong>: Colores empleados:
+      <span style="background-color: hsl(190 80% 30%);">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(190 80% 30%) en todos los bordes,
+      <span style="background-color: hsl(190 80% 40%)">&nbsp;&nbsp;&nbsp;&nbsp;</span> hsl(190 80% 40%) y
+      <span style="background-color: lightgrey">&nbsp;&nbsp;&nbsp;&nbsp;</span> lightgrey para los fondos.
+    </p>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>S4 3 - Márgenes</h2>
+
+    <ol>
+      <li>En este ejercicio se trata de hacer tres diseños distintos de la misma página.</li>
+      <li>La hoja de estilo de la plantilla ya incluye los colores y bordes que ayudarán a distinguir dónde usar las propiedades <span class="css-prop">margin</span> y <span class="css-prop">margin</span>.</li>
+      <li>La página de partida muestra el siguiente aspecto:
+        <p class="mcl-captura">
+          <img src="s4-3-1.png" alt="Ejercicio S4 3" width="1012" height="360">
+        </p>
+      </li>
+      <li>La parte inferior de la página posterior a los párrafos (de color rosado) puede ser más o menos larga dependiendo del tamaño de la ventana.</li>
+      <li>Recuerde que la hoja de estilo predeterminada de los navegadores asigna <span class="css-prop">margin</span> a algunos elementos. A veces es necesario eliminar ese margen exterior añadiendo la regla <span class="css-prop">margin</span>: 0;</li>
+      <li>Normalmente, cada ejercicio se puede realizar de varias maneras. Cualquiera de ellas es válida. Lo más importante es intentar no escribir propiedades innecesarias para no complicar la hoja de estilo (por ejemplo, dar <span class="css-prop">padding</span>: 0 a un párrafo <span class="html-eti">p</span> en estos ejercicios sería innecesario, porque los párrafos no tienen <span class="css-prop">padding</span> predeterminado. Una manera de utilizar menos propiedades es utilizar la propiedad compuesta <span class="css-prop">margin</span> en vez de las propiedades individuales <span class="css-prop">margin-top</span>, <span class="css-prop">margin-right</span>, <span class="css-prop">margin-bottom</span> y <span class="css-prop">margin-bottom</span> (lo mismo con <span class="css-prop">padding</span>), pero se puede hacer de cualquiera de las dos formas.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-3-a">
+    <h2>S4 3 A - Márgenes A</h2>
+
+    <ol>
+      <li>Añada propiedades <span class="css-prop">margin</span> y/o <span class="css-prop">padding</span> en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura siguiente.
+        <p class="mcl-captura">
+          <img src="s4-3-2.png" alt="Ejercicio S4 3" width="1012" height="330">
+        </p>
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Se puede conseguir el resultado utilizando únicamente dos propiedades <span class="css-prop">margin</span> que eliminen márgenes exteriores predeterminados.</li>
+          </ul>
+        </details>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-3-b">
+    <h2>S4 3 B - Márgenes B</h2>
+
+    <ol>
+      <li>Añada propiedades <span class="css-prop">margin</span> y/o <span class="css-prop">padding</span> en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura siguiente.
+        <p class="mcl-captura">
+          <img src="s4-3-3.png" alt="Ejercicio S4 3" width="1012" height="330">
+        </p>
+      </li>
+      <li>Los valores numéricos utilizados pueden ser 0 y 50px.
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Se puede conseguir el resultado utilizando únicamente cuatro propiedades <span class="css-prop">margin</span> y/o <span class="css-prop">padding</span>.</li>
+          </ul>
+        </details>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-3-c">
+    <h2>S4 3 C - Márgenes C</h2>
+
+    <ol>
+      <li>Añada propiedades <span class="css-prop">margin</span> y/o <span class="css-prop">padding</span> en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en la captura siguiente.
+        <p class="mcl-captura">
+          <img src="s4-3-4.png" alt="Ejercicio S4 3" width="1012" height="330">
+        </p>
+      </li>
+      <li>Los valores numéricos utilizados pueden ser 0 y 25px.
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Se puede conseguir el resultado utilizando únicamente seis propiedades <span class="css-prop">margin</span> y/o <span class="css-prop">padding</span>.</li>
+          </ul>
+        </details>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>S4 4 - Fondos</h2>
+
+    <p>Por completar</p>
+  </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 2 de mayo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 3 de mayo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

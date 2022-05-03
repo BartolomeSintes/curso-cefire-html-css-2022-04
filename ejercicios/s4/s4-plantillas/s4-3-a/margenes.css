@@ -1,0 +1,16 @@
+html {
+    background-color: hsl(0 50% 70%);
+}
+
+body {
+    background-color: hsl(180 50% 70%);
+    text-align: justify;
+}
+
+h1 {
+    border: black 1px dashed;
+}
+
+p {
+    border: black 1px solid;
+}
