@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Listas. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>HTML. Listas</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="../html/html-enlaces.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../css/css-listas.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML Listas</a>
+      </h2>
+
+      <ul>
+        <li><a href="#listas-tipos">Tipos</a></li>
+        <li><a href="#listas-ordenadas-no-ordenadas"><span class="html-eti">&lt;ol&gt;</span> y <span class="html-eti">&lt;ul&gt;</span></a></li>
+        <li><a href="#listas-definicion"><span class="html-eti">&lt;dl&gt;</span>, <span class="html-eti">&lt;dt&gt;</span> y <span class="html-eti">&lt;dd&gt;</span></a></li>
+        <li><a href="#listas-anidamiento">Anidamiento</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="listas-tipos">
+    <h2>Tipos de listas</h2>
+
+    <p>Existen tres tipos de listas:</p>
+
+    <ul>
+      <li>listas ordenadas (<span class="html-eti">&lt;ol&gt; ...&lt;/ol&gt;</span></li>
+      <li>listas no ordenadas (<span class="html-eti">&lt;ul&gt; ...&lt;/ul&gt;</span>)</li>
+      <li>listas de definición (<span class="html-eti">&lt;dl&gt; ...&lt;/dl&gt;</span>)</li>
+    </ul>
+
+    <p>Dentro de un elemento de lista se puede insertar cualquier otro elemento (texto, imágenes, divisiones, tablas, listas, etc).</p>
+  </section>
+
+  <section id="listas-ordenadas-no-ordenadas">
+    <h2 class="con-aside">Listas ordenadas y no ordenadas</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;ol&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;ul&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;li&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Tanto las listas ordenadas (<span class="html-eti">&lt;ol&gt;</span>) como las listas desordenadas (<span class="html-eti">&lt;ul&gt;</span>) tienen la misma estructura:</p>
+
+    <ul>
+      <li>las etiquetas <span class="html-eti">&lt;ul&gt; ...&lt;/ul&gt;</span> o <span class="html-eti">&lt;ol&gt; ...&lt;/ol&gt;</span> delimitan la lista completa</li>
+      <li>las etiquetas <span class="html-eti">&lt;li&gt; ...&lt;/li&gt;</span> delimitan cada elemento de la lista</li>
+    </ul>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;ol&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.&lt;/li&gt;
+  &lt;li&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a los demás.&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/listas/ol.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/listas/ol.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;ul&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.&lt;/li&gt;
+  &lt;li&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a los demás.&lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/listas/ul.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/listas/ul.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>La diferencia entre ambos tipos de listas es que los navegadores numeran (con letras o números) los elementos de las listas ordenadas, mientras que en las listas no ordenadas se dibuja un símbolo gráfico.</p>
+  </section>
+
+  <section id="listas-definicion">
+    <h2 class="con-aside">Listas de definición</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;dl&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;dt&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;dd&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Las listas de definición tienen una estructura distinta:</p>
+
+    <ul>
+      <li>las etiquetas <span class="html-eti">&lt;dl&gt; ...&lt;/dl&gt;</span> delimitan la lista completa</li>
+      <li>las etiquetas <span class="html-eti">&lt;dt&gt; ...&lt;/dt&gt;</span> delimitan los términos</li>
+      <li>las etiquetas <span class="html-eti">&lt;dd&gt; ...&lt;/dd&gt;</span> delimitan las definiciones</li>
+    </ul>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;software&lt;/dt&gt;
+  &lt;dd&gt;Conjunto de programas, instrucciones y reglas informáticas para ejecutar ciertas tareas en una computadora.&lt;/dd&gt;
+  &lt;dt&gt;libre&lt;/dt&gt;
+  &lt;dd&gt;Que tiene facultad para obrar o no obrar.&lt;/dd&gt;
+  &lt;dd&gt;Que no es esclavo.&lt;/dd&gt;
+  &lt;dd&gt;Que no está preso.&lt;/dd&gt;
+  &lt;dd&gt;Licencioso,&lt;/dd&gt;
+&lt;/dl&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/listas/dl.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/listas/dl.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Las etiquetas <span class="html-eti">&lt;dt&gt;</span> y <span class="html-eti">&lt;dd&gt;</span> pueden encontrarse en cualquier orden dentro de un lista de definición, aunque lo razonable es que aparezcan cada <span class="html-eti">&lt;dt&gt;</span> seguido por uno o varios <span class="html-eti">&lt;dd&gt;</span>.</p>
+  </section>
+
+  <section id="listas-anidamiento">
+    <h2>Anidamiento</h2>
+
+    <p>Las listas pueden presentar cualquier nivel de anidamiento.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Ítem 1
+    &lt;ol&gt;
+      &lt;li&gt;Ítem 1 de sublista
+        &lt;ul&gt;
+          &lt;li&gt;Ítem 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Ítem 2 de sub-sublista&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ítem 2 de sublista
+        &lt;ol&gt;
+          &lt;li&gt;Ítem 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Ítem 2 de sub-sublista&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ítem 3 de sublista&lt;/li&gt;
+      &lt;li&gt;Ítem 4 de sublista&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ítem 2
+    &lt;ul&gt;
+      &lt;li&gt;Ítem 1 de sublista&lt;/li&gt;
+      &lt;li&gt;Ítem 2 de sublista&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/listas/listas-anidadas-1.html" style="width: 100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/listas/listas-anidadas-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Los navegadores suelen utilizar estilos de marcadores distintos para las sublistas no ordenadas (hasta el tercer nivel), pero no en las listas ordenadas:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Esto es un punto de una lista&lt;/li&gt;
+  &lt;li&gt;Esto es otro punto de la misma lista
+    &lt;ul&gt;
+      &lt;li&gt;Esto es un punto de una sublista&lt;/li&gt;
+...</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/listas/listas-anidadas-2.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/listas/listas-anidadas-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Esto es un punto de una lista&lt;/li&gt;
+  &lt;li&gt;Esto es otro punto de la misma lista
+    &lt;ol&gt;
+      &lt;li&gt;Esto es un punto de una sublista&lt;/li&gt;
+...</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/listas/listas-anidadas-3.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/listas/listas-anidadas-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>Cada lista ordenada sigue su propia numeración, independiente de las demás.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Ítem 1
+    &lt;ol&gt;
+      &lt;li&gt;Ítem 1 de sublista
+        &lt;ol&gt;
+          &lt;li&gt;Ítem 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Ítem 2 de sub-sublista&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ítem 2 de sublista
+        &lt;ol&gt;
+          &lt;li&gt;Ítem 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Ítem 2 de sub-sublista&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Ítem 3 de sublista&lt;/li&gt;
+      &lt;li&gt;Ítem 4 de sublista&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ítem 2
+    &lt;ol&gt;
+      &lt;li&gt;Ítem 1 de sublista&lt;/li&gt;
+      &lt;li&gt;Ítem 2 de sublista&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/listas/listas-anidadas-4.html" style="width: 100%; height: 20em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/listas/listas-anidadas-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 9 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
