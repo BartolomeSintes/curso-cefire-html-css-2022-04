@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Tablas. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+  <style>
+    table.tabeje1 {
+      border: black 1px solid;
+    }
+
+    table.tabeje1 td {
+      border: black 1px solid;
+      width: 1em;
+      height: 1em;
+      text-align: center;
+    }
+
+    table.tabeje2 table td {
+      border: black 1px solid;
+      width: 1em;
+      height: 1em;
+      text-align: center;
+    }
+
+    table.tabeje2 table {
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
+    }
+
+    td.tabeje2izq {
+      border: black 1px solid;
+      border-right: none;
+    }
+
+    td.tabeje2cen {
+      border-top: black 1px solid;
+      border-bottom: black 1px solid;
+    }
+
+    td.tabeje2der {
+      border: black 1px solid;
+      border-left: none;
+    }
+
+    td.borde-izq {
+      border-left: black 2px solid;
+    }
+
+    td.borde-inf {
+      border-bottom: black 2px solid;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>HTML. Tablas</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="../css/css-listas.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="html-tablas-atributos.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML Tablas</a>
+      </h2>
+
+      <ul>
+        <li><a href="#tablas-estructura">Estructura <span class="html-eti">&lt;table&gt;</span></a></li>
+        <li><a href="#tablas-leyenda">Leyenda <span class="html-eti">&lt;caption&gt;</span></a></li>
+        <li><a href="#tablas-tbody">Cuerpos <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;thead&gt;</span>, <span class="html-eti">&lt;tfoot&gt;</span></a></li>
+        <li><a href="#tablas-filas">Filas <span class="html-eti">&lt;tr&gt;</span></a></li>
+        <li><a href="#tablas-celdas">Celdas <span class="html-eti">&lt;td&gt;</span>, <span class="html-eti">&lt;th&gt;</span></a></li>
+        <li><a href="#tablas-columnas">Columnas <span class="html-eti">&lt;col&gt;</span>, <span class="html-eti">&lt;colgroup&gt;</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p><strong>Nota</strong>: Como se comenta en la lección <a href="html-tablas-atributos.html">Atributos de tablas</a>, los bordes de los elementos de una tabla se establecen mediante propiedades de estilo. En los ejemplos de código de esta página no se muestran esas propiedades, pero en las hojas de estilo correspondientes se han incluido las siguientes reglas:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-css">table {
+  border: #b2b2b2 1px solid;
+}
+td, th {
+  border: black 1px solid;
+}</code>
+</pre>
+  </div>.
+
+  <section id="tablas-estructura">
+    <h2 class="con-aside">Estructura de una tabla (<span class="html-eti">&lt;table&gt;</span>)</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;table&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Una tabla HTML (<span class="html-eti">&lt;table&gt;</span>) es un conjunto de celdas (<span class="html-eti">&lt;td&gt;</span> o <span class="html-eti">&lt;th&gt;</span>) organizadas en filas (<span class="html-eti">&lt;tr&gt;</span>) que a su vez se organizan en grupos de filas (<span class="html-eti">&lt;thead&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>). Además, la tabla puede tener una leyenda (<span class="html-eti">&lt;caption&gt;</span>) y hacer referencia a las columnas (<span class="html-eti">&lt;col&gt;</span> y <span class="html-eti">&lt;colspan&gt;</span>).</p>
+
+    <p>La leyenda y los grupos de filas se muestran en este orden:</p>
+
+    <table class="mcl-centrado" cellspacing="5" cellpadding="5">
+      <tbody>
+        <tr>
+          <td>Esto es la leyenda</td>
+          <td class="borde-izq">Leyenda (<span class="html-eti">&lt;caption&gt;</span>)</td>
+        </tr>
+        <tr>
+          <td>
+            <table class="tabla-con-borde mcl-centrado tabeje1">
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="borde-izq">Cabecera de tabla (<span class="html-eti">&lt;thead&gt;</span>)</td>
+        </tr>
+        <tr>
+          <td>
+            <table class="tabla-con-borde mcl-centrado tabeje1">
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="mcl-centrado">...</p>
+
+            <table class="tabla-con-borde mcl-centrado tabeje1">
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="borde-izq">Cuerpos de tablas (<span class="html-eti">&lt;tbody&gt;</span>)</td>
+        </tr>
+        <tr>
+          <td>
+            <table class="tabla-con-borde mcl-centrado tabeje1">
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                  <td>...</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td>...</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="borde-izq">Pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>A su vez, tanto los cuerpos de tabla como la cabecera y el pie de tabla están formados por varias filas (<span class="html-eti">&lt;tr&gt;</span>) formadas por varias celdas (<span class="html-eti">&lt;td&gt;</span> o <span class="html-eti">&lt;th&gt;</span>). Todas las filas tienen el mismo número de celdas (aunque también se pueden unir celdas horizontal y verticalmente).</p>
+
+    <table class="mcl-centrado tabeje2" cellpadding="5">
+      <tbody>
+        <tr>
+          <td class="borde-inf">Celda</td>
+          <td class="borde-inf">Celda</td>
+          <td>...</td>
+          <td class="borde-inf">Celda</td>
+          <td class="borde-inf">Celda</td>
+          <td></td>
+        </tr>
+        <tr class="tabeje2">
+          <td class="tabeje2izq">
+            <table class="tabla-con-borde">
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="tabeje2cen">
+            <table class="tabla-con-borde">
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="tabeje2cen">...</td>
+          <td class="tabeje2cen">
+            <table class="tabla-con-borde">
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="tabeje2der">
+            <table class="tabla-con-borde">
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="borde-izq">Fila (<span class="html-eti">&lt;tr&gt;</span>)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Las celdas de la tabla suelen ser elementos <span class="html-eti">&lt;td&gt;</span>, aunque también pueden ser elemento <span class="html-eti">&lt;th&gt;</span> para indicar que la celda es una cabecera de la fila o columna correspondiente.</p>
+
+    <p>El código fuente de una tabla sencilla (con un único <span class="html-eti">&lt;tbody&gt;</span>) sería el siguiente:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;A1&lt;/td&gt;
+      &lt;td&gt;B1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;A2&lt;/td&gt;
+      &lt;td&gt;B2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/tablas.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/tablas.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tablas-leyenda">
+    <h2 class="con-aside">Leyenda (<span class="html-eti">&lt;caption&gt;</span>)</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;caption&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-caption-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>La leyenda (<span class="html-eti">&lt;caption&gt;</span>) es un texto explicativo opcional que se muestra fuera de la tabla (normalmente, arriba). La leyenda no puede incluir párrafos ni otros elementos de bloque, aunque sí etiquetas en línea (<span class="html-eti">&lt;strong&gt;</span>, imágenes, etc).</p>
+
+    <p>Los navegadores dan a la leyenda el mismo ancho que a la tabla, por lo que si una leyenda es larga y la tabla estrecha, la leyenda ocupará varias líneas, como muestra el ejemplo siguiente:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Liga de &lt;strong&gt;Fútbol&lt;/strong&gt; española - Resultados de la Copa del Rey&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+...</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/caption.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/caption.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tablas-tbody">
+    <h2 class="con-aside">Cuerpos de tabla (<span class="html-eti">&lt;tbody&gt;</span>), encabezados (<span class="html-eti">&lt;thead&gt;)</span> y pies (<span class="html-eti">&lt;tfoot&gt;</span>)</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;tbody&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;thead&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-thead-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;tfoot&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Los elementos <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;thead&gt;</span> y <span class="html-eti">&lt;tfoot&gt;</span> abarcan una o varias filas seguidas para formar un grupo de filas. Un grupo de filas puede ser una cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>), un pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) o formar parte del contenido de la tabla (<span class="html-eti">&lt;tbody&gt;</span>)</p>
+
+    <p>En una tabla puede haber uno o varios <span class="html-eti">&lt;tbody&gt;</span>, pero tanto la cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>) como el pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) son opcionales y sólo puede haber uno de cada en una tabla.</p>
+
+    <p>Si una tabla contiene <span class="html-eti">&lt;thead&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>, también debe contener <span class="html-eti">&lt;tbody&gt;</span>.</p>
+
+    <p>Al imprimir una tabla que ocupa varias páginas, los navegadores repiten al principio y al final de cada página las cabeceras <span class="html-eti">&lt;thead&gt;</span> y pies de tabla <span class="html-eti">&lt;tfoot&gt;</span>. Se puede comprobar, por ejemplo, con la <a href="html-entidades-caracter.html#entidades-caracter">lista de entidades de carácter de HTML 4</a>, que no cabe en una sola página.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;País&lt;/th&gt;
+      &lt;th&gt;Capital&lt;/th&gt;
+      &lt;th&gt;Moneda&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Reino de España&lt;/td&gt;
+      &lt;td&gt;Madrid&lt;/td&gt;
+      &lt;td&gt;Euro&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Estados Unidos Mexicanos&lt;/td&gt;
+      &lt;td&gt;Ciudad de México&lt;/td&gt;
+      &lt;td&gt;Peso&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;República Argentina&lt;/td&gt;
+      &lt;td&gt;Buenos Aires&lt;/td&gt;
+      &lt;td&gt;Peso&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;País&lt;/th&gt;
+      &lt;th&gt;Capital&lt;/th&gt;
+      &lt;th&gt;Moneda&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/thead-tbody-tfoot.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/thead-tbody-tfoot.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tablas-filas">
+    <h2 class="con-aside">Filas (<span class="html-eti">&lt;tr&gt;</span>)</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;tr&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Cada fila de la tabla está marcada con la etiqueta <span class="html-eti">&lt;tr&gt;</span> (fila de tabla).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda A1&lt;/td&gt;
+      &lt;td&gt;celda A2&lt;/td&gt;
+      &lt;td&gt;celda A3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda B1&lt;/td&gt;
+      &lt;td&gt;celda B2&lt;/td&gt;
+      &lt;td&gt;celda B3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda C1&lt;/td&gt;
+      &lt;td&gt;celda C2&lt;/td&gt;
+      &lt;td&gt;celda C3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/tr.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/tr.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tablas-celdas">
+    <h2 class="con-aside">Celdas de datos (<span class="html-eti">&lt;td&gt;</span>) y celdas de cabecera (<span class="html-eti">&lt;th&gt;</span>)</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;td&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;th&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Cada celda de la tabla está marcada con la etiqueta <span class="html-eti">&lt;td&gt;</span> (celda de datos), aunque también se pueden marcar con la etiqueta <span class="html-eti">&lt;th&gt;</span> (celda de cabecera). Las celdas <span class="html-eti">&lt;th&gt;</span> están pensadas para utilizarse en las celdas que sirven de cabecera para la fila o columna, por lo que los navegadores las muestran resaltadas (normalmente, en negrita y centradas en horizontal), aunque se pueden utilizar en cualquier celda.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Fútbol Copa del Rey&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;th&gt;2020/2021&lt;/th&gt;
+      &lt;th&gt;2021/2022&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Campeón&lt;/th&gt;
+      &lt;td&gt;F.C. Barcelona&lt;/td&gt;
+      &lt;td&gt;Real Betis Balompié&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Subcampeón&lt;/th&gt;
+      &lt;td&gt;Athletic Club&lt;/td&gt;
+      &lt;td&gt;Valencia C.F.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/th-td.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/th-td.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tablas-columnas">
+    <h2 class="con-aside">Columnas (<span class="html-eti">&lt;col&gt;</span>) y grupos de columnas (<span class="html-eti">&lt;colgroup&gt;</span>)</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;col&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-col-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+
+      <p>
+        <span class="html-eti">&lt;colgroup&gt;</span><br>
+        <a href="https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
+
+    <p>Aunque las celdas de una tabla (<span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span>) estén organizadas en filas (<span class="html-eti">&lt;tr&gt;</span>) y grupos de filas (<span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;thead&gt;</span> y <span class="html-eti">&lt;tfoot&gt;</span>), también existen dos etiquetas que permiten hacer referencia a las columnas de una tabla: las etiquetas <span class="html-eti">&lt;col&gt;</span> (columna) y <span class="html-eti">&lt;colgroup&gt;</span> (grupo de columnas).</p>
+
+    <p>La etiqueta vacía <span class="html-eti">&lt;col&gt;</span> permite hacer referencia a una columna y la etiqueta <span class="html-eti">&lt;colgroup&gt;</span> permite definir grupos de columnas (de manera similar a como la etiqueta <span class="html-eti">&lt;tbody&gt;</span> define grupos de filas).</p>
+
+    <p>Las etiquetas <span class="html-eti">&lt;col&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span> se encuentran situadas al principio de la tabla, después de la etiqueta <span class="html-eti">&lt;caption&gt;</span>.</p>
+
+    <p>El ejemplo siguiente muestra la situación de las etiquetas <span class="html-eti">&lt;col&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span> en una tabla.</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-html">&lt;table &gt;
+  &lt;caption&gt;Leyenda&lt;/caption&gt;
+  &lt;colgroup&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
+  &lt;colgroup&gt;&lt;col&gt;&lt;/colgroup&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+    </div>
+
+    <p>Cada etiqueta <span class="html-eti">&lt;col&gt;</span> corresponde a una columna, en el mismo orden (la primera etiqueta <span class="html-eti">&lt;col&gt;</span> corresponde a la primera columna, y así sucesivamente). En el ejemplo anterior, hay definidos dos grupos de columnas, el primero de los cuales abarca dos columnas y el segundo una columna.</p>
+
+    <p>El número de columnas que se defina mediante etiquetas <span class="html-eti">&lt;col&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span> debe coincidir con el número de columnas de la tabla.</p>
+
+    <p>Todas las etiquetas <span class="html-eti">&lt;col&gt;</span> deben estar incluidas en algún <span class="html-eti">&lt;colgroup&gt;</span>. Si alguna o algunas etiquetas <span class="html-eti">&lt;col&gt;</span> no están incluidas en ninguna etiqueta <span class="html-eti">&lt;colgroup&gt;</span>, los navegadores crean automáticamente etiquetas <span class="html-eti">&lt;colgroup&gt;</span> que agrupan las etiquetas <span class="html-eti">&lt;col&gt;</span> "huérfanas" consecutivas. Por ejemplo, si no se incluye ninguna etiqueta <span class="html-eti">&lt;colgroup&gt;</span>, el navegador creará un etiqueta <span class="html-eti">&lt;colgroup&gt;</span> que agrupe todas las columnas. Y si se incluye una o varias etiquetas <span class="html-eti">&lt;colgroup&gt;</span>, pero quedan etiquetas <span class="html-eti">&lt;col&gt;</span> no incluidas en ninguno de los <span class="html-eti">&lt;colgroup&gt;</span>, el navegador creará etiquetas <span class="html-eti">&lt;colgroup&gt;</span> para esas etiquetas <span class="html-eti">&lt;col&gt;</span>.</p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 9 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
