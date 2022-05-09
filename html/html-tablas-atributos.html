@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Atributos de tablas. HTML. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>HTML. Atributos de tablas</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="html-tablas.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../css/css-tablas.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML Atributos de tablas</a>
+      </h2>
+
+      <ul>
+        <li><a href="#atributo-table-border"><span class="html-atri">border</span> de <span class="html-eti">&lt;table&gt;</span></a></li>
+        <li><a href="#atributo-colspan-rowspan"><span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span> de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></a></li>
+        <li><a href="#atributo-col-span"><span class="html-atri">span</span> de <span class="html-eti">&lt;col&gt;</span></a></li>
+        <li><a href="#atributo-colgroup-span"><span class="html-atri">span</span> de <span class="html-eti">&lt;colgroup&gt;</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="atributo-table-border">
+    <h2>El atributo <span class="html-atri">border</span> de <span class="html-eti">&lt;table&gt;</span></h2>
+
+    <p><img src="../varios/iconos/icono-obsoleto.svg" alt="Obsoleto" title="Obsoleto" width="48" height="48" class="izquierda">Como se comenta en la <a href="../html/html-obsoletos.html#table-border-n">lección sobre elementos obsoletos</a>, en HTML el atributo <span class="html-atri">border</span> se considera obsoleto y en su lugar se deben asignar bordes mediante propiedades CSS de bordes, aunque los navegadores siguen admitiendo su uso.</p>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-obsoleto.svg" alt="Obsoleto" title="Obsoleto" width="48" height="48">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  ...</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/border-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/border-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+      </div>
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;table&gt;
+  ...</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">table {
+  border: #b2b2b2 1px solid;
+}
+td, th {
+  border: black 1px solid;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/border-5.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/border-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="atributo-colspan-rowspan">
+    <h2>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span> de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></h2>
+
+    <p>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span> permiten unir una celda con las celdas contiguas, tanto horizontal como verticalmente. El valor de <span class="html-atri">colspan</span> indica la cantidad de celdas unidas en horizontal y el valor de <span class="html-atri">rowspan</span> indica la cantidad de celdas unidas en vertical.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;celdas a1 y b1 unidas&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda a2&lt;/td&gt;
+      &lt;td&gt;celda b2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/th-td-colspan-rowspan-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/th-td-colspan-rowspan-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2"&gt;celdas a1 y a2 unidas&lt;/td&gt;
+      &lt;td&gt;celda b1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda b2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/th-td-colspan-rowspan-2.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/th-td-colspan-rowspan-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2" colspan="2"&gt;celdas a1, a2, b1 y b2 unidas&lt;/td&gt;
+      &lt;td&gt;celda c1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda c2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda a3&lt;/td&gt;
+      &lt;td&gt;celda b3&lt;/td&gt;
+      &lt;td&gt;celda c3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/th-td-colspan-rowspan-3.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/th-td-colspan-rowspan-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="atributo-col-span">
+    <h2>El atributo <span class="html-atri">span</span> de <span class="html-eti">&lt;col&gt;</span></h2>
+
+    <p>El atributo <span class="html-atri">span</span> permite que una etiqueta <span class="html-eti">&lt;col&gt;</span> haga referencia a varias columnas seguidas. El valor del atributo <span class="html-atri">span</span> indica el número de columnas al que hace referencia la etiqueta <span class="html-eti">&lt;col&gt;</span>.</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;col span="2" class="fondo"&gt;&lt;col&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Celda 1&lt;/td&gt;
+      &lt;td&gt;Celda 2&lt;/td&gt;
+      &lt;td&gt;Celda 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Celda 4&lt;/td&gt;
+      &lt;td&gt;Celda 5&lt;/td&gt;
+      &lt;td&gt;Celda 6&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">col.fondo {
+  background-color: lightblue;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/col-span.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/col-span.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="atributo-colgroup-span">
+    <h2>El atributo <span class="html-atri">span</span> de <span class="html-eti">&lt;colgroup&gt;</span></h2>
+
+    <p>Para indicar el número de columnas que forman parte de un grupo de columnas, se pueden utilizar etiquetas <span class="html-eti">&lt;col&gt;</span> (con o sin atributo <span class="html-atri">span</span>) o el atributo <span class="html-atri">span</span> de <span class="html-eti">&lt;colgroup&gt;</span>. Si se utiliza el atributo <span class="html-atri">span</span>, su valor indica el número de columnas que forman parte del grupo de columnas.</p>
+
+    <p>Pero si se utiliza el atributo <span class="html-atri">span</span> en la etiqueta <span class="html-eti">&lt;colgroup&gt;</span>, no se pueden incluir etiquetas <span class="html-eti">&lt;col&gt;</span> en el <span class="html-eti">&lt;colgroup&gt;</span>.</p>
+
+    <p>En los tres ejemplos siguientes se pueden ver las tres maneras de definir un grupo de dos columnas. El <span class="html-eti">&lt;colgroup&gt;</span> abarca las dos primeras columnas y se ven de color gris porque tiene clase <span class="css-valor">fondo</span>. La tercera columna no se ve de color gris porque aunque el navegador añade un <span class="html-eti">&lt;colgroup&gt;</span> para la tercera columna, este <span class="html-eti">&lt;colgroup&gt;</span> no tiene clase <span class="css-valor">fondo</span>:</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;table border="1"&gt;
+&lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+&lt;colgroup span="2" class="fondo"&gt;&lt;/colgroup&gt;
+&lt;col&gt;
+&lt;tbody&gt;
+...</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">colgroup.fondo {
+background-color: lightgrey;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/colgroup-span-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;table border="1"&gt;
+&lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+&lt;colgroup class="fondo"&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
+&lt;col&gt;
+&lt;tbody&gt;
+...</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">colgroup.fondo {
+background-color: lightgrey;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-2.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/colgroup-span-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;table border="1"&gt;
+&lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+&lt;colgroup&gt;&lt;col span="2"&gt;&lt;/colgroup&gt;
+&lt;col&gt;
+&lt;tbody&gt;
+...</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">colgroup {
+background-color: lightgrey;
+}<br>col {
+background-color: lightblue;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas-atributos/colgroup-span-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Para entender el resultado de los ejemplos siguientes, hay que tener en cuenta que los navegadores añaden etiquetas <span class="html-eti">&lt;colgroup&gt;</span> alrededor de las etiquetas <span class="html-eti">&lt;col&gt;</span> consecutivas no incluidas en etiquetas <span class="html-eti">&lt;colgroup&gt;</span>.</p>
+
+    <ul>
+      <li>En el ejemplo siguiente, el <span class="html-eti">&lt;colgroup&gt;</span> abarca las dos primeras columnas y se ven de color gris. La tercera columna también se ve de color gris porque el navegador añade un <span class="html-eti">&lt;colgroup&gt;</span> para la tercera columna:
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup span="2"&gt;&lt;/colgroup&gt;
+  &lt;col&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}</code>
+</pre>
+            </div>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-4.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/tablas-atributos/colgroup-span-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </li>
+      <li>En el ejemplo siguiente, el <span class="html-eti">&lt;colgroup&gt;</span> abarca las dos primeras columnas y se ven de color gris. En este caso la tercera columna se ve de color azul porque aunque el navegador añade un <span class="html-eti">&lt;colgroup&gt;</span> para esa columna, la regla para <span class="css-sele">col</span> tiene precedencia sobre la regla para el <span class="css-sele">colgroup</span>:
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup span="2"&gt;&lt;/colgroup&gt;
+  &lt;col&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}
+col {
+  background-color: lightblue;
+}</code>
+</pre>
+            </div>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-5.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/tablas-atributos/colgroup-span-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </li>
+      <li>En el ejemplo siguiente, todas las columnas se ven de color azul porque el <span class="html-eti">&lt;colgroup&gt;</span> contiene etiquetas <span class="html-eti">&lt;col&gt;</span> y la regla para <span class="css-sele">col</span> tiene precedencia sobre la regla para el <span class="css-sele">colgroup</span>:
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
+  &lt;col&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}
+col {
+  background-color: lightblue;
+}</code>
+</pre>
+            </div>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-6.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/tablas-atributos/colgroup-span-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 9 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
