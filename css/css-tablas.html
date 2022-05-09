@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Tablas. CSS. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>CSS. Tablas</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="../html/html-tablas-atributos.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="css-posicionamiento.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">CSS Tablas</a>
+      </h2>
+
+      <ul>
+        <li><a href="#caption-side"><span class="css-prop">caption-side</span></a></li>
+        <li><a href="#tabla-centrar">Centrar una tabla</a></li>
+        <li><a href="#table-layout"><span class="css-prop">table-layout</span></a></li>
+        <li><a href="#border-collapse"><span class="css-prop">border-collapse</span></a></li>
+        <li><a href="#empty-cells"><span class="css-prop">empty-cells</span></a></li>
+        <li><a href="#border-spacing"><span class="css-prop">border-spacing</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se comentan propiedades CSS definidas en la recomendación <a href="https://www.w3.org/TR/CSS2/">CSS 2.1</a>, publicada en junio de 2011.</p>
+
+  <p>Estas propiedades se aplican a las tablas.</p>
+
+  <p><strong>Nota</strong>: En las hojas de estilo de los ejemplos que se muestran en esta página se ha añadido bordes a las celdas y a las tablas mediante las siguientes reglas:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-css">table {
+  border: #b2b2b2 1px solid;
+}
+td, th {
+  border: black 1px solid;
+}</code>
+</pre>
+  </div>
+
+  <section id="caption-side">
+    <h2 class="con-aside">Posición de la leyenda: <span class="css-prop">caption-side</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">caption-side</span><br>
+        <a href="https://www.w3.org/TR/CSS2/tables.html#caption-position"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">caption-side</span> permite elegir la posición de la leyenda (<span class="html-eti">&lt;caption&gt;</span>) con respecto a la tabla. Los dos valores permitidos son <span class="css-valor">top</span> (arriba) y <span class="css-valor">bottom</span> (abajo). Si no se establece la posición de la leyenda, los navegadores aplican el valor <span class="css-valor">top</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">caption {
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/caption-side-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/caption-side-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">caption {
+  caption-side: top;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/caption-side-2.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/caption-side-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">caption {
+  caption-side: bottom;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/caption-side-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/caption-side-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En la recomendación CSS 2 la propiedad <span class="css-prop">caption-side</span> podía tomar también los valores <span class="css-valor">right</span> (derecha) y <span class="css-valor">left</span> (izquierda), pero en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se eliminaron esos valores, que tampoco aparecen en la futura recomendación <a href="https://www.w3.org/TR/css-tables-3/">CSS 3: Tablas</a>, actualmente (mayo de 2022) en elaboración.</p>
+  </section>
+
+  <section id="tabla-centrar">
+    <h2>Centrar una tabla</h2>
+
+    <p>Para centrar una tabla horizontalmente en la página, se deben establecer las dos propiedades <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span> con el valor <span class="css-valor">auto</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  margin-left: auto;
+  margin-right: auto;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/centrar-tabla-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/centrar-tabla-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>La alineación del contenido de la leyenda se interpreta dentro del espacio que ocupa la leyenda (que coincide con el ancho de la tabla).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+caption {
+  background-color: lightblue;
+  text-align: right;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/centrar-tabla-2.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/centrar-tabla-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="table-layout">
+    <h2 class="con-aside">Disposición de la tabla: <span class="css-prop">table-layout</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">table-layout</span><br>
+        <a href="https://www.w3.org/TR/CSS2/tables.html#width-layout"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">table-layout</span> permite elegir el modo en el que el navegador calcula el tamaño total de la tabla y el de cada fila o columna. Los dos valores permitidos son <span class="css-valor">fixed</span> (fijo) y <span class="css-valor">auto</span> (automático).</p>
+
+    <p>En el modo fijo (<span class="css-valor">fixed</span>), el tamaño de las tablas y de las celdas depende de las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>.</p>
+
+    <p>En el modo fijo (<span class="css-valor">auto</span>), el tamaño de las tablas y de las celdas depende de su contenido (y si es posible, de las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>).</p>
+
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Por completar con ejemplos</p>
+  </section>
+
+  <section id="border-collapse">
+    <h2 class="con-aside">Modos de bordes: <span class="css-prop">border-collapse</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">border-collapse</span><br>
+        <a href="https://www.w3.org/TR/CSS2/tables.html#borders"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">border-collapse</span> permite elegir el modo de presentación de los bordes de las celdas y de la tabla. Los dos valores permitidos son <span class="css-valor">separate</span> (separado) y <span class="css-valor">collapse</span> (colapsado). En el modo separado existe un hueco entre los bordes de cada celda, mientras que en el modo colapsado los bordes se superponen. Si no se establece el modo de presentación, los navegadores aplican el valor <span class="css-valor">separate</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-collapse-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-collapse-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  border-collapse: separate;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-collapse-2.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-collapse-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  border-collapse: collapse;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-collapse-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-collapse-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En la página de <a href="css-tablas-modos-bordes.html">bordes, márgenes y fondos en las tablas</a> se explican con detalle estos modos de funcionamiento.</p>
+  </section>
+
+  <section id="empty-cells">
+    <h2 class="con-aside">Bordes de celdas vacías: <span class="css-prop">empty-cells</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">empty-cells</span><br>
+        <a href="https://www.w3.org/TR/CSS2/tables.html#empty-cells"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">empty-cells</span> permite establecer si se muestran o no los bordes de las celdas vacías, en el modo de bordes separado. Los dos valores permitidos son <span class="css-valor">show</span> (mostrar) y <span class="css-valor">hide</span> (ocultar). Si no se establece la propiedad, los navegadores aplican el valor <span class="css-valor">show</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/empty-cells-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/empty-cells-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  empty-cells: show;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/empty-cells-2.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/empty-cells-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  empty-cells: hide;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/empty-cells-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/empty-cells-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>En el modo de bordes colapsado no se aplica la propiedad <span class="css-prop">empty-cells</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  border-collapse: collapse;
+  empty-cells: hide;
+  /* En el modo colapsado empty-cells no hace nada */
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/empty-cells-4.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/empty-cells-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="border-spacing">
+    <h2>Separación entre celdas: <span class="css-prop">border-spacing</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">border-spacing</span><br>
+        <a href="https://www.w3.org/TR/CSS2/tables.html#separated-borders"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">border-spacing</span> permite establecer una separación entre las celdas cuando se utiliza el modo de bordes separado. Se puede escribir un único valor, que se aplicaría a los cuatro lados, o dos valores, que se aplicarían en horizontal (a derecha e izquierda) y en vertical (arriba y abajo), respectivamente. Los valores no se pueden expresar en porcentajes, pero sí en cualquier otra unidad (<span class="css-unidad">px</span>, <span class="css-unidad">em</span>, etc).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  border-spacing: 20px;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-spacing-1.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-spacing-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  border-spacing: 30px 10px;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-spacing-2.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-spacing-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Si no se establece la propiedad, los navegadores aplican el valor <span class="css-valor">2px</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-spacing-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-spacing-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  border-spacing: 2px;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-spacing-4.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-spacing-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En el modo de bordes colapsado no se aplica la propiedad <span class="css-prop">border-spacing</span>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+  border-collapse: collapse;
+  border-spacing: 20px;
+  /* En el modo colapsado border-spacing no hace nada */
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/tablas/border-spacing-5.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/border-spacing-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 9 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
