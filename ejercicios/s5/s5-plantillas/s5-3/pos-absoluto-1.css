@@ -1,0 +1,11 @@
+div {
+    position: absolute;
+}
+
+div.d1 {
+    top: 10%;
+    left: 10%;
+    width: 30%;
+    height: 30%;
+    background-color: red;
+}

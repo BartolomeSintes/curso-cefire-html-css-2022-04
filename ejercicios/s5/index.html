@@ -26,24 +26,188 @@
       <h2><a href="#">Ejercicios S5</a></h2>
     </div>
 
-    <!--
     <ul>
-      <li><a href="#ejercicio-1-a">1 A - Fuentes web locales</a></li>
-      <li><a href="#ejercicio-1-b">1 B - Fuentes web remotas</a></li>
-      <li><a href="#ejercicio-2">2 - Divisiones y bordes</a></li>
-      <li><a href="#ejercicio-3">3 - Márgenes</a></li>
-      <li><a href="#ejercicio-3-a">3 A - Márgenes A</a></li>
-      <li><a href="#ejercicio-3-b">3 B - Márgenes A</a></li>
-      <li><a href="#ejercicio-3-c">3 C - Márgenes A</a></li>
-      <li><a href="#ejercicio-4">4 - Fondos</a></li>
-      <li><a href="#ejercicio-5">5 - Tamaños</a></li>
+      <li><a href="#ejercicio-1-a">1 A - Enlaces internos</a></li>
+      <li><a href="#ejercicio-1-b">1 B - Enlaces externos</a></li>
+      <li><a href="#ejercicio-2">2 - Tablas</a></li>
+      <li><a href="#ejercicio-3">3 - Posicionamiento absoluto</a></li>
     </ul>
-  -->
   </nav>
 
-  <p>Por completar</p>
+  <p>Estos ejercicios tratan sobre los temas tratados en la Semana 5 del curso.</p>
+
+  <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="s5-plantillas.zip">plantillas de los ejercicios S5</a>. Una vez descargado el fichero zip:</p>
+  <ol>
+    <li>Descomprima las plantillas en la carpeta <strong>ejercicios</strong>. Se creará una carpeta <strong>s5-plantillas</strong>.</li>
+    <li>Renombre la carpeta <strong>s5-plantillas</strong> como <strong>s5</strong>.</li>
+  </ol>
+
+  <p>Las capturas de pantalla están tomadas con un ancho de ventana de 1024px aproximadamente.</p>
+
+  <p><span class="entidad-inline">&#9888;&#65039;</span> En algunos aspectos, no es necesario que el resultado sea absolutamente exacto, sobre todo porque algunos detalles no tienen importancia. Por ejemplo, basta con que la ventana del navegador sea un poco más ancha o estrecha para que las palabras salten de una línea a la siguiente. Los valores de tamaños y distancias utilizados suelen ser valores "redondos", pero acertar el valor exacto puede necesitar varios intentos. Con que el parecido sea razonable, es suficiente. Otros aspectos sí que me gustaría que fueran idénticos, por ejemplo los tipos de letra, la posición de las imágenes o qué palabras se han resaltado.</p>
+
+  <p>Formatee con Visual Studio Code tanto la página web como la hoja de estilo (con CSScomb).</p>
+
+  <section id="ejercicio-1-a">
+    <h2>S5 1 A - Enlaces internos</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>enlaces.html</strong>.</li>
+      <li>Añada las etiquetas necesarias a partir de la captura siguiente:
+        <ul>
+          <li>Complete las etiquetas de bloques.</li>
+          <li>Incluya cada fragmento de obra en una etiqueta <span class="html-eti">div</span>, <span class="html-eti">article</span> o <span class="html-eti">section</span></li>
+          <li>Cree los destinos asignando un atributo <span class="html-atri">id</span> a cada una de las etiquetas creadas.</li>
+          <li>Cree los enlaces a esos elementos.</li>
+          <li>Vista <strong>sin</strong> estilo (el resto de fragmento no visibles en la captura deben tener el mismo aspecto que el primero):
+            <p class="mcl-captura">
+              <img src="s5-1-a-1.png" alt="Ejercicio S5 1 A" width="995" height="677">
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>Cree la hoja de estilo <strong>enlaces.css</strong> y añada el enlace a la hoja de estilo.</li>
+      <li><span class="aviso">[OPTATIVO]</span> Añada los atributos en las páginas web y las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como en <strong>una</strong> de las capturas con estilo siguientes, a su elección. Haga clic en la captura para ver la captura de la página completa
+        <ul>
+          <li>Vista <strong>con</strong> estilo (hoja de estilo más sencilla):
+            <p class="mcl-captura">
+              <a href="s5-1-a-3.png">
+                <img src="s5-1-a-2.png" alt="Ejercicio S5 1 A" width="995" height="840">
+              </a>
+            </p>
+            <p>
+              <strong>Nota</strong>: Colores empleados:
+              <span style="background-color: lightgray; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> lightgray y
+              <span style="background-color: black">&nbsp;&nbsp;&nbsp;&nbsp;</span> black
+            </p>
+            <details>
+              <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+              <ul>
+                <li>La raya negra horizontal no es un elemento <span class="html-eti">hr</span> porque no se ve en la lista sin estilo, así que debe ser el borde del elemento que abarque cada obra.</li>
+              </ul>
+            </details>
+          </li>
+          <li>Vista <strong>con</strong> estilo (Hoja de estilo más complicada):
+            <p class="mcl-captura">
+              <a href="s5-1-a-5.png">
+                <img src="s5-1-a-4.png" alt="Ejercicio S5 1 A" width="995" height="900">
+              </a>
+            </p>
+            <p>
+              <strong>Nota</strong>: Colores empleados:
+              <span style="background-color: hwb(200 1% 70%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(200 1% 70%),
+              <span style="background-color: hwb(45 1% 0%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(45 1% 0%),
+              <span style="background-color: hwb(30 0% 2%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(30 0% 2%) y
+              <span style="background-color: white; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> white
+            </p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-1-b">
+    <h2>S5 1 B - Enlaces externos</h2>
+
+    <ol>
+      <li>No modifique la estructura de carpetas del ejercicio. Mantenga cada fichero en la carpeta original.</li>
+      <li>Abra en Visual Studio Code las páginas <strong>index.html</strong>, <strong>tirant-lo-blanch/llibre-1-capitol-1.html</strong>, etc.</li>
+      <li>Añada las etiquetas necesarias a partir de las capturas siguientes, teniendo en cuenta que:
+        <ul>
+          <li>Los enlaces de la portada "Capitol 1", etc. enlazan a las páginas correspondientes del directorio tirant-lo-blanch</li>
+          <li>El enlace de la portada "Tirant lo Blanch, en Wikipedia" enlaza a la página correspondiente al autor en la Wikipedia.</li>
+          <li>Las imágenes de flechas de las páginas de capítulos enlazan respectivamente a los capítulos anterior, a la portada y al capítulo posterior. El primer y último capítulo enlazarán dos veces a la portada.</li>
+        </ul>
+        <ul>
+          <li>Vista <strong>sin</strong> estilo:
+            <p class="mcl-captura">
+              <img src="s5-1-b-1.png" alt="Ejercicio S5 1 B" width="1012" height="320">
+            </p>
+            <p class="mcl-captura">
+              <img src="s5-1-b-2.png" alt="Ejercicio S5 1 B" width="1012" height="430">
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>Cree la hoja de estilo <strong>enlaces.css</strong> (en el directorio raíz del ejercicio, donde se encuentra index.html) y añada el enlace a la hoja de estilo en todas las páginas web.</li>
+      <li><span class="aviso">[OPTATIVO]</span> Añada las etiquetas y atributos en las páginas web y las reglas en la hoja de estilo de manera que al abrir la página web en un navegador el contenido se vea como las capturas con estilo siguientes.
+        <ul>
+          <li>Vista <strong>con</strong> estilo:
+            <p class="mcl-captura">
+                <img src="s5-1-b-3.png" alt="Ejercicio S5 1 B" width="1012" height="400">
+            </p>
+            <p class="mcl-captura">
+                <img src="s5-1-b-4.png" alt="Ejercicio S5 1 B" width="1012" height="677">
+            </p>
+            <p>
+              <strong>Nota</strong>: Colores empleados:
+              <span style="background-color: hwb(180 90% 3%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(180 90% 3%),
+              <span style="background-color: hwb(30 50% 30%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(30 50% 30%),
+              <span style="background-color: hwb(30 60% 20%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(30 60% 20%),
+              <span style="background-color: hwb(30 80% 10%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(30 80% 10%) y
+              <span style="background-color: white; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> white
+            </p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>S5 2 - Tablas</h2>
+
+    <ol>
+      <li>En este ejercicio se trata de crear 6 tablas con atributos <span class="html-atri">rowspan</span> y <span class="html-atri">colspan</span> <span class="aviso">[las dos últimas son opcionales]</span>.</li>
+      <li>Abra en Visual Studio Code la página <strong>tablas.html</strong>.</li>
+      <li>Sólo hay que escribir el código html, la hoja de estilo va incluida en la plantilla.</li>
+      <li>El resultado debe ser el siguiente:
+        <p class="mcl-captura">
+          <img src="s5-2-1.png" alt="Ejercicio S5 2" width="1012" height="420">
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>S5 3 - Posicionamiento absoluto</h2>
+
+    <ol>
+      <li>En este ejercicio se trata de posicionar cuatro divisiones (sin contenido) con posicionamiento absoluto (<span class="html-atri">position</span>: <span class="css-valor">absolute</span>).</li>
+      <li>Abra en Visual Studio Code la página <strong>posicionamiento-absoluto-1.html</strong>.</li>
+      <li>Complete la hoja de estilo (que ya contiene una de las divisiones resueltas, como ejemplo).</li>
+      <li>El resultado debe ser el siguiente:
+        <p class="mcl-captura">
+          <img src="s5-3-1.png" alt="Ejercicio S5 3 1" width="1012" height="677">
+        </p>
+        <p>
+          <strong>Nota</strong>: Colores empleados:
+          <span style="background-color: red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> red,
+          <span style="background-color: blue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue,
+          <span style="background-color: yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> yellow y
+          <span style="background-color: green; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> green
+        </p>
+      </li>
+      <li>Abra en Visual Studio Code la página <strong>posicionamiento-absoluto-2.html</strong>.</li>
+      <li>Complete la hoja de estilo.</li>
+      <li>El resultado debe ser el siguiente:
+        <p class="mcl-captura">
+          <img src="s5-3-2.png" alt="Ejercicio S5 3 2" width="1012" height="677">
+        </p>
+        <p>
+          <strong>Nota</strong>: Colores empleados:
+          <span style="background-color: red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> red,
+          <span style="background-color: blue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue,
+          <span style="background-color: yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> yellow y
+          <span style="background-color: green; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> green
+        </p>
+      </li>
+
+    </ol>
+  </section>
+
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 9 de mayo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 10 de mayo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

@@ -87,6 +87,10 @@ p.aviso {
   color:red;
 }
 
+span.aviso {
+    color: red;
+}
+
 p.ultmod {
   clear: both;
   border-top: black 2px solid;

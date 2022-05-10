@@ -1,0 +1,10 @@
+table {
+    float: left;
+    margin: 10px 30px 30px;
+    border: #b2b2b2 1px solid;
+}
+
+td, th {
+    border: black 1px solid;
+    text-align: center;
+}
