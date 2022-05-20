@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Instalación. Git. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="canonical" href="https://www.mclibre.org/consultar/htmlcss/otros/historia.html">
+</head>
+
+<body>
+  <h1>Git. Instalación en Windows</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="git.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="github-cuenta.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">Git Instalación</a>
+      </h2>
+
+      <ul>
+        <li><a href="#descargar-windows">Descargar</a></li>
+        <li><a href="#instalar-windows">Instalar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="descargar-windows">
+    <h2>Descargar Git en Windows</h2>
+
+    <p><a href="https://gitforwindows.org/">Git for windows</a> es un instalador de <a href="https://git-scm.com/">Git-SCM</a> para Windows.</p>
+
+    <p>Git for windows se puede descargar desde su <a href="https://gitforwindows.org/">página principal</a> o del <a href="https://github.com/git-for-windows/git/releases">repositorio en GitHub</a>.</p>
+
+    <p>Actualmente (mayo de 2022), la última versión publicada de Git for windows es la versión 2.36.1, publicada el 10 de mayo de 2022.</p>
+
+    <p>En <a href="https://www.cdlibre.org/">cdlibre.org</a> hay una sección dedicada a <a href="https://www.cdlibre.org/consultar/catalogo/Programacion_Sistemas-de-control-de-versiones.html">Sistemas de Control de Versiones</a>, con información detallada sobre la última versión publicada para Windows.</p>
+  </section>
+
+  <section id="instalar-windows">
+    <h2>Instalar Git en Windows</h2>
+
+    <p>Una vez descargado el instalador, haga doble clic en él para iniciar el proceso de instalación.</p>
+
+    <p>Personalmente, yo recomiendo cambiar un par de opciones predeterminadas:</p>
+    <ul>
+      <li>que Git busque actualizaciones diariamente</li>
+      <li>que utilice Visual Studio Code como editor.</li>
+    </ul>
+
+    <p>Estos son los pasos del proceso de instalación de la versión 2.36.1, similares a los de otras versiones:</p>
+
+    <ol>
+      <li>La primera pantalla muestra la licencia de Git (<a href="https://opensource.org/licenses/GPL-2.0">GPL 2</a>, como el kernel Linux):
+        <p class="captura">
+          <img src="../img/git/git-instalacion-01.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla indica el directorio de instalación:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-02.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla indica los componentes a instalar. Marque la casilla "Check daily for Git for Windows updates".
+        <p class="captura">
+          <img src="../img/git/git-instalacion-03.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla indica el nombre de la carpeta en el menú de Inicio:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-04.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el editor predeterminado. De forma predeterminada Git ofrece Vim, pero el propio instalador recomienda elegir un navegador gráfico.
+        <p class="captura">
+          <img src="../img/git/git-instalacion-05.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>Despliegue la caja de lista para elegir otro editor. En estos apuntes se recomienda elegir Visual Studio Code (<a href="https://notepad-plus-plus.org/">Notepad++</a> es otro editor aconsejable).
+        <p class="captura">
+          <img src="../img/git/git-instalacion-06.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>Una vez elegido el editor, haga clic en "Next":
+        <p class="captura">
+          <img src="../img/git/git-instalacion-07.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el nombre de la rama principal de los nuevos repositorios. Tradicionalmente la rama principal recibía el nombre de <i>master</i>, pero desde hace años este término se ha visto envuelto en polémica ya que hay personas que lo consideran racista (ya que los términos <i>master</i>/<i>slave</i> se pueden traducir como amo/esclavo). La verdad es que en este caso esta opinión es discutible (por un lado, la relación amo/esclavo es independiente de la raza, y por otro lado, la palabra <i>master</i> en inglés tiene también el significado de "original", que es el que tiene sentido en este caso (<i>master record</i> es "grabación original") pero, de todas formas, muchos proyectos están modificando la denominación de <i>master</i>. Git todavía no ha decidido el cambio, pero GitHub ha empezado a utilizar el término <i>main</i>, que es el que elegiremos aquí.
+        <p class="captura">
+          <img src="../img/git/git-instalacion-08.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el tipo de ventanas de terminal desde las que se podrá usar Git:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-09.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el ejecutable SSH:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-10.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir la biblioteca SSL/TLS:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-11.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el carácter de final de línea:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-12.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el tipo de terminal de Git:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-13.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el comportamiento de la orden "git pull":
+        <p class="captura">
+          <img src="../img/git/git-instalacion-14.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir el gestor de credenciales:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-15.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir algunas características extra:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-16.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>La siguiente pantalla permite elegir algunas características experimentales (en algunas versiones no aparece esta pantalla):
+        <p class="captura">
+          <img src="../img/git/git-instalacion-17.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>A continuación se realizará la instalación, que durará unos segundos:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-18.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>Cuando termine la instalación se mostrará la pantalla final. Haga clic en Finish para cerrar el programa de instalación:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-19.png" alt="Git - Instalación en Windows" width="499" height="392">
+        </p>
+      </li>
+      <li>Al cerrarse el programa de instalación, si se ha dejado marcada la casilla "View Release Notes" en la pantalla final, se mostrarán en el navegador las notas de la versión:
+        <p class="captura">
+          <img src="../img/git/git-instalacion-20.png" alt="Git - Instalación en Windows" width="1190" height="311">
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 20 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
