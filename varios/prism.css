@@ -197,6 +197,10 @@ pre code.language-json .string        { color: #ce9178; }          /* valor (cad
 /* pre code.language-json .punctuation   { color: #000000; }          /* puntuación, llaves, etc   */
 /* pre code.language-json .string        { color: #a31515; }          /* valor (cadena)            */
 
+/* Estilo para Shell  imitando a Visual Studio Code con tema Dark+ */
+
+pre code.language-shell .comment        { color: #6a9955; }                     /* comment                   */
+
 /* CSS para plugin Line Numbers de Prism */
 
 pre.line-numbers {
