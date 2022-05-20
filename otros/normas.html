@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Normas oficiales HTML y CSS. Historia. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="canonical" href="https://www.mclibre.org/consultar/htmlcss/otros/historia.html">
+</head>
+
+<body>
+  <h1>HTML y CSS. Normas oficiales</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="vsc-git-repositorio.html"><img src="../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Lección siguiente" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        <a href="#">HTML/CSS Normas</a>
+      </h2>
+
+      <ul>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#recomendaciones-css">Definición oficial de CSS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="historia">
+    <h2>Historia de las normas HTML y CSS</h2>
+
+    <h3>La época clásica</h3>
+
+    <p>La World Wide Web nació cerca de Ginebra (Suiza) en el <a href="https://home.cern/">CERN</a>, el laboratorio europeo de física de partículas. Su principal creador fue <a href="https://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a> (nacido en Londres en 1955), que propuso en marzo de 1989 la creación de un sistema de hipertexto para facilitar el intercambio de información entre los investigadores del CERN. El <a href="https://en.wikipedia.org/wiki/File:First_Web_Server.jpg">primer servidor web</a> de la historia se instaló en el CERN en diciembre de 1990. En el verano de 1991, este sistema (servidor y navegador) se puso a disposición de todos los usuarios de Internet, entonces limitados a universades y otros centros públicos. El 20 de abril de 1993, el CERN <a href="https://cds.cern.ch/record/1164399">anunció oficialmente</a> que la licencia del software del navegador y del servidor sería el dominio público, permitiendo su expansión sin límites.</p>
+
+    <p>A partir de 1991 se permitió el acceso a Internet a particulares. El éxito de la web como medio de distribución de información impulsó la creación en 1994 del <a href="https://www.w3.org">W3C</a> (World Wide Web Consortium), organismo formado por empresas y universidades de todo el mundo, para encauzar el desarrollo de la Web.</p>
+
+    <p>Hasta el año 2000 el W3C dirigió con eficacia y resultados tangibles el desarrollo de la web, consiguiendo equilibrar las presiones de las empresas y consensuar normas publicadas con el nombre de Recomendaciones.</p>
+
+    <p>En los 90, el W3C publicó las recomendaciones HTML 3.2 (1997), HTML 4 (1998) y HTMl 4.01 (1999) que constituyen las versiones "clásicas" del HTML, con cada vez más etiquetas para distintos tipos de elementos. El W3C publicó también las recomendaciones CSS nivel 1 (1996) y CSS nivel 2 (1998), que constituyen las versiones "clásicas" de las hojas de estilo CSS, con cada vez más propiedades para definir el aspecto visual de las páginas.</p>
+
+    <p>Para permitir que el HTML pudiera codificar cualquier tipo de información, no simplemente documentos formados por texto e imágenes pensados para ser leídos en pantallas de ordenador, el W3C creó en 1998 el XML, un conjunto de tecnologías para definir y manipular documentos de marcas arbitrarios. Así, el W3C creó los lenguajes de marcas MathML (para fórmulas matemáticas, en 1998) y SVG (para gráficos vectoriales, en 2001).</p>
+
+    <p>El W3C decidió entonces declarar obsoleto el HTML "clásico" y trabajar únicamente en un HTML basado en XML y que se llamó XHTML, cuya recomendación XHTML 1.0 se publicó en 2000.</p>
+
+    <h3>El fracaso del XHTML</h3>
+
+    <p>Esa decisión resultó ser un fracaso absoluto, porque el XHTML nunca llegó a utilizarse (por mucho que digan los currículos obsoletos de los ciclos formativos ASIR, DAM y DAW :-). Personalmente, no creo que haya un único motivo que explique ese fracaso. Que Microsoft, que entonces dominaba de forma absoluta el mercado de navegadores con Internet Explorer, se negara a mostrar documentos XHTML tuvo sin duda un peso innegable, pero es verdad que los navegadores posteriores que acabaron con ese dominio (Firefox y sobre todo, Google Chrome, pero también Safari) tampoco han apostado de verdad nunca por el XHTML. La exigencia del XHTML (heredada del XML) de que los documentos no pueden tener errores sintácticos para mostrarse en el navegador quizás ha sido una exigencia demasiado fuerte para una web que sigue teniendo un proceso de elaboración artesanal (como en este curso ;-).</p>
+
+    <p>El XML, por su parte, tuvo inicialmente un éxito tremendo y aunque todavía se utiliza en muchos ámbitos, su declive desde 2010 es evidente. El W3C empezó en 2013 a cerrar los grupos de trabajo dedicados a las tecnologías XML y actualmente (mayo de 2022) apenas quedan un par de grupos dedicados a temas sectoriales. Seguramente, el XML no desaparezca nunca de la informática, pero en la web yo diría que ya nadie plantea un nuevo proyecto basándose en XML (y aplicaciones basadas en XML como RSS han sido eliminadas de los navegadores).</p>
+
+    <p>En el año 2000 el W3C impulsó otra iniciativa todavía más ambiciosa denominada Web Semántica, que pretendía crear una web de datos y significados procesables automáticamente y que no llegó a ninguna parte. En 2013 el W3C ya había cerrado todos los grupos de trabajo relacionados con la Web Semántica, que languidece como tema de investigación en entornos académicos (que yo sepa).</p>
+
+    <h3>El renacimiento del HTML</h3>
+
+    <p>Ante la negativa del W3C a recuperar el HTML "clásico" (no basado en XML), Mozilla, Apple y Opera crearon en 2004 el <a href="https://whatwg.org/">WHATWG</a> que empezó a redactar el HTML 5. En 2007 el W3C aceptó recuperar el HTML, trabajando a partir de los borradores del WHATWG, en 2011 W3C aceptó el fracaso del XHTML y en 2015 publicó la recomendación HTML 5.0. Aunque llegaron a publicarse las recomendaciones HTML 5.1 en 2016 y HTML 5.2 en 2017, el WHATWG no se disolvió y ha seguido dirigiendo el desarrollo del HTML. Finalmente, en 2019 el W3C decidió abandonar todo trabajo sobre el HTML y otras tecnologías asociadas y dejarlo en manos del WHATWG, en el que ya participaban también Google y Microsoft.</p>
+
+    <p>Con respecto a las hojas de estilo, estas no han dejado de desarrollarse nunca en el seno del W3C. pero las hojas de estilo también sufrieron un parón a partir del año 2000 y en este caso el motivo principal fue sin duda el boicot de Microsoft a la recomendación CSS 2, implementando incorrectamente la recomendación o directamente no implementándola. Hasta que Firefox no empezó a tener cuota de mercado, Microsoft no dio su brazo a torcer, pero no fue hasta 2009 que Internet Explorer 8 cumplió de forma significativa CSS 2.</p>
+
+    <p>En 2010 el W3C retomó el desarrollo de las hojas de estilo, pero decidieron trocear la recomendación en un gran número de pequeñas recomendaciones que tratan temas específicos. Esas recomendaciones se suelen denominar en general CSS nivel 3, pero en algunos ya existen borradores de niveles 4 o 5 y algunas partes están todavía en su nivel 1. Además, el W3C ha abandonado parcialmente su modelo de publicación de recomendaciones, acercándose al modelo continuo que cada vez está más extendido en la informática. Así el grupo de trabajo del W3C publica nuevas versiones de los borradores de las recomendaciones a medida que se trabaja en ellos. Para aclarar al público en general el estado de madurez de cada recomendación, el W3C publica desde hace unos años (y la intención parece ser hacerlo regularmente a finales de cada año) una recomendación llamada CSS Snapshot que establece la definición oficial de CSS.</p>
+
+    <h3>La situación en 2022</h3>
+
+    <p>En 2022 el organismo que define el HTML es el WHATWG, cuya norma se desarrolla desde 2011 de forma continua, sin número de versiones: <a href="https://html.spec.whatwg.org/multipage/">HTML Living Standard</a>.</p>
+
+    <p>En 2022 el organismo que define las CSS es el W3C, cuyas normas (recomendaciones) se desarrollan desde 2010 de forma troceada y cada vez más continua. En 2022, la definición oficial de CSS que se encuentra en la recomendación  <a href="https://www.w3.org/TR/css-2021/">CSS Snapshot 2021</a> (diciembre de 2021) está formada por las partes de la antigua recomendación <a href="https://www.w3.org/TR/CSS2/">CSS 2.1</a> (2011) que no han sido publicadas en nuevas recomendaciones, diez CSS de nivel 3 ya aprobadas y catorce borradores de recomendaciones que aunque no están oficialmente aprobadas se consideran suficientemente maduras e implementadas en los navegadores.</p>
+  </section>
+
+  <section id="recomendaciones-css">
+    <h2>La definición oficial de CSS</h2>
+
+    <p>La tabla siguiente muestra las recomendaciones y los borradores de recomendaciones que se han ido incorporando a la definición oficial de CSS en sucesivas recomendaciones CSS Snapshot, cuya última versión es actualmente (mayo de 2022) <a href="https://www.w3.org/TR/css-2021/">CSS Snapshot 2021</a> (diciembre de 2021).</p>
+
+    <p>Las recomendaciones y borradores se agrupan en tres grupos:</p>
+    <ul>
+      <li>RET: Recomendaciones retiradas</li>
+      <li>REC: Recomendaciones aprobadas</li>
+      <li>NO REC: Borradores maduros</li>
+    </ul>
+
+    <table class="tabla-con-borde">
+      <thead>
+        <tr>
+          <th rowspan="2">Grupo</th>
+          <th rowspan="2">Fecha</th>
+          <th rowspan="2">Nombre</th>
+          <th colspan="5">Snapshot</th>
+        </tr>
+        <tr>
+          <th>2021<br>21/12/2021</th>
+          <th>2020<br>22/12/2020</th>
+          <th>2018<br>22/01/2019</th>
+          <th>2017<br>31/01/2017</th>
+          <th>2015<br>13/10/2015</th>
+        </tr>
+      </thead>
+      <tbody id="css-sustituidas">
+        <tr>
+          <td rowspan="1">RET</td>
+          <td>REC 11/02/2021</td>
+          <td><a href="https://www.w3.org/TR/css3-cascade/">CSS Cascading and Inheritance Level 3</a></td>
+          <td>SUSTITUIDA</td>
+          <td>SUSTITUIDA</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+      </tbody>
+      <tbody id="css-aprobadas">
+        <tr>
+          <td rowspan="10">
+            <p style="_transform: rotate(-90deg);">REC</p>
+          </td>
+          <td>REC 07/06/2011</td>
+          <td><a href="https://www.w3.org/TR/CSS2/">CSS 2.1</a> </td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>REC 05/04/2022</td>
+          <td><a href="https://www.w3.org/TR/css3-mediaqueries/">Media Queries Level 3 (2ª ed)</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>REC 05/08/2021</td>
+          <td><a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3 (4ª ed)</a> </td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>REC 22/12/2020</td>
+          <td><a href="https://www.w3.org/TR/css-contain-1/">CSS Containment Module Level 1 (2ª ed)</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 ELA++</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>REC 10/12/2019</td>
+          <td><a href="https://www.w3.org/TR/css-writing-modes-3/">CSS Writing Modes Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>REC 06/11/2018</td>
+          <td><a href="https://www.w3.org/TR/selectors-3/">Selectors Level 3 (2ª ed)</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>REC 20/09/2018</td>
+          <td><a href="https://www.w3.org/TR/css-fonts-3/">CSS Fonts Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>REC 21/06/2018</td>
+          <td><a href="https://www.w3.org/TR/css-ui-3/">CSS Basic User Interface Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>REC 20/03/2014</td>
+          <td><a href="https://www.w3.org/TR/css-namespaces/">CSS Namespaces Module Level 3 (2ª ed)</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>REC 07/11/2013</td>
+          <td><a href="https://www.w3.org/TR/css-style-attr/">CSS Style Attributes</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+      </tbody>
+      <tbody id="css-no-aprobadas">
+        <tr>
+          <td rowspan="14">
+            <p style="_transform: rotate(-90deg);">NO REC</p>
+          </td>
+          <td>CRS 13/01/2022</td>
+          <td><a href="https://www.w3.org/TR/css-conditional-3/">CSS Conditional Rules Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>WD 13/01/2022</td>
+          <td><a href="https://www.w3.org/TR/css-cascade-4/">CSS Cascading and Inheritance Level 4</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 ELA++</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CR 24/12/2021</td>
+          <td><a href="https://www.w3.org/TR/css-syntax-3/">CSS Syntax Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>CRD 11/11/2021</td>
+          <td><a href="https://www.w3.org/TR/css-variables-1/">CSS Custom Properties for Cascading Variables Module Level 1</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 ELA</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRS 12/10/2021</td>
+          <td><a href="https://www.w3.org/TR/css-multicol-1/">CSS Multi-column Layout Level 1</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>CRS 27/07/2021</td>
+          <td><a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td>2017 ELA++</td>
+          <td>2015 ELA++</td>
+        </tr>
+        <tr>
+          <td>CR 26/07/2021</td>
+          <td><a href="https://www.w3.org/TR/css-backgrounds-3/">CSS Backgrounds and Borders Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>CRD 01/04/2021</td>
+          <td><a href="https://www.w3.org/TR/css-easing-1/">CSS Easing Functions Level 1</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRS 22/12/2020</td>
+          <td><a href="https://www.w3.org/TR/css-box-3/">CSS Box Model Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRD 17/12/2020</td>
+          <td><a href="https://www.w3.org/TR/css-images-3/">CSS Images Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>CR 06/06/2019</td>
+          <td><a href="https://www.w3.org/TR/css-values-3/">CSS Values and Units Module Level 3</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+        <tr>
+          <td>CR 14/02/2019</td>
+          <td><a href="https://www.w3.org/TR/css-transforms-1/">CSS Transforms Module Level 1</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 ELA</td>
+          <td>2015 ELA</td>
+        </tr>
+        <tr>
+          <td>CR 19/11/2018</td>
+          <td><a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexible Box Layout Module Level 1</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 ELA</td>
+          <td>2015 ELA</td>
+        </tr>
+        <tr>
+          <td>CR 13/01/2015</td>
+          <td><a href="https://www.w3.org/TR/compositing-1/">CSS Compositing and Blending Level 1</a></td>
+          <td>2021 CSS</td>
+          <td>2020 CSS</td>
+          <td>2018 CSS</td>
+          <td>2017 CSS</td>
+          <td>2015 CSS</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>La tabla siguiente muestra los borradores de recomendaciones que se citan en CSS Snapshot, pero que todavía no se consideran lo suficientemente maduras como para formar parte de la definición oficial.</p>
+
+    <p>Los borradores se agrupan en dos grupos:</p>
+    <ul>
+      <li>ELA++: Recomendaciones en elaboración, relativamente estables, pero no forman parte de la definición oficial</li>
+      <li>ELA: Recomendaciones en elaboración, por estabilizar antes de formar parte de la definición oficial</li>
+    </ul>
+
+    <p>Existe un grupo todavía mayor de casi 50 borradores de recomendaciones que no se nombran en CSS Snaphost 2021 y que por ese motivo no se listan aquí.</p>
+
+    <table class="tabla-con-borde">
+      <thead>
+        <tr>
+          <th rowspan="2">Grupo</th>
+          <th rowspan="2">Fecha</th>
+          <th rowspan="2">Nombre</th>
+          <th colspan="5">Incluidas en CSS Snapshot</th>
+        </tr>
+        <tr>
+          <th>2021<br>21/12/2021</th>
+          <th>2020<br>22/12/2020</th>
+          <th>2018<br>22/01/2019</th>
+          <th>2017<br>31/01/2017</th>
+          <th>2015<br>13/10/2015</th>
+        </tr>
+      </thead>
+      <tbody id="no-css-1">
+        <tr>
+          <td rowspan="13">
+            <p style="_transform: rotate(-90deg);">ELA++</p>
+          </td>
+          <td>CR 05/05/2022</td>
+          <td><a href="https://www.w3.org/TR/css-text-decor-3/">CSS Text Decoration Module Level 3</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td>2017 ELA++</td>
+          <td>2015 ELA++</td>
+        </tr>
+        <tr>
+          <td>CRS 05/05/2022</td>
+          <td><a href="https://www.w3.org/TR/css-text-3/">CSS Text Module Level 3</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA</td>
+          <td>2017 ELA</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 28/04/2022</td>
+          <td><a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRD 25/12/2021</td>
+          <td><a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 24/11/2021</td>
+          <td><a href="https://www.w3.org/TR/css-align-3/">CSS Box Alignment Module Level 3</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td>2017 ELA++</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRD 09/12/2021</td>
+          <td><a href="https://www.w3.org/TR/css-scrollbars-1/">CSS Scrollbars Styling Module Level 1</a></td>
+          <td>2021 ELA++</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRD 03/09/2021</td>
+          <td><a href="https://www.w3.org/TR/css-display-3/">CSS Display Module Level 3</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRD 05/08/2021</td>
+          <td><a href="https://www.w3.org/TR/css-masking-1/">CSS Masking Module Level 1</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td>2017 ELA++</td>
+          <td>2015 ELA++</td>
+        </tr>
+        <tr>
+          <td>CRS 11/03/2021</td>
+          <td><a href="https://www.w3.org/TR/css-scroll-snap-1/">CSS Scroll Snap Module Level 1</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CR 10/03/2020</td>
+          <td><a href="https://www.w3.org/TR/css-speech-1/">CSS Speech Module</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td>2017 ELA++</td>
+          <td>2015 ELA++</td>
+        </tr>
+        <tr>
+          <td>CR 30/07/2019</td>
+          <td><a href="https://www.w3.org/TR/css-writing-modes-4/">CSS Writing Modes Level 4</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CR 04/12/2018</td>
+          <td><a href="https://www.w3.org/TR/css-break-3/">CSS Fragmentation Module Level 3</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td>2017 ELA++</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CR 20/03/2014</td>
+          <td><a href="https://www.w3.org/TR/css-shapes-1/">CSS Shapes Module Level 1</a></td>
+          <td>2021 ELA++</td>
+          <td>2020 ELA++</td>
+          <td>2018 ELA++</td>
+          <td>2017 ELA++</td>
+          <td>2015 ELA++</td>
+        </tr>
+      </tbody>
+      <tbody id="no-css-2">
+        <tr>
+          <td rowspan="14">
+            <p style="_transform: rotate(-90deg);">ELA</p>
+          </td>
+          <td>CR 05/05/2022</td>
+          <td><a href="https://www.w3.org/TR/css-will-change-1/">CSS Will Change Module Level 1</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA</td>
+          <td>2018 ELA</td>
+          <td>2017 ELA++</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 21/12/2021</td>
+          <td><a href="https://www.w3.org/TR/css-fonts-4/">CSS Fonts Module Level 4</a></td>
+          <td>2021 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 17/12/2021</td>
+          <td><a href="https://www.w3.org/TR/css-sizing-3/">CSS Box Sizing Module Level 3</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA++</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 16/12/2021</td>
+          <td><a href="https://www.w3.org/TR/css-position-3/">CSS Positioned Layout Module Level 3</a></td>
+          <td>2021 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 09/11/2021</td>
+          <td><a href="https://www.w3.org/TR/css-transforms-2/">CSS Transforms Module Level 2</a></td>
+          <td>2021 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 18/05/2021</td>
+          <td><a href="https://www.w3.org/TR/web-animations-1/">Web Animations</a></td>
+          <td>2021 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRD 18/12/2020</td>
+          <td><a href="https://www.w3.org/TR/css-grid-1/">CSS Grid Layout Module Level 1</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA</td>
+          <td>2018 ELA</td>
+          <td>2017 ELA++</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>CRD 18/12/2020</td>
+          <td><a href="https://www.w3.org/TR/css-grid-2/">CSS Grid Layout Module Level 2</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 17/11/2020</td>
+          <td><a href="https://www.w3.org/TR/css-lists-3/">CSS Lists and Counters Module Level 3</a></td>
+          <td>2021 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 18/12/2018</td>
+          <td><a href="https://www.w3.org/TR/filter-effects-1/">Filter Effects Module Level 1</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA</td>
+          <td>2018 ELA</td>
+          <td>2017 ELA++</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 11/10/2018</td>
+          <td><a href="https://www.w3.org/TR/css-transitions-1/">CSS Transitions</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA</td>
+          <td>2018 ELA</td>
+          <td>2017 ELA</td>
+          <td>2015 ELA</td>
+        </tr>
+        <tr>
+          <td>WD 11/10/2018</td>
+          <td><a href="https://www.w3.org/TR/css-animations-1/">CSS Animations Level 1</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 27/08/2018</td>
+          <td><a href="https://www.w3.org/TR/css-logical-1/">CSS Logical Properties and Values Level 1</a></td>
+          <td>2021 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>WD 22/05/2014</td>
+          <td><a href="https://www.w3.org/TR/css-font-loading/">CSS Font Loading Module Level 3</a></td>
+          <td>2021 ELA</td>
+          <td>2020 ELA</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 20 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
