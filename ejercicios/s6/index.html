@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicios S6. HTML / CSS. Diseño Web con HTML y CSS. Bartolomé Sintes Marco. Cefire CTEM 22CT47ES011 (abril/mayo 2022)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism-copy.js"></script>
+  <script src="../../varios/prism.js"></script>
+  <script src="../../varios/clipboard.min.js"></script>
+</head>
+
+<body>
+  <h1>HTML / CSS. Ejercicios S6</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-cefire-html.svg" alt="Home" title="Ir a página de inicio" width="48" height="48"></a>
+      <a href="../../otros/normas.html"><img src="../../varios/iconos/icono-arrow-circle-left.svg" alt="Anterior" title="Lección anterior" width="36" height="36"></a>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-arrow-circle-right.svg" alt="Siguiente" title="Índice" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2><a href="#">Ejercicios S6</a></h2>
+    </div>
+
+    <ul>
+      <li><a href="#ejercicio-1">1 - Consultas / Columnas</a></li>
+      <li><a href="#ejercicio-2">2 - Flexbox</a></li>
+      <li><a href="#ejercicio-3">3 - Posicionamiento absoluto</a></li>
+    </ul>
+  </nav>
+
+  <p>Estos ejercicios tratan sobre los temas tratados en la Semana 6 del curso.</p>
+
+  <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="s6-plantillas.zip">plantillas de los ejercicios S6</a>. Una vez descargado el fichero zip:</p>
+  <ol>
+    <li>Descomprima las plantillas en la carpeta <strong>ejercicios</strong>. Se creará una carpeta <strong>s6-plantillas</strong>.</li>
+    <li>Renombre la carpeta <strong>s6-plantillas</strong> como <strong>s6</strong>.</li>
+  </ol>
+
+  <p>Las capturas de pantalla están tomadas con un ancho de ventana de 1920px aproximadamente.</p>
+
+  <p><span class="entidad-inline">&#9888;&#65039;</span> En algunos aspectos, no es necesario que el resultado sea absolutamente exacto, sobre todo porque algunos detalles no tienen importancia. Por ejemplo, basta con que la ventana del navegador sea un poco más ancha o estrecha para que las palabras salten de una línea a la siguiente. Los valores de tamaños y distancias utilizados suelen ser valores "redondos", pero acertar el valor exacto puede necesitar varios intentos. Con que el parecido sea razonable, es suficiente. Otros aspectos sí que me gustaría que fueran idénticos, por ejemplo los tipos de letra, la posición de las imágenes o qué palabras se han resaltado.</p>
+
+  <section id="ejercicio-1">
+    <h2>S6 1 - Consultas de medios / Columnas</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>quijote.html</strong>.</li>
+      <li>Cree la hoja de estilo <strong>quijote.css</strong> y añada el enlace a la hoja de estilo.</li>
+      <li>Incluya tres reglas-arroba <span class="css-arroba">@media</span> de manera que el diseño de la página cambie cuando el ancho de la pantalla sea inferior a 640px o cuando sea superior a 1280px, como muestra el vídeo siguiente (haga clic en el vídeo para verlo a pantalla completa):
+        <p class="mcl-centrado">
+          <a href="quijote.webm">
+            <video src="quijote.webm" autoplay loop style="height: 400px">
+              Tu navegador no admite el elemento <code>video</code>.
+            </video>
+          </a>
+        </p>
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Las reglas de la hoja de estilo pueden ser las siguientes (faltan las propiedades):
+              <div class="codigo">
+                <pre>
+<code class="language-css">html {
+}
+
+@media screen and (max-width: 640px) {
+    html {
+    }
+
+    section {
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1280px) {
+    html {
+    }
+
+    section {
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    html {
+    }
+
+    section {
+    }
+
+    p {
+    }
+}</code>
+        </pre>
+              </div>
+            </li>
+          </ul>
+        </details>
+        <p>
+          <strong>Nota</strong>: Colores empleados:
+          <span style="background-color: hwb(290 75% 10%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(290 75% 10%),
+          <span style="background-color: hwb(45 70% 0%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(45 70% 0%) y
+          <span style="background-color: hwb(175 50% 20%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> hwb(175 50% 20%)
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>S6 2 - Flexbox</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code las páginas <strong>revistas.html</strong> A, B, C y D.</li>
+      <li>Sólo hay que escribir las hojas de estilo. El código html ya está incluido en la plantilla.</li>
+      <li>Complete las hojas de estilo de manera que los diseños de las páginas sean como muestran los vídeos siguientes (haga clic en el vídeo para verlo a pantalla completa). En principio, creo que no hace falta añadir más propiedades, aunque es posible que se pueda eliminar alguna:
+        <p class="mcl-centrado">
+          <a href="flexbox-a.webm">
+            <video src="flexbox-a.webm" autoplay loop style="height: 400px">
+              Tu navegador no admite el elemento <code>video</code>.
+            </video>
+          </a>
+        </p>
+        <p class="mcl-centrado">
+          <a href="flexbox-b.webm">
+            <video src="flexbox-b.webm" autoplay loop style="height: 400px">
+              Tu navegador no admite el elemento <code>video</code>.
+            </video>
+          </a>
+        </p>
+        <p class="mcl-centrado">
+          <a href="flexbox-c.webm">
+            <video src="flexbox-c.webm" autoplay loop style="height: 400px">
+              Tu navegador no admite el elemento <code>video</code>.
+            </video>
+          </a>
+        </p>
+        <p class="mcl-centrado">
+          <a href="flexbox-d.webm">
+            <video src="flexbox-d.webm" autoplay loop style="height: 400px">
+              Tu navegador no admite el elemento <code>video</code>.
+            </video>
+          </a>
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>S6 3 - GitHub <span class="aviso">[OPTATIVO]</span></h2>
+
+    <ol>
+      <li>Instale git en su ordenador (<a href="../../otros/git-instalacion.html">apuntes</a>)</li>
+      <li>Si no dispone de cuenta en GitHub, cree una cuenta en GitHub (<a href="../../otros/github-cuenta.html#crear-cuenta">apuntes</a>). El nombre de usuario puede ser su nombre real (NombreApellido) o puede usar un seudónimo</li>
+      <li>Cree un repositorio en GitHub (<a href="../../otros/github-repositorios.html#crear">apuntes</a>). El nombre del repositorio puede ser <strong>curso-cefire-2022-05-ejercicio</strong>.</li>
+      <li>Clone el repositorio en su ordenador (<a href="../../otros/vsc-git-repositorio.html#clonar-repositorio">apuntes</a>).</li>
+      <li>Cree el archivo .gitgnore. (<a href="../../otros/vsc-git-repositorio.html#gitignore">apuntes</a>) en su repositorio local.</li>
+      <li>Realice un commit con el archivo .gitgnore. (<a href="../../otros/vsc-git-repositorio.html#commit">apuntes</a>).</li>
+      <li>Copie la carpeta <strong>.vscode</strong> de la carpeta HTMLCSS en la carpeta del repositorio local para disponer de la misma configuración en ambas áreas de trabajo.</li>
+      <li>Cree una página web <strong>index.html</strong> y una hoja de estilo <strong>estilo.css</strong> (<a href="../../html/html-metadatos.html#pagina-basica">apuntes</a>). El contenido puede ser cualquiera (generado con lorem ipsum incluso).</li>
+      <li>Realice un commit con esos dos archivos (<a href="../../otros/vsc-git-repositorio.html#commit">apuntes</a>).</li>
+
+      <li>Publique el repositorio como sitio web público (<a href="../../otros/github-repositorios.html#publicar-repositorios-web">apuntes</a>).</li>
+      <li>Escriba la URL en el fichero de texto de la plantilla</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 20 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <a href="https://bartolomesintes.github.io/curso-cefire-html-css-2022-04/">Diseño web con HTML y CSS (abril/mayo 2022)</a> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

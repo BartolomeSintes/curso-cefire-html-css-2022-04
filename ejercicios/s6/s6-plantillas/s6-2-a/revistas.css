@@ -1,0 +1,20 @@
+html {
+    background-color: hwb(350 50% 15%);
+    font-family: ;
+    hyphens: auto;
+    line-height: 125%;
+    text-align: ;
+}
+
+section {
+    display: flex;
+    flex-wrap: ;
+}
+
+article {
+    width: ;
+    margin: ;
+    padding: ;
+    border: black 3px solid;
+    background-color: hwb(350 70% 5%);
+}
