@@ -1,5 +1,6 @@
 html {
-    background-color: hwb(150 25% 30%);
+    /* background-color: hwb(150 25% 30%); */
+    background-color: hsl(150 47% 48%);
     font-family: ;
     line-height: 125%;
     text-align: ;
@@ -18,7 +19,8 @@ article {
     width: ;
     margin: ;
     border: black 3px solid;
-    background-color: hwb(150 50% 30%);
+    /* background-color: hwb(150 50% 30%); */
+    background-color: hsl(150 25% 60%);
 }
 
 h2 {

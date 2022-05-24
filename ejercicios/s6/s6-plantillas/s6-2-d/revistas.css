@@ -1,5 +1,6 @@
 html {
-    background-color: hwb(240 50% 10%);
+    /* background-color: hwb(240 50% 10%); */
+    background-color: hsl(240 67% 70%);
     color: black;
     font-family: ;
     line-height: 125%;
@@ -19,7 +20,8 @@ article {
     margin: ;
     padding: ;
     border: lightgray 3px solid;
-    background-color: hwb(240 40% 20%);
+    /* background-color: hwb(240 40% 20%); */
+    background-color: hsl(240 50% 60%);
 }
 
 header {
